@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('../assets/fonts/CourierPrime/CourierPrime-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'IrishGrover';
+    src: url('../assets/fonts/IrishGrover/IrishGrover-Regular.ttf');
+}
+
+.menu {
+    display: flex;
+    background-color: #2B2B2B;
+    justify-content: space-between;
+}
+
+.menu-items {
+    align-items: center;
+    display: flex;
+    width: 30%;
+}
+
+.menu-item {
+    color: #C6CDD3;
+    font-size: 2rem;
+    font-family: 'CourierPrime';
+    font-weight: 400;
+    word-wrap: break-word;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.logo {
+    width: 5%;
+}
+
+.home-panel-1 {
+    height: 100vh;
+    position: relative;
+}
+
+.home-panel-1-text {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 20rem;
+}
+
+.background {
+    width: 100%;
+}
+
+.title-1 {
+    color: #F88982;
+    font-size: 80px;
+    font-family: 'IrishGrover';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.description-1 {
+    color: white;
+    font-size: 36px;
+    font-family: 'CourierPrime';
+    font-weight: 400;
+    word-wrap: break-word;
+}
