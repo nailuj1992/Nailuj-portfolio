@@ -13,6 +13,24 @@
     src: url('../assets/fonts/IndieFlower/IndieFlower-Regular.ttf');
 }
 
+.image-background-1 {
+    background-image: url('../assets/img/WoWScrnShot_020324_165142_2.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.image-background-2 {
+    background-image: url('../assets/img/WoWScrnShot_020324_173939_2.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.image-background-3 {
+    background-image: url('../assets/img/WoWScrnShot_020324_184154_2.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
 .font-family-courier-prime {
     font-family: 'CourierPrime';
 }
@@ -34,6 +52,7 @@
 .menu-items {
     align-items: center;
     display: flex;
+    justify-content: end;
 }
 
 .width-30 {
@@ -52,7 +71,7 @@
     width: 70%;
 }
 
-.width-75 {
+.width-75, .separator {
     width: 75%;
 }
 
@@ -256,4 +275,191 @@
     font-size: 20px;
     font-weight: 400;
     word-wrap: break-word;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .title-1 {
+        font-size: 60px;
+    }
+
+    .description-1 {
+        font-size: 25px;
+    }
+
+    .home-panel-text-1 {
+        row-gap: 17rem;
+    }
+
+    .title-2 {
+        font-size: 45px;
+    }
+
+    .subtitle-2 {
+        font-size: 23px;
+    }
+
+    .description-2 {
+        font-size: 20px;
+    }
+
+    .width-30 {
+        width: 40%;
+    }
+
+    .width-40vh {
+        width: 32vh;
+    }
+
+    .title-frontend,
+    .title-backend {
+        font-size: 40px;
+    }
+
+    .languages-title,
+    .tools-title {
+        font-size: 17px;
+    }
+
+    .languages-text,
+    .tools-text {
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .background {
+        width: 140%;
+    }
+
+    .menu-item {
+        font-size: 1.5rem;
+    }
+
+    .title-2 {
+        font-size: 40px;
+    }
+
+    .subtitle-2 {
+        font-size: 20px;
+    }
+
+    .description-2 {
+        font-size: 17px;
+    }
+
+    .width-30 {
+        width: 35%;
+    }
+
+    .home-panel-text-3 {
+        top: 53%;
+    }
+
+    .languages-title,
+    .tools-title {
+        font-size: 15px;
+    }
+
+    .languages-text,
+    .tools-text {
+        font-size: 12px;
+    }
+
+    .height-50vh {
+        height: 36vh;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    .width-30 {
+        width: 43%;
+    }
+
+    .logo {
+        width: 7%;
+    }
+
+    .background {
+        width: 165%;
+    }
+
+    .title-2 {
+        font-size: 33px;
+    }
+
+    .subtitle-2 {
+        font-size: 17px;
+    }
+
+    .description-2 {
+        font-size: 12px;
+    }
+
+    .width-40vh {
+        width: 25vh;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .menu-item {
+        font-size: 1.2rem;
+    }
+
+    .background {
+        width: 215%;
+    }
+
+    .title-1 {
+        font-size: 45px;
+    }
+
+    .description-1 {
+        font-size: 20px;
+    }
+
+    .title-2 {
+        font-size: 25px;
+    }
+
+    .subtitle-2 {
+        font-size: 13px;
+    }
+
+    .description-2 {
+        font-size: 10px;
+    }
+
+    .width-40vh {
+        width: 20vh;
+    }
+
+    .padding-bottom-10vh {
+        padding-bottom: 5vh;
+    }
+
+    .table-panel-3 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .frontend-section,
+    .backend-section {
+        height: 35vh;
+    }
+
+    .separator {
+        height: 5%;
+    }
+
+    .width-75 {
+        width: 40%;
+    }
+
 }
