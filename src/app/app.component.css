@@ -34,12 +34,12 @@
     width: 5%;
 }
 
-.home-panel-1 {
+.home-panel {
     height: 100vh;
     position: relative;
 }
 
-.home-panel-1-text {
+.home-panel-text-1 {
     width: 60%;
     position: absolute;
     left: 50%;
@@ -69,4 +69,71 @@
     font-family: 'CourierPrime';
     font-weight: 400;
     word-wrap: break-word;
+}
+
+.home-panel-text-2 {
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 20rem;
+}
+
+.section-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subsection-2 {
+    width: 48%;
+}
+
+.title-2 {
+    color: #F88982;
+    font-size: 60px;
+    font-family: 'IrishGrover';
+    font-weight: 400;
+    line-height: 50px;
+    word-wrap: break-word;
+    text-align: right;
+    padding-bottom: 1%;
+}
+
+.subtitle-2 {
+    color: #F88982;
+    font-size: 32px;
+    font-family: 'IrishGrover';
+    font-weight: 400;
+    line-height: 50px;
+    word-wrap: break-word;
+    text-align: right;
+    padding-top: 1%;
+}
+
+.description-2 {
+    color: white;
+    font-size: 26px;
+    font-family: 'CourierPrime';
+    font-weight: 400;
+    word-wrap: break-word;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-2 {
+    width: 40vh;
+}
+
+.padding-bottom-10vh {
+    padding-bottom: 10vh;
+}
+
+.padding-top-10vh {
+    padding-top: 10vh;
 }
