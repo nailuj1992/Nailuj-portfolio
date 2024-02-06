@@ -1,0 +1,54 @@
+@import '../../assets/css/files.css';
+@import '../../assets/css/fonts.css';
+@import '../../assets/css/common.css';
+
+.menu {
+    display: flex;
+    background-color: #2B2B2B;
+    justify-content: space-between;
+}
+
+.menu-items {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+}
+
+.menu-item {
+    color: #C6CDD3;
+    font-size: 2rem;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.logo {
+    width: 5%;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: #C6CDD3;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .menu-item {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    .logo {
+        width: 7%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .menu-item {
+        font-size: 1.2rem;
+    }
+
+}

@@ -1,0 +1,54 @@
+@import '../../assets/css/files.css';
+@import '../../assets/css/fonts.css';
+@import '../../assets/css/common.css';
+
+.title-1 {
+    color: #586dbd;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50px;
+    word-wrap: break-word;
+}
+
+.description-1 {
+    color: white;
+    font-size: 26px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.portfolio-panel {
+    height: 100vh;
+    position: relative;
+}
+
+.portfolio-subpanel-1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 6rem;
+}
+
+.portfolio-link {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+    word-wrap: break-word;
+    width: 35%;
+    height: 7vh;
+}
+
+.carousel-center {
+    display: flex;
+    align-self: center;
+}
+
+.carousel-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
