@@ -2,7 +2,8 @@
 @import '../../assets/css/fonts.css';
 @import '../../assets/css/common.css';
 
-.title-1 {
+.title-1,
+.title-2 {
     color: #586dbd;
     font-size: 48px;
     font-weight: 400;
@@ -10,11 +11,20 @@
     word-wrap: break-word;
 }
 
-.description-1 {
+.title-2 {
+    color: #2a47b5;
+}
+
+.description-1,
+.description-2 {
     color: white;
     font-size: 26px;
     font-weight: 400;
     word-wrap: break-word;
+}
+
+.description-2 {
+    font-size: 22px;
 }
 
 .portfolio-panel {
@@ -22,7 +32,8 @@
     position: relative;
 }
 
-.portfolio-subpanel-1 {
+.portfolio-subpanel-1,
+.portfolio-subpanel-2 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -33,9 +44,13 @@
     row-gap: 6rem;
 }
 
+.portfolio-subpanel-2 {
+    row-gap: 5rem;
+}
+
 .portfolio-link {
     text-align: center;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
     word-wrap: break-word;
     width: 35%;
@@ -51,11 +66,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 5rem;
 }
 
 @media only screen and (max-width: 1400px) {
 
-    .description-1 {
+    .description-1,
+    .description-2 {
         font-size: 20px;
     }
 
@@ -67,11 +84,13 @@
 
 @media only screen and (max-width: 1200px) {
 
-    .title-1 {
+    .title-1,
+    .title-2 {
         font-size: 40px;
     }
 
-    .description-1 {
+    .description-1,
+    .description-2 {
         font-size: 18px;
     }
 
@@ -79,7 +98,8 @@
         font-size: 30px;
     }
 
-    .portfolio-subpanel-1 {
+    .portfolio-subpanel-1,
+    .portfolio-subpanel-2 {
         row-gap: 5rem;
     }
 
@@ -87,7 +107,8 @@
 
 @media only screen and (max-width: 992px) {
 
-    .title-1 {
+    .title-1,
+    .title-2 {
         font-size: 45px;
     }
 
@@ -97,7 +118,8 @@
         height: 5vh;
     }
 
-    .portfolio-subpanel-1 {
+    .portfolio-subpanel-1,
+    .portfolio-subpanel-2 {
         row-gap: 6rem;
     }
 
@@ -105,11 +127,13 @@
 
 @media only screen and (max-width: 768px) {
 
-    .title-1 {
+    .title-1,
+    .title-2 {
         font-size: 35px;
     }
 
-    .description-1 {
+    .description-1,
+    .description-2 {
         font-size: 15px;
     }
 
@@ -119,7 +143,8 @@
         height: 6vh;
     }
 
-    .portfolio-subpanel-1 {
+    .portfolio-subpanel-1,
+    .portfolio-subpanel-2 {
         row-gap: 3rem;
     }
 

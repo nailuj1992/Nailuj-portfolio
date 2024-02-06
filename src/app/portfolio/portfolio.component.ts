@@ -16,15 +16,22 @@ export class PortfolioComponent {
     {
       url: '../../assets/img/logic/img1.png',
       title: 'Home'
-    },{
+    }, {
       url: '../../assets/img/logic/img2.png',
       title: 'Concepts'
-    },{
+    }, {
       url: '../../assets/img/logic/img3.png',
       title: 'Calculator'
-    },{
+    }, {
       url: '../../assets/img/logic/img5.png',
       title: 'Syntax tree'
+    }
+  ];
+
+  slidesMusicPlayer: any[] = [
+    {
+      url: '../../assets/img/calculator/img1.png',
+      title: 'Home'
     }
   ];
 
