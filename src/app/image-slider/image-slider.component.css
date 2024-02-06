@@ -42,7 +42,7 @@
             right: 0px;
             margin: auto;
             bottom: 20px;
-            width: 200px;
+            width: 70%;
 
             .indicator {
                 width: 20px;
@@ -50,7 +50,7 @@
                 border-radius: 50%;
                 background-color: #fff;
                 display: inline-block;
-                margin: 0px 5px;
+                margin: 0 2%;
                 cursor: pointer;
                 transition: background-color 0.5s ease-in-out;
 
@@ -60,4 +60,68 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 1400px) {
+
+    :host {
+        .slides {
+            height: 45vh;
+
+            .nextButton,
+            .previousButton {
+                font-size: 25px;
+            }
+
+            .indicators {
+                .indicator {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    :host {
+        .slides {
+            .indicators {
+                .indicator {
+                    margin: 0 3%;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    :host {
+        .slides {
+            height: 40vh;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    :host {
+        .slides {
+            height: 30vh;
+
+            .indicators {
+                width: 95%;
+
+                .indicator {
+                    margin: 0 5%;
+                }
+            }
+        }
+    }
+
 }
