@@ -3,7 +3,8 @@
 @import '../../assets/css/common.css';
 
 .title-1,
-.title-2 {
+.title-2,
+.title-3 {
     color: #586dbd;
     font-size: 48px;
     font-weight: 400;
@@ -15,8 +16,13 @@
     color: #2a47b5;
 }
 
+.title-3 {
+    color: #a0b2f9;
+}
+
 .description-1,
-.description-2 {
+.description-2,
+.description-3 {
     color: white;
     font-size: 26px;
     font-weight: 400;
@@ -33,7 +39,8 @@
 }
 
 .portfolio-subpanel-1,
-.portfolio-subpanel-2 {
+.portfolio-subpanel-2,
+.portfolio-subpanel-3 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -62,17 +69,24 @@
     align-self: center;
 }
 
-.carousel-text {
+.carousel-text,
+.carousel-text-3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     column-gap: 5rem;
 }
 
+.carousel-text-3 {
+    justify-content: center;
+    column-gap: 12rem;
+}
+
 @media only screen and (max-width: 1400px) {
 
     .description-1,
-    .description-2 {
+    .description-2,
+    .description-3 {
         font-size: 20px;
     }
 
@@ -80,17 +94,27 @@
         font-size: 35px;
     }
 
+    .width-15 {
+        width: 17%;
+    }
+
+    .carousel-text-3 {
+        column-gap: 10rem;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
 
     .title-1,
-    .title-2 {
+    .title-2,
+    .title-3 {
         font-size: 40px;
     }
 
     .description-1,
-    .description-2 {
+    .description-2,
+    .description-3 {
         font-size: 18px;
     }
 
@@ -99,8 +123,17 @@
     }
 
     .portfolio-subpanel-1,
-    .portfolio-subpanel-2 {
+    .portfolio-subpanel-2,
+    .portfolio-subpanel-3 {
         row-gap: 5rem;
+    }
+
+    .carousel-text-3 {
+        column-gap: 8rem;
+    }
+
+    .width-15 {
+        width: 19%;
     }
 
 }
@@ -108,7 +141,8 @@
 @media only screen and (max-width: 992px) {
 
     .title-1,
-    .title-2 {
+    .title-2,
+    .title-3 {
         font-size: 45px;
     }
 
@@ -119,8 +153,17 @@
     }
 
     .portfolio-subpanel-1,
-    .portfolio-subpanel-2 {
+    .portfolio-subpanel-2,
+    .portfolio-subpanel-3 {
         row-gap: 6rem;
+    }
+
+    .carousel-text-3 {
+        column-gap: 5rem;
+    }
+
+    .width-15 {
+        width: 23%;
     }
 
 }
@@ -128,12 +171,14 @@
 @media only screen and (max-width: 768px) {
 
     .title-1,
-    .title-2 {
+    .title-2,
+    .title-3 {
         font-size: 35px;
     }
 
     .description-1,
-    .description-2 {
+    .description-2,
+    .description-3 {
         font-size: 15px;
     }
 
@@ -144,11 +189,13 @@
     }
 
     .portfolio-subpanel-1,
-    .portfolio-subpanel-2 {
+    .portfolio-subpanel-2,
+    .portfolio-subpanel-3 {
         row-gap: 3rem;
     }
 
-    .carousel-text {
+    .carousel-text,
+    .carousel-text-3 {
         flex-direction: column;
         row-gap: 2rem;
     }
@@ -159,6 +206,23 @@
 
     .width-40 {
         width: 100%;
+    }
+
+    .width-15 {
+        width: 22%;
+    }
+
+    .text-align-left,
+    .text-align-right {
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 472px) {
+
+    .width-15 {
+        width: 35%;
     }
 
 }

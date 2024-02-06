@@ -35,4 +35,38 @@ export class PortfolioComponent {
     }
   ];
 
+  slidesPrayersProject: any[] = [
+    {
+      url: '../../assets/img/prayers/img1.jpg',
+      title: 'Home'
+    }, {
+      url: '../../assets/img/prayers/img2.jpg',
+      title: 'Concepts'
+    }, {
+      url: '../../assets/img/prayers/img3.jpg',
+      title: 'Calculator'
+    }, {
+      url: '../../assets/img/prayers/img4.jpg',
+      title: 'Syntax tree'
+    }, {
+      url: '../../assets/img/prayers/img5.jpg',
+      title: 'Home'
+    }, {
+      url: '../../assets/img/prayers/img6.jpg',
+      title: 'Concepts'
+    }, {
+      url: '../../assets/img/prayers/img7.jpg',
+      title: 'Calculator'
+    }, {
+      url: '../../assets/img/prayers/img8.jpg',
+      title: 'Syntax tree'
+    }, {
+      url: '../../assets/img/prayers/img9.jpg',
+      title: 'Syntax tree'
+    }, {
+      url: '../../assets/img/prayers/img10.jpg',
+      title: 'Syntax tree'
+    }
+  ];
+
 }

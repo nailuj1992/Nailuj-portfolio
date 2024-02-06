@@ -8,6 +8,8 @@
         border-radius: 10px;
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
 
         .slide {
             width: 100%;
@@ -29,11 +31,11 @@
         }
 
         .nextButton {
-            right: 20px;
+            right: 7%;
         }
 
         .previousButton {
-            left: 20px;
+            left: 7%;
         }
 
         .indicators {
@@ -42,7 +44,11 @@
             right: 0px;
             margin: auto;
             bottom: 20px;
-            width: 70%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            row-gap: 0.5rem;
+            column-gap: 0.2rem;
 
             .indicator {
                 width: 20px;
@@ -103,6 +109,19 @@
     :host {
         .slides {
             height: 40vh;
+
+            .nextButton,
+            .previousButton {
+                top: 35%;
+            }
+
+            .nextButton {
+                right: 5%;
+            }
+
+            .previousButton {
+                left: 5%;
+            }
         }
     }
 
@@ -114,11 +133,28 @@
         .slides {
             height: 30vh;
 
+            .nextButton,
+            .previousButton {
+                top: 30%;
+            }
+
+            .nextButton {
+                right: 2%;
+            }
+
+            .previousButton {
+                left: 2%;
+            }
+
             .indicators {
                 width: 95%;
+                row-gap: 0.4rem;
+                column-gap: 0.1rem;
 
                 .indicator {
                     margin: 0 5%;
+                    width: 8px;
+                    height: 8px;
                 }
             }
         }
