@@ -4,12 +4,18 @@
 
 .title-1,
 .title-2,
-.title-3 {
+.title-3,
+.title-4 {
     color: #586dbd;
     font-size: 48px;
     font-weight: 400;
     line-height: 50px;
     word-wrap: break-word;
+}
+
+.title-4 {
+    color: #F88982;
+    font-size: 5rem;
 }
 
 .description-1,
@@ -45,6 +51,17 @@
     background: rgb(181 181 181 / 80%);
     border-radius: 20px;
     padding: 1% 2% 1% 2%;
+}
+
+.portfolio-subpanel-4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 5rem;
 }
 
 .portfolio-subpanel-2 {
@@ -98,6 +115,10 @@
         column-gap: 10rem;
     }
 
+    .portfolio-subpanel-4 {
+        row-gap: 4rem;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -106,6 +127,10 @@
     .title-2,
     .title-3 {
         font-size: 40px;
+    }
+
+    .title-4 {
+        font-size: 3rem;
     }
 
     .description-1,
@@ -122,6 +147,10 @@
     .portfolio-subpanel-2,
     .portfolio-subpanel-3 {
         row-gap: 5rem;
+    }
+
+    .portfolio-subpanel-4 {
+        row-gap: 4rem;
     }
 
     .carousel-text-3 {
@@ -152,6 +181,10 @@
     .portfolio-subpanel-2,
     .portfolio-subpanel-3 {
         row-gap: 6rem;
+    }
+
+    .portfolio-subpanel-4 {
+        row-gap: 3rem;
     }
 
     .carousel-text-3 {
@@ -189,6 +222,11 @@
     .portfolio-subpanel-2,
     .portfolio-subpanel-3 {
         row-gap: 3rem;
+    }
+
+    .portfolio-subpanel-4 {
+        row-gap: 4rem;
+        top: 40%;
     }
 
     .carousel-text,
@@ -236,6 +274,10 @@
     .portfolio-subpanel-2,
     .portfolio-subpanel-3 {
         row-gap: 1.5rem;
+    }
+
+    .portfolio-subpanel-4 {
+        row-gap: 4rem;
     }
 
     .carousel-center.width-15 {

@@ -28,6 +28,7 @@
             background-color: transparent;
             font-size: 30px;
             color: #fff;
+            cursor: pointer;
         }
 
         .nextButton {
