@@ -8,43 +8,86 @@
             </div>
 
             <div class="rows">
-                <div class="name-contact">
-                    <label for="name" class="font-family-courier-prime">Name</label>
+                <div class="name-contact font-family-courier-prime">
+                    <label for="name">Name</label>
                     <input id="name" type="text" formControlName="name" autocomplete="disabled"
-                        class="font-family-courier-prime">
+                        class="font-family-courier-prime"
+                        [className]="this.contactForm.controls.name.invalid && this.contactForm.controls.name.touched ? 'is-invalid' : ''">
+                    <div class="alert"
+                        *ngIf="this.contactForm.controls.name.invalid && (this.contactForm.controls.name.dirty || this.contactForm.controls.name.touched)">
+                        <div *ngIf="this.contactForm.controls.name.errors?.['minlength']">Name should have at minimum 3
+                            characters.</div>
+                    </div>
                 </div>
 
-                <div class="email-contact">
-                    <label for="email" class="font-family-courier-prime">Email</label>
-                    <input id="email" type="text" formControlName="email" autocomplete="disabled"
-                        class="font-family-courier-prime">
+                <div class="email-contact font-family-courier-prime">
+                    <label for="email">
+                        Email address
+                        <span *ngIf="this.contactForm.controls.email.errors?.['required']">*</span>
+                    </label>
+                    <input id="email" type="email" email required formControlName="email" autocomplete="disabled"
+                        class="font-family-courier-prime"
+                        [className]="this.contactForm.controls.email.invalid && this.contactForm.controls.email.touched ? 'is-invalid' : ''">
+                    <div class="alert"
+                        *ngIf="this.contactForm.controls.email.invalid && (this.contactForm.controls.email.dirty || this.contactForm.controls.email.touched)">
+                        <div *ngIf="this.contactForm.controls.email.errors?.['required']">Email address is required.
+                        </div>
+                        <div
+                            *ngIf="this.contactForm.controls.email.errors?.['pattern'] or this.contactForm.controls.email.errors?.['email']">
+                            Provide a valid email address.</div>
+                    </div>
                 </div>
             </div>
 
             <div class="rows">
-                <div class="website-contact">
-                    <label for="website" class="font-family-courier-prime">Website</label>
+                <div class="website-contact font-family-courier-prime">
+                    <label for="website">Website URL</label>
                     <input id="website" type="text" formControlName="website" autocomplete="disabled"
-                        class="font-family-courier-prime">
+                        class="font-family-courier-prime"
+                        [className]="this.contactForm.controls.website.invalid && this.contactForm.controls.website.touched ? 'is-invalid' : ''">
+                    <div class="alert"
+                        *ngIf="this.contactForm.controls.website.invalid && (this.contactForm.controls.website.dirty || this.contactForm.controls.website.touched)">
+                        <div *ngIf="this.contactForm.controls.website.errors?.['pattern']">Provide a valid website URL.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="phone-contact">
-                    <label for="phone" class="font-family-courier-prime">Phone</label>
+                <div class="phone-contact font-family-courier-prime">
+                    <label for="phone">Phone</label>
                     <input id="phone" type="text" formControlName="phone" autocomplete="disabled"
-                        class="font-family-courier-prime">
+                        class="font-family-courier-prime"
+                        [className]="this.contactForm.controls.phone.invalid && this.contactForm.controls.phone.touched ? 'is-invalid' : ''"
+                        (keypress)="onlyNumbers($event)">
+                    <div class="alert"
+                        *ngIf="this.contactForm.controls.phone.invalid && (this.contactForm.controls.phone.dirty || this.contactForm.controls.phone.touched)">
+                        <div *ngIf="this.contactForm.controls.phone.errors?.['minlength']">Phone should have at minimum
+                            7 digits.</div>
+                        <div *ngIf="this.contactForm.controls.phone.errors?.['pattern']">Phone should be a number.</div>
+                    </div>
                 </div>
             </div>
 
             <div class="rows">
                 <div class="message-contact font-family-courier-prime">
-                    <label for="message">Message</label>
+                    <label for="message">
+                        Message
+                        <span *ngIf="this.contactForm.controls.message.errors?.['required']">*</span>
+                    </label>
                     <textarea id="message" type="text" formControlName="message" autocomplete="disabled"
-                        class="font-family-courier-prime"></textarea>
+                        class="font-family-courier-prime"
+                        [className]="this.contactForm.controls.message.invalid && this.contactForm.controls.message.touched ? 'is-invalid' : ''"></textarea>
+                    <div class="alert"
+                        *ngIf="this.contactForm.controls.message.invalid && (this.contactForm.controls.message.dirty || this.contactForm.controls.message.touched)">
+                        <div *ngIf="this.contactForm.controls.message.errors?.['required']">Message is required.</div>
+                        <div *ngIf="this.contactForm.controls.message.errors?.['minlength']">Message should have at
+                            minimum 5 characters.</div>
+                    </div>
                 </div>
             </div>
 
             <div class="rows">
-                <button mat-flat-button color="primary" class="font-family-indie-flower send-mail" type="submit">SEND</button>
+                <button mat-flat-button color="primary" class="font-family-indie-flower send-mail"
+                    type="submit">SEND</button>
             </div>
         </form>
     </div>

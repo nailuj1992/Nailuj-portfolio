@@ -101,6 +101,20 @@
     margin-top: 3%;
 }
 
+.alert {
+    color: #d10000;
+    font-size: 0.6rem;
+}
+
+#name.is-invalid,
+#email.is-invalid,
+#website.is-invalid,
+#phone.is-invalid,
+#message.is-invalid {
+    border-color: #d10000;
+    border: 1px solid #d10000;
+}
+
 @media only screen and (max-width: 1400px) {
 
     .title {
@@ -128,6 +142,10 @@
         font-size: 1rem;
     }
 
+    .alert {
+        font-size: 0.5rem;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -138,6 +156,10 @@
 
     .title {
         margin-bottom: 1%;
+    }
+
+    .alert {
+        font-size: 0.6rem;
     }
 
 }
@@ -160,6 +182,10 @@
 
     .send-mail {
         font-size: 30px;
+    }
+
+    .alert {
+        font-size: 0.7rem;
     }
 
 }
@@ -191,6 +217,10 @@
         font-size: 0.8rem;
     }
 
+    .alert {
+        font-size: 0.6rem;
+    }
+
 }
 
 @media only screen and (max-width: 472px) {
@@ -218,6 +248,10 @@
     #phone,
     #message {
         font-size: 0.7rem;
+    }
+
+    .alert {
+        font-size: 0.5rem;
     }
 
 }
