@@ -77,7 +77,7 @@ export class PortfolioComponent {
       url: 'https://bitbucket.org/pegasus1992/sg-sst/'
     }, {
       title: 'Inpec Project',
-      description: 'This project was a prototype, focused on manage and control the stock from a store in the prisons owned by the Colombian organization called Inpec. This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
+      description: 'This project was a prototype, focused on manage and control the stock from a store in the prisons owned by the Colombian organization known as Inpec (National Penitentiary and Prison Institute). This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
       url: 'https://bitbucket.org/pegasus1992/inpec-project/'
     }, {
       title: 'LCD Pin',

@@ -1,0 +1,6 @@
+<div class="scroll-to-top" [class]="{'show-scrollTop': windowScrolled}">
+    <button type="button" class="btn active" [class]="{'show-scrollTop-btn': windowScrolled}" data-toggle="button"
+        aria-pressed="true" (click)="scrollToTop()">
+        <fa-icon [icon]="faArrowUp"></fa-icon>
+    </button>
+</div>
