@@ -1,0 +1,223 @@
+@import '../../assets/css/files.css';
+@import '../../assets/css/fonts.css';
+@import '../../assets/css/common.css';
+
+.contact-panel {
+    height: 90vh;
+    position: relative;
+}
+
+.contact-subpanel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgb(181 181 181 / 80%);
+    border-radius: 20px;
+    padding: 1% 2% 1% 2%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1% 0;
+}
+
+.title {
+    color: #586dbd;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50px;
+    word-wrap: break-word;
+    margin-bottom: 3%;
+}
+
+.rows {
+    display: flex;
+    justify-content: space-around;
+}
+
+.name-contact,
+.email-contact,
+.website-contact,
+.phone-contact,
+.message-contact,
+.send-mail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.name-contact,
+.email-contact,
+.website-contact,
+.phone-contact,
+.message-contact {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+    width: 40%;
+}
+
+.message-contact {
+    width: 90%;
+}
+
+#name,
+#email,
+#website,
+#phone,
+#message {
+    border: 1px solid #cccccc;
+    border-color: #d6d6d6;
+    color: #555555;
+    padding: 1% 2%;
+    border-radius: 6px;
+    box-shadow: none;
+    font-size: 1.2rem;
+    height: 3vh;
+}
+
+#message {
+    font-size: 1rem;
+    height: 10vh;
+    resize: none;
+}
+
+.send-mail {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    word-wrap: break-word;
+    width: 35%;
+    height: 7vh;
+    margin-top: 3%;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .title {
+        font-size: 35px;
+    }
+
+    .send-mail {
+        font-size: 35px;
+        width: 30%;
+        height: 6vh;
+    }
+
+    .name-contact,
+    .email-contact,
+    .website-contact,
+    .phone-contact,
+    .message-contact {
+        row-gap: 0.3rem;
+    }
+
+    #name,
+    #email,
+    #website,
+    #phone {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .contact-subpanel.width-50 {
+        width: 60%;
+    }
+
+    .title {
+        margin-bottom: 1%;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+    .rows {
+        flex-direction: column;
+        row-gap: 1rem;
+        align-items: center;
+    }
+
+    .name-contact,
+    .email-contact,
+    .website-contact,
+    .phone-contact,
+    .message-contact {
+        width: 100%;
+    }
+
+    .send-mail {
+        font-size: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .title {
+        font-size: 30px;
+    }
+
+    .send-mail {
+        font-size: 25px;
+        width: 35%;
+    }
+
+    .name-contact,
+    .email-contact,
+    .website-contact,
+    .phone-contact,
+    .message-contact {
+        font-size: 18px;
+    }
+
+    #name,
+    #email,
+    #website,
+    #phone,
+    #message {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media only screen and (max-width: 472px) {
+
+    .title {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .send-mail {
+        font-size: 20px;
+    }
+
+    .name-contact,
+    .email-contact,
+    .website-contact,
+    .phone-contact,
+    .message-contact {
+        font-size: 16px;
+    }
+
+    #name,
+    #email,
+    #website,
+    #phone,
+    #message {
+        font-size: 0.7rem;
+    }
+
+}

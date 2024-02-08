@@ -13,7 +13,6 @@ const logo = '../assets/img/logo.jpg';
 })
 export class MenuComponent {
 
-  title = 'Nailuj\'s portfolio';
   logo = logo;
 
 }

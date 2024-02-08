@@ -1,0 +1,52 @@
+<!-- PANEL CONTACT -->
+<div class="contact-panel image-background-7">
+    <div class="contact-subpanel width-50">
+        <form class="contact-form width-85" autocomplete="off" id="contactForm" [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()">
+            <div class="title font-family-irish-grover text-align-center width-100">
+                Contact me if you have a question
+            </div>
+
+            <div class="rows">
+                <div class="name-contact">
+                    <label for="name" class="font-family-courier-prime">Name</label>
+                    <input id="name" type="text" formControlName="name" autocomplete="disabled"
+                        class="font-family-courier-prime">
+                </div>
+
+                <div class="email-contact">
+                    <label for="email" class="font-family-courier-prime">Email</label>
+                    <input id="email" type="text" formControlName="email" autocomplete="disabled"
+                        class="font-family-courier-prime">
+                </div>
+            </div>
+
+            <div class="rows">
+                <div class="website-contact">
+                    <label for="website" class="font-family-courier-prime">Website</label>
+                    <input id="website" type="text" formControlName="website" autocomplete="disabled"
+                        class="font-family-courier-prime">
+                </div>
+
+                <div class="phone-contact">
+                    <label for="phone" class="font-family-courier-prime">Phone</label>
+                    <input id="phone" type="text" formControlName="phone" autocomplete="disabled"
+                        class="font-family-courier-prime">
+                </div>
+            </div>
+
+            <div class="rows">
+                <div class="message-contact font-family-courier-prime">
+                    <label for="message">Message</label>
+                    <textarea id="message" type="text" formControlName="message" autocomplete="disabled"
+                        class="font-family-courier-prime"></textarea>
+                </div>
+            </div>
+
+            <div class="rows">
+                <button mat-flat-button color="primary" class="font-family-indie-flower send-mail" type="submit">SEND</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- PANEL CONTACT END -->
