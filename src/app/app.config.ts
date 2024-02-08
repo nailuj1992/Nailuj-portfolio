@@ -6,6 +6,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HomeComponent } from './home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ContactComponent } from './contact/contact.component';
+import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,5 +15,5 @@ const routes: Routes = [
 ];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync()]
+  providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideHttpClient()]
 };

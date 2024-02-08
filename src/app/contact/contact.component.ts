@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
+import { MailService } from '../services/mail.service';
 
 @Component({
   selector: 'app-contact',
@@ -20,18 +21,14 @@ export class ContactComponent {
     message: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
-  constructor(
-    private formBuilder: FormBuilder,
-  ) { }
-
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder, private mailService: MailService) {
   }
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      // Here is the logic for send email
+      let formData = this.contactForm.value;
 
-      console.warn('Your mail has been sent', this.contactForm.value);
+      console.warn('Your mail has been sent', formData);
       this.contactForm.reset();
     } else {
       this.contactForm.markAllAsTouched();
