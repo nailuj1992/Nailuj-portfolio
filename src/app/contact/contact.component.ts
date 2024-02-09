@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators 
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 import { MailService } from '../services/mail.service';
+import { SendMailRequestDto } from '../dto/send-mail-dto';
 
 @Component({
   selector: 'app-contact',
@@ -28,8 +29,25 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       let formData = this.contactForm.value;
 
-      console.warn('Your mail has been sent', formData);
-      this.contactForm.reset();
+      const to = 'nailuj1992@outlook.com';
+      const subject = '[Portfolio] You have a new message';
+      const name = formData.name;
+      const email = formData.email;
+      const website = formData.website;
+      const phone = formData.phone;
+      const message = formData.message;
+
+      const data = new SendMailRequestDto(to, subject, name, email, website, phone, message);
+
+      this.mailService.sendEmail(data).subscribe(
+        response => {
+          console.warn(response);
+          this.contactForm.reset();
+        },
+        error => {
+          console.log('Error sending email:', error);
+        }
+      );
     } else {
       this.contactForm.markAllAsTouched();
     }

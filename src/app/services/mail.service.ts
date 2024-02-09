@@ -1,32 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
-import { HttpHeaders } from '@angular/common/http'
+import { SendMailRequestDto } from '../dto/send-mail-dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailService {
-  private mailApi = 'https://mailthis.to/codeninja'
+
+  private mailApi = 'https://nailuj-portfolio-backend-5adc8fe9dfe4.herokuapp.com/send-email'
 
   constructor(private http: HttpClient) { }
 
-  PostMessage(input: any) {
-    return this.http.post(this.mailApi, input, { responseType: 'text' })
-      .pipe(
-        map(
-          (response) => {
-            if (response) {
-              return response;
-            } else {
-              return null;
-            }
-          },
-          (error: any) => {
-            return error;
-          }
-        )
-      )
+  sendEmail(data: SendMailRequestDto) {
+    let options = { headers: { 'Content-Type': 'application/json' } };
+    const request = JSON.stringify(data);
+    return this.http.post(this.mailApi, request, options);
   }
+
 }
