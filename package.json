@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Nailuj-portfolio": "node dist/nailuj-portfolio/server/server.mjs",
-    "heroku-postbuild": "ng build"
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
