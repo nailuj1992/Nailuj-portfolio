@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "serve:ssr": "node dist/ng_ssr_esm/server.mjs",
     "postinstall": "ng build --aot"
   },
   "private": true,
@@ -59,5 +60,6 @@
   "engines": {
     "node": "21.x",
     "npm": "10.x"
-  }
+  },
+  "type": "module"
 }
