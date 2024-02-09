@@ -1,5 +1,5 @@
-@import '../../assets/css/fonts.css';
-@import '../../assets/css/common.css';
+@import '../../../assets/css/fonts.css';
+@import '../../../assets/css/common.css';
 
 :host {
     .footer {
@@ -23,27 +23,32 @@
                 background: #55ACEE;
                 color: white;
                 text-decoration: none;
+                z-index: 1000;
             }
 
             .fa-linkedin {
                 background: #007bb5;
                 color: white;
                 text-decoration: none;
+                z-index: 1000;
             }
 
             .fa-github {
                 color: white;
                 text-decoration: none;
+                z-index: 1000;
             }
 
             .fa-bitbucket {
-                color: #1d4976;
+                color: #0052cc;
                 text-decoration: none;
+                z-index: 1000;
             }
 
             .fa-envelope {
                 color: #007bb5;
                 text-decoration: none;
+                z-index: 1000;
             }
         }
 

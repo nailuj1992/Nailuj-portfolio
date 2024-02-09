@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SendMailRequestDto } from '../dto/send-mail-dto';
+import { SendMailRequestDto } from '../model/dto/send-mail-dto';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailService {
 
-  private mailApi = 'https://nailuj-portfolio-backend-5adc8fe9dfe4.herokuapp.com/send-email'
+  private mailApi = environment.sendMailEndpoint;
 
   constructor(private http: HttpClient) { }
 

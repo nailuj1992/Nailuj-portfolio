@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
-import { MailService } from '../services/mail.service';
-import { SendMailRequestDto } from '../dto/send-mail-dto';
+import { MailService } from '../../services/mail.service';
+import { SendMailRequestDto } from '../../model/dto/send-mail-dto';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -29,8 +30,8 @@ export class ContactComponent {
     if (this.contactForm.valid) {
       let formData = this.contactForm.value;
 
-      const to = 'nailuj1992@outlook.com';
-      const subject = '[Portfolio] You have a new message';
+      const to = environment.sendMessageTo;
+      const subject = environment.sendMessageSubject;
       const name = formData.name;
       const email = formData.email;
       const website = formData.website;

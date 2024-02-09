@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -11,5 +12,7 @@ import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+
+  env = environment;
 
 }

@@ -1,14 +1,12 @@
 <div class="footer">
     <div class="sm-icons">
-        <a class="fa fa-twitter" href="https://twitter.com/nailuj1992" target="_blank" title="Developer on Twitter">
+        <a class="fa fa-twitter" href="{{env.twitterUrl}}" target="_blank" title="Developer on Twitter">
         </a>
-        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/julian-gonzalez-prieto-bb7b70140/" target="_blank"
-            title="Developer on LinkedIn">
+        <a class="fa fa-linkedin" href="{{env.linkedinUrl}}" target="_blank" title="Developer on LinkedIn">
         </a>
-        <a class="fa fa-github" href="https://github.com/nailuj1992" target="_blank" title="Developer on GitHub">
+        <a class="fa fa-github" href="{{env.githubUrl}}" target="_blank" title="Developer on GitHub">
         </a>
-        <a class="fa fa-bitbucket" href="https://bitbucket.org/pegasus1992/" target="_blank"
-            title="Developer on BitBucket">
+        <a class="fa fa-bitbucket" href="{{env.bitbucketUrl}}" target="_blank" title="Developer on BitBucket">
         </a>
     </div>
     <ul class="footer-navigation">
@@ -23,7 +21,7 @@
         </li>
     </ul>
     <div class="author font-family-courier-prime text-align-center width-50">
-        Copyright &copy; 2024 Julián González Prieto
+        Copyright &copy; {{env.year}} Julián González Prieto
     </div>
 </div>
 
