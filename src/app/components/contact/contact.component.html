@@ -86,8 +86,14 @@
             </div>
 
             <div class="rows">
-                <button mat-flat-button color="primary" class="font-family-indie-flower send-mail"
-                    type="submit">SEND</button>
+                <div class="send-mail-container font-family-indie-flower width-100">
+                    <button mat-flat-button color="primary" type="submit" class="send-mail" [disabled]="errorMessage">SEND</button>
+                    <span *ngIf="successMessage" class="success-message">Your message was sent succesfully.</span>
+                    <div *ngIf="errorMessage" class="error-message">
+                        <span>An error occurred while sending your message.</span>
+                        <span>Try again in a few seconds.</span>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

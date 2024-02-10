@@ -15,6 +15,9 @@ import { environment } from '../../../environments/environment';
 })
 export class ContactComponent {
 
+  successMessage: boolean = false;
+  errorMessage: boolean = false;
+
   contactForm = this.formBuilder.group({
     name: new FormControl('', [Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
@@ -40,15 +43,27 @@ export class ContactComponent {
 
       const data = new SendMailRequestDto(to, subject, name, email, website, phone, message);
 
-      this.mailService.sendEmail(data).subscribe(
-        response => {
+      const timeout = 5000;
+      this.mailService.sendEmail(data).subscribe({
+        next: (response) => {
           console.warn(response);
           this.contactForm.reset();
+
+          this.successMessage = true;
+          setTimeout(() => {
+            this.successMessage = false;
+          }, timeout);
         },
-        error => {
+        error: (error) => {
           console.log('Error sending email:', error);
-        }
-      );
+
+          this.errorMessage = true;
+          setTimeout(() => {
+            this.errorMessage = false;
+          }, timeout);
+        },
+        complete: () => console.info('Sending mail - process complete')
+      });
     } else {
       this.contactForm.markAllAsTouched();
     }
