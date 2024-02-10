@@ -16,6 +16,7 @@ export const environment = {
     repoEciLogicUrl: 'https://github.com/nailuj1992/ECI-Logic',
     repoMusicPlayerUrl: 'https://github.com/nailuj1992/ReproductorMusica',
     repoCatholicPrayersUrl: 'https://github.com/nailuj1992/OracionesCatolicas',
+    repoPortfolioUrl: 'https://github.com/nailuj1992/Nailuj-portfolio',
 
     repoSgSstUrl: 'https://bitbucket.org/pegasus1992/sg-sst/',
     repoInpecProjectUrl: 'https://bitbucket.org/pegasus1992/inpec-project/',

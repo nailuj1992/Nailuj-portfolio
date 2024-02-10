@@ -102,6 +102,10 @@ export class PortfolioComponent {
       title: 'Formulario',
       description: 'It was a little mock-up where a person can be register to a web application.',
       url: this.env.repoFormularioUrl
+    }, {
+      title: 'Portfolio',
+      description: 'This project is focused in showing my portfolio in a good and pretty manner. The next link contains the source code for this project -and this entire Web page, of course-.',
+      url: this.env.repoPortfolioUrl
     }
   ];
 
