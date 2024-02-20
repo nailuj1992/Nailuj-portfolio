@@ -6,6 +6,8 @@
     display: flex;
     background-color: #2B2B2B;
     justify-content: space-between;
+    justify-content: right;
+    height: 6vh;
 }
 
 .menu-items {
