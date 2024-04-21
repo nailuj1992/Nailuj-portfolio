@@ -251,7 +251,8 @@
         width: 75%;
     }
 
-    .description-1.width-40, .description-4.width-40 {
+    .description-1.width-40,
+    .description-4.width-40 {
         width: 100%;
     }
 
