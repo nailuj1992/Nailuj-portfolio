@@ -5,7 +5,8 @@
 .title-1,
 .title-2,
 .title-3,
-.title-4 {
+.title-4,
+.title-5 {
     color: #586dbd;
     font-size: 48px;
     font-weight: 400;
@@ -13,14 +14,15 @@
     word-wrap: break-word;
 }
 
-.title-4 {
+.title-5 {
     color: #F88982;
     font-size: 5rem;
 }
 
 .description-1,
 .description-2,
-.description-3 {
+.description-3,
+.description-4 {
     color: white;
     font-size: 26px;
     font-weight: 400;
@@ -38,7 +40,8 @@
 
 .portfolio-subpanel-1,
 .portfolio-subpanel-2,
-.portfolio-subpanel-3 {
+.portfolio-subpanel-3,
+.portfolio-subpanel-4 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -53,7 +56,7 @@
     padding: 1% 2% 1% 2%;
 }
 
-.portfolio-subpanel-4 {
+.portfolio-subpanel-5 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -99,7 +102,8 @@
 
     .description-1,
     .description-2,
-    .description-3 {
+    .description-3,
+    .description-4 {
         font-size: 20px;
     }
 
@@ -115,7 +119,7 @@
         column-gap: 10rem;
     }
 
-    .portfolio-subpanel-4 {
+    .portfolio-subpanel-5 {
         row-gap: 4rem;
     }
 
@@ -125,17 +129,19 @@
 
     .title-1,
     .title-2,
-    .title-3 {
+    .title-3,
+    .title-4 {
         font-size: 40px;
     }
 
-    .title-4 {
+    .title-5 {
         font-size: 3rem;
     }
 
     .description-1,
     .description-2,
-    .description-3 {
+    .description-3,
+    .description-4 {
         font-size: 18px;
     }
 
@@ -145,11 +151,12 @@
 
     .portfolio-subpanel-1,
     .portfolio-subpanel-2,
-    .portfolio-subpanel-3 {
+    .portfolio-subpanel-3,
+    .portfolio-subpanel-4 {
         row-gap: 5rem;
     }
 
-    .portfolio-subpanel-4 {
+    .portfolio-subpanel-5 {
         row-gap: 4rem;
     }
 
@@ -167,7 +174,8 @@
 
     .title-1,
     .title-2,
-    .title-3 {
+    .title-3,
+    .title-4 {
         font-size: 45px;
     }
 
@@ -179,11 +187,12 @@
 
     .portfolio-subpanel-1,
     .portfolio-subpanel-2,
-    .portfolio-subpanel-3 {
+    .portfolio-subpanel-3,
+    .portfolio-subpanel-4 {
         row-gap: 6rem;
     }
 
-    .portfolio-subpanel-4 {
+    .portfolio-subpanel-5 {
         row-gap: 3rem;
     }
 
@@ -201,13 +210,15 @@
 
     .title-1,
     .title-2,
-    .title-3 {
+    .title-3,
+    .title-4 {
         font-size: 35px;
     }
 
     .description-1,
     .description-2,
-    .description-3 {
+    .description-3,
+    .description-4 {
         font-size: 15px;
         text-align: center;
     }
@@ -220,11 +231,12 @@
 
     .portfolio-subpanel-1,
     .portfolio-subpanel-2,
-    .portfolio-subpanel-3 {
+    .portfolio-subpanel-3,
+    .portfolio-subpanel-4 {
         row-gap: 3rem;
     }
 
-    .portfolio-subpanel-4 {
+    .portfolio-subpanel-5 {
         row-gap: 4rem;
         top: 40%;
     }
@@ -239,7 +251,7 @@
         width: 75%;
     }
 
-    .description-1.width-40 {
+    .description-1.width-40, .description-4.width-40 {
         width: 100%;
     }
 
@@ -253,14 +265,16 @@
 
     .title-1,
     .title-2,
-    .title-3 {
+    .title-3,
+    .title-4 {
         font-size: 30px;
         line-height: 35px;
     }
 
     .description-1,
     .description-2,
-    .description-3 {
+    .description-3,
+    .description-4 {
         text-align: center;
         font-size: 13px;
         width: 90%;
@@ -272,11 +286,12 @@
 
     .portfolio-subpanel-1,
     .portfolio-subpanel-2,
-    .portfolio-subpanel-3 {
+    .portfolio-subpanel-3,
+    .portfolio-subpanel-4 {
         row-gap: 1.5rem;
     }
 
-    .portfolio-subpanel-4 {
+    .portfolio-subpanel-5 {
         row-gap: 4rem;
     }
 

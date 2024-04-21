@@ -73,6 +73,25 @@ export class PortfolioComponent {
     }
   ];
 
+  slidesBasic2dGameProject: any[] = [
+    {
+      url: '../../assets/img/basic-2d-game/img1.png',
+      title: 'Capture 1'
+    }, {
+      url: '../../assets/img/basic-2d-game/img2.png',
+      title: 'Capture 2'
+    }, {
+      url: '../../assets/img/basic-2d-game/img3.png',
+      title: 'Capture 3'
+    }, {
+      url: '../../assets/img/basic-2d-game/img4.png',
+      title: 'Capture 4'
+    }, {
+      url: '../../assets/img/basic-2d-game/img5.png',
+      title: 'Capture 5'
+    }
+  ];
+
   slidesOthers: any[] = [
     {
       title: 'SG-SST',

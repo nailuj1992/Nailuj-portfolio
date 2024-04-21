@@ -17,6 +17,7 @@ export const environment = {
     repoMusicPlayerUrl: 'https://github.com/nailuj1992/ReproductorMusica',
     repoCatholicPrayersUrl: 'https://github.com/nailuj1992/OracionesCatolicas',
     repoPortfolioUrl: 'https://github.com/nailuj1992/Nailuj-portfolio',
+    repoBasic2dGame: 'https://github.com/nailuj1992/Basic-2D-Game',
 
     repoSgSstUrl: 'https://bitbucket.org/pegasus1992/sg-sst/',
     repoInpecProjectUrl: 'https://bitbucket.org/pegasus1992/inpec-project/',
