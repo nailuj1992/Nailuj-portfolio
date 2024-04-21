@@ -44,8 +44,8 @@
         </div>
 
         <div class="font-family-indie-flower">
-            <a mat-flat-button color="primary" class="portfolio-link"
-                href="{{env.repoMusicPlayerUrl}}" target="_blank">LINK TO THE PROJECT</a>
+            <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoMusicPlayerUrl}}"
+                target="_blank">LINK TO THE PROJECT</a>
         </div>
     </div>
 </div>
@@ -68,8 +68,8 @@
         </div>
 
         <div class="font-family-indie-flower">
-            <a mat-flat-button color="primary" class="portfolio-link"
-                href="{{env.repoCatholicPrayersUrl}}" target="_blank">LINK TO THE PROJECT</a>
+            <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoCatholicPrayersUrl}}"
+                target="_blank">LINK TO THE PROJECT</a>
         </div>
     </div>
 </div>
@@ -78,9 +78,33 @@
 <!-- PANEL 4 -->
 <div class="portfolio-panel image-background-9">
     <div class="portfolio-subpanel-4 width-85">
-        <div class="title-4 font-family-courier-prime text-align-center width-100">Other projects</div>
+        <div class="title-4 font-family-courier-prime text-align-center width-100">Basic 2D Game - Unity</div>
+
+        <div class="carousel-text">
+            <div class="description-4 font-family-courier-prime text-align-left width-40">
+                This is a very basic 2D videogame made with Unity. This mini-project was originally made as a commission
+                on November 29th, 2017, but I have decided to do some little improvements, and then to upload it to this
+                repository until now (April 20th, 2024).
+            </div>
+
+            <app-image-slider [slides]="slidesBasic2dGameProject" [animationSpeed]="300"
+                class="carousel-center width-50"></app-image-slider>
+        </div>
+
+        <div class="font-family-indie-flower">
+            <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoBasic2dGame}}"
+                target="_blank">LINK TO THE PROJECT</a>
+        </div>
+    </div>
+</div>
+<!-- PANEL 4 END -->
+
+<!-- PANEL 5 -->
+<div class="portfolio-panel image-background-9">
+    <div class="portfolio-subpanel-5 width-85">
+        <div class="title-5 font-family-courier-prime text-align-center width-100">Other projects</div>
 
         <app-info-slider [slides]="slidesOthers" [animationSpeed]="300"></app-info-slider>
     </div>
 </div>
-<!-- PANEL 4 END -->
+<!-- PANEL 5 END -->
