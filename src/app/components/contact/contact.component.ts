@@ -44,29 +44,44 @@ export class ContactComponent {
       const data = new SendMailRequestDto(to, subject, name, email, website, phone, message);
 
       const timeout = 5000;
-      this.mailService.sendEmail(data).subscribe({
-        next: (response) => {
-          console.warn(response);
-          this.contactForm.reset();
 
-          this.successMessage = true;
-          setTimeout(() => {
-            this.successMessage = false;
-          }, timeout);
-        },
-        error: (error) => {
-          console.log('Error sending email:', error);
+      // this.mailService.sendEmail(data).subscribe({
+      //   next: (response) => {
+      //     this.successfulMailSending(response, timeout);
+      //   },
+      //   error: (error) => {
+      //     this.failedMailSending(error, timeout);
+      //   },
+      //   complete: () => console.info('Sending mail - process complete')
+      // });
 
-          this.errorMessage = true;
-          setTimeout(() => {
-            this.errorMessage = false;
-          }, timeout);
-        },
-        complete: () => console.info('Sending mail - process complete')
-      });
+      // The mail service responsible for sending the email was disabled (because of $$).
+      // To avoid any conflict, the default behavior will be showing a successful message (the happy path). 
+      this.successfulMailSending(null, timeout);
     } else {
       this.contactForm.markAllAsTouched();
     }
+  }
+
+  private successfulMailSending(response: any, timeout: any) {
+    if (response) {
+      console.warn(response);
+    }
+    this.contactForm.reset();
+
+    this.successMessage = true;
+    setTimeout(() => {
+      this.successMessage = false;
+    }, timeout);
+  }
+
+  private failedMailSending(error: any, timeout: any) {
+    console.log('Error sending email:', error);
+
+    this.errorMessage = true;
+    setTimeout(() => {
+      this.errorMessage = false;
+    }, timeout);
   }
 
   onlyNumbers(event: any) {
