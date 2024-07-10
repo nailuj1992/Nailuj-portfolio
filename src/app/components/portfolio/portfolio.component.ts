@@ -94,6 +94,11 @@ export class PortfolioComponent {
 
   slidesOthers: any[] = [
     {
+      title: 'NFC Scan module for Passport chip',
+      description: 'This module is done with the idea of implementing the passport scanning with NFC technology on Unity, and for Android devices only. This module was developed for the new social media project, owned by the organization called HELP US DEFEND.',
+      url: null
+    },
+    {
       title: 'SG-SST',
       description: 'This prototype was developed on PHP using the framework Yii. This project was imagined to provide companies with tools with which they can fully comply with the guidelines and strict controls related to Occupational Health and Safety (SG-SST for its acronym in Spanish).',
       url: this.env.repoSgSstUrl

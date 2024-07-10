@@ -3,7 +3,7 @@
         <div class="title font-family-courier-prime text-align-center width-100">{{slides[currentSlide].title}}</div>
         <div class="description font-family-courier-prime text-align-left width-100">
             {{slides[currentSlide].description}}</div>
-        <div class="font-family-indie-flower text-align-center">
+        <div class="font-family-indie-flower text-align-center" *ngIf="slides[currentSlide].url !== null">
             <a mat-flat-button color="primary" class="link" href="{{slides[currentSlide].url}}" target="_blank">LINK TO
                 THE PROJECT</a>
         </div>
