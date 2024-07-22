@@ -265,6 +265,10 @@
         height: 45vh;
     }
 
+    .separator {
+        width: 60%;
+    }
+
     .frontend-section,
     .backend-section {
         row-gap: 3rem;
@@ -325,6 +329,10 @@
         height: 85vh;
     }
 
+    .separator {
+        width: 0%;
+    }
+
     .frontend-section,
     .backend-section {
         padding: 1vh;
@@ -370,6 +378,27 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+    .home-panel-1 {
+        row-gap: 5rem;
+    }
+
+    .home-panel-text-1 {
+        row-gap: 5rem;
+    }
+
+    .title-1 {
+        font-size: 3.5vh;
+    }
+
+    .description-1 {
+        font-size: 2.4vh;
+    }
+
+    .cta-button-1,
+    .cta-button-2 {
+        font-size: 2.3vh;
+    }
 
     .frontend-section,
     .backend-section {
