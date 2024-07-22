@@ -16,11 +16,9 @@
         <li class="footer-item font-family-courier-prime">
             <a mat-button routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
         </li>
-        <!-- The mail service responsible for sending the email was disabled (because of money). To avoid any conflict, the access to the Contact form has been removed.
         <li class="footer-item font-family-courier-prime">
-            <a mat-button routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+            <a mat-button href="mailto:{{env.mailto}}">Contact</a>
         </li>
-        -->
     </ul>
     <div class="author font-family-courier-prime text-align-center width-50">
         Copyright &copy; {{env.year}} Julián González Prieto
