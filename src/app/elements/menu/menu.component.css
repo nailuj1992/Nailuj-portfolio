@@ -24,6 +24,7 @@
 
 .logo {
     display: flex;
+    align-items: stretch;
 }
 
 .mat-mdc-button:not(:disabled) {
