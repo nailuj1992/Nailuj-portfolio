@@ -6,8 +6,7 @@
     display: flex;
     background-color: #2B2B2B;
     justify-content: space-between;
-    justify-content: right;
-    height: 6vh;
+    height: 8vh;
 }
 
 .menu-items {
@@ -24,11 +23,19 @@
 }
 
 .logo {
-    width: 5%;
+    display: flex;
 }
 
 .mat-mdc-button:not(:disabled) {
     color: #C6CDD3;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .menu {
+        height: 6vh;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -40,11 +47,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-
-    .logo {
-        width: 7%;
-    }
-
+    /*Empty*/
 }
 
 @media only screen and (max-width: 768px) {

@@ -38,6 +38,14 @@
     position: relative;
 }
 
+.odd {
+    background-color: #172c50;
+}
+
+.even {
+    background-color: #7a8daf;
+}
+
 .portfolio-subpanel-1,
 .portfolio-subpanel-2,
 .portfolio-subpanel-3,

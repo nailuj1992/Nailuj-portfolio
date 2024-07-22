@@ -3,6 +3,8 @@ export const environment = {
     production: false,
     year: '2023',
 
+    mailto: 'juliangonzalezprieto@hotmail.com',
+
     sendMailEndpoint: 'https://nailuj-portfolio-backend-5adc8fe9dfe4.herokuapp.com/send-email',
 
     sendMessageTo: 'nailuj1992@outlook.com',

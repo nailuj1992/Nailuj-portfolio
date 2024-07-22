@@ -55,7 +55,7 @@ export class ContactComponent {
       //   complete: () => console.info('Sending mail - process complete')
       // });
 
-      // The mail service responsible for sending the email was disabled (because of $$).
+      // The mail service responsible for sending the email was disabled (because of money).
       // To avoid any conflict, the default behavior will be showing a successful message (the happy path). 
       this.successfulMailSending(null, timeout);
     } else {
