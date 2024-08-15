@@ -97,8 +97,15 @@ export class PortfolioComponent {
       title: 'NFC Scan module for Passport chip',
       description: 'This module is done with the idea of implementing the passport scanning with NFC technology on Unity, and for Android devices only. This module was developed for the new social media project, owned by the organization called HELP US DEFEND.',
       url: null
-    },
-    {
+    }, {
+      title: 'Portfolio',
+      description: 'This project is focused in showing my portfolio in a good and pretty manner. The next link contains the source code for this project -and this entire Web page, of course-.',
+      url: this.env.repoPortfolioUrl
+    }, {
+      title: 'Stock Management',
+      description: 'This basic project was built on PHP using the framework Yii. This project was focused on manage the stock for a company. This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
+      url: this.env.repoStockManagementUrl
+    }, {
       title: 'SG-SST',
       description: 'This prototype was developed on PHP using the framework Yii. This project was imagined to provide companies with tools with which they can fully comply with the guidelines and strict controls related to Occupational Health and Safety (SG-SST for its acronym in Spanish).',
       url: this.env.repoSgSstUrl
@@ -115,10 +122,6 @@ export class PortfolioComponent {
       description: 'This Java desktop application was built to store and print questions on the exams for the school Liceo Campo David (LCD for its acronym in Spanish). The exams were made and printed using a powerful tool calles JasperReports. This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
       url: this.env.repoCuestionarioLcdUrl
     }, {
-      title: 'Inventarios',
-      description: 'This basic project was built on PHP using the framework Yii. This project was focused on manage the stock for a company. This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
-      url: this.env.repoInventariosUrl
-    }, {
       title: 'TuConjunto',
       description: 'This basic project was built on PHP using the framework Yii. This project was focused on help the administrators and related people with some topics related with horizontal properties and residential complexes. This project was developed for the company \'Data Global S.A\'.',
       url: this.env.repoTuConjuntoUrl
@@ -126,10 +129,6 @@ export class PortfolioComponent {
       title: 'Formulario',
       description: 'It was a little mock-up where a person can be register to a web application.',
       url: this.env.repoFormularioUrl
-    }, {
-      title: 'Portfolio',
-      description: 'This project is focused in showing my portfolio in a good and pretty manner. The next link contains the source code for this project -and this entire Web page, of course-.',
-      url: this.env.repoPortfolioUrl
     }
   ];
 
