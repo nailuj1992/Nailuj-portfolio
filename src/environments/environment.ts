@@ -25,7 +25,7 @@ export const environment = {
     repoInpecProjectUrl: 'https://bitbucket.org/pegasus1992/inpec-project/',
     repoLcdPinUrl: 'https://bitbucket.org/pegasus1992/lcd_pin/',
     repoCuestionarioLcdUrl: 'https://bitbucket.org/pegasus1992/cuestionariolcd/',
-    repoInventariosUrl: 'https://bitbucket.org/pegasus1992/inventarios/',
+    repoStockManagementUrl: 'https://bitbucket.org/pegasus1992/stock-management/',
     repoTuConjuntoUrl: 'https://bitbucket.org/pegasus1992/tuconjunto/',
     repoFormularioUrl: 'https://bitbucket.org/pegasus1992/formulario/',
 
