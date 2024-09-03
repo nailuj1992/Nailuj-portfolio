@@ -95,16 +95,16 @@ export class PortfolioComponent {
   slidesOthers: any[] = [
     {
       title: 'NFC Scan module for Passport chip',
-      description: 'This module is done with the idea of implementing the passport scanning with NFC technology on Unity, and for Android devices only. This module was developed for the new social media project, owned by the organization called HELP US DEFEND.',
+      description: 'This module is done with the idea of implementing the passport scanning with NFC technology on Unity, and for Android devices only.',
       url: null
+    }, {
+      title: 'Stock Management',
+      description: 'This basic project was built on PHP using the framework Yii. This project was focused on manage the stock for a company: inputs, outputs, stock management, and kardex.',
+      url: this.env.repoStockManagementUrl
     }, {
       title: 'Portfolio',
       description: 'This project is focused in showing my portfolio in a good and pretty manner. The next link contains the source code for this project -and this entire Web page, of course-.',
       url: this.env.repoPortfolioUrl
-    }, {
-      title: 'Stock Management',
-      description: 'This basic project was built on PHP using the framework Yii. This project was focused on manage the stock for a company. This project was developed for the company \'Sistemas Comerciales SIA Ltda\'.',
-      url: this.env.repoStockManagementUrl
     }, {
       title: 'SG-SST',
       description: 'This prototype was developed on PHP using the framework Yii. This project was imagined to provide companies with tools with which they can fully comply with the guidelines and strict controls related to Occupational Health and Safety (SG-SST for its acronym in Spanish).',
