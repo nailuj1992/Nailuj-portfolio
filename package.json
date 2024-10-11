@@ -64,7 +64,7 @@
     "webpack-dev-middleware": "^6.1.2"
   },
   "engines": {
-    "node": "21.x",
+    "node": "20.x",
     "npm": "10.x"
   }
 }
