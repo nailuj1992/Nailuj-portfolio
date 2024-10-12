@@ -1,21 +1,22 @@
 <div class="slides">
-    <div class="slide"
-        [style]="{'background-image': 'url(' + slides[currentSlide].url + ')', opacity: hidden ? 0 : 1, transition: 'opacity ' + animationSpeed + 'ms ease-in-out'}">
-    </div>
+    <img class="slide" alt="" [src]="slides[currentSlide].url"
+        [style]="{opacity: hidden ? 0 : 1, transition: 'opacity ' + animationSpeed + 'ms ease-in-out'}">
 
     @if(indicatorsVisible) {
     <div class="indicators">
         @for(slide of slides; track $index) {
-        <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)">
+        <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)" onkeypress="">
         </div>
         }
     </div>
     }
 
+    @if(slides.length > 1) {
     <button (click)="next()" class="nextButton">
         <fa-icon [icon]="faArrowRight"></fa-icon>
     </button>
     <button (click)="previous()" class="previousButton">
         <fa-icon [icon]="faArrowLeft"></fa-icon>
     </button>
+    }
 </div>

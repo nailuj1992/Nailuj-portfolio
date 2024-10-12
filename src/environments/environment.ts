@@ -10,7 +10,8 @@ export const environment = {
     sendMessageTo: 'nailuj1992@outlook.com',
     sendMessageSubject: '[Portfolio] You have a new message',
 
-    twitterUrl: 'https://twitter.com/nailuj1992',
+    cvLinkEn: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto-PPXM3ymoWVxBPLB122YoagW0XFTsmd.pdf',
+    cvLinkSp: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto%20ESP-ALFJAoLIqTJmRfcQk8YE5YBoQTP0JI.pdf',
     linkedinUrl: 'https://www.linkedin.com/in/julian-gonzalez-prieto-bb7b70140/',
     githubUrl: 'https://github.com/nailuj1992',
     bitbucketUrl: 'https://bitbucket.org/pegasus1992/',
