@@ -1,8 +1,8 @@
 <div class="slides">
     <div class="slide" [style]="{transition: 'opacity ' + animationSpeed + 'ms ease-in-out'}">
-        <div class="title">{{slides[currentSlide].title}}</div>
+        <div class="title">{{getText(slides[currentSlide].title)}}</div>
         <div class="description">
-            {{slides[currentSlide].description}}</div>
+            {{getText(slides[currentSlide].description)}}</div>
         <div class="button" *ngIf="slides[currentSlide].url !== null">
             <a mat-flat-button color="primary" class="link" href="{{slides[currentSlide].url}}"
                 target="_blank">{{getText("link-project")}}</a>

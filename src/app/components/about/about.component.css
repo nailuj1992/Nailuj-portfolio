@@ -53,6 +53,7 @@
     .tech-icon {
         width: 3rem;
         padding: 1rem;
+        content-visibility: auto;
     }
 }
 

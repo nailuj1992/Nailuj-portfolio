@@ -8,6 +8,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+        content-visibility: auto;
 
         background: rgb(181 181 181 / 80%);
         border-radius: 20px;

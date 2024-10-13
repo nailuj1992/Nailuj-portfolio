@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { environment } from '../../../environments/environment';
 import { getText, enUS, esES } from '../../model/dto/language';
 
 const logo = '../assets/img/logo.jpg';
@@ -16,6 +17,7 @@ const logo = '../assets/img/logo.jpg';
 export class MenuComponent {
 
   logo = logo;
+  env = environment;
   document: Document;
 
   constructor(@Inject(DOCUMENT) document: Document) {
@@ -50,6 +52,10 @@ export class MenuComponent {
     const sessionStorage = this.document.defaultView?.sessionStorage;
     if (sessionStorage) {
       const lang = sessionStorage.getItem("lang");
+      if (lang === null) {
+        sessionStorage.setItem('lang', this.env.defaultLang);
+        return;
+      }
       switch (lang) {
         case enUS:
           sessionStorage.setItem('lang', esES);
@@ -58,7 +64,6 @@ export class MenuComponent {
           sessionStorage.setItem('lang', enUS);
           break;
       }
-      this.document.location.reload();
     }
   }
 
