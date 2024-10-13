@@ -5,6 +5,7 @@ import { MenuComponent } from './elements/menu/menu.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { environment } from '../environments/environment';
 import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent {
       sessionStorage.setItem('lang', this.env.defaultLang);
     }
     inject();
+    injectSpeedInsights();
   }
 
 }
