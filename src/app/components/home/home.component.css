@@ -24,11 +24,13 @@
     .title {
         color: #f88982;
         font-size: 6vh;
+        text-align: center;
     }
 
     .subtitle {
         color: #fff;
         font-size: 3vh;
+        text-align: center;
     }
 
     .description {
