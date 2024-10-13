@@ -58,7 +58,10 @@ mapPhrases.set("description-sgsst", new PhraseDto("This prototype was developed 
 mapPhrases.set("title-inpec", new PhraseDto("Stock management for Inpec", "Manejo de inventarios para el Inpec"));
 mapPhrases.set("description-inpec", new PhraseDto("This project was a prototype, focused on manage and control the stock from a store in the prisons owned by the Colombian organization known as Inpec (National Penitentiary and Prison Institute). This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Este proyecto fue un prototipo enfocado a la gestión y control de inventarios de los expendios dentro de las cárceles que son controladas por el organismo colombiano conocido como Inpec (Instituto Nacional Penitenciario y Carcelario). Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
 
+mapPhrases.set("title-lcd-pin", new PhraseDto("LCD Pin", "LCD Pin"));
 mapPhrases.set("description-lcd-pin", new PhraseDto("This desktop app -developed in Java- was focused on register the enrollment data of the students at a school (Liceo Campo David - LCD for its acronym in Spanish), in order to obtain a consecutive number that the parents must present to the school, along with the corresponding payment, thus confirming the student's enrollment. This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Esta aplicación de escritorio desarrollada en Java estuvo enfocada en registrar los datos de matrícula de los alumnos del colegio Liceo Campo David (LCD), con el fin de obtener un número consecutivo que los padres de familia deben presentar al colegio, junto con el pago correspondiente, confirmando así la matrícula del alumno. Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
+
+mapPhrases.set("title-lcd-questions", new PhraseDto("Cuestionario LCD", "Cuestionario LCD"));
 mapPhrases.set("description-lcd-questions", new PhraseDto("This Java desktop application was built to store and print questions on the exams for the school Liceo Campo David (LCD for its acronym in Spanish). The exams were made and printed using a powerful tool calles JasperReports. This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Esta aplicación de escritorio en Java fue desarrollada para almacenar e imprimir preguntas para los exámenes del colegio Liceo Campo David (LCD). Los exámenes fueron realizados e impresos utilizando una potente herramienta llamada JasperReports. Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
 
 mapPhrases.set("title-tu-conjunto", new PhraseDto("TuConjunto Project", "Proyecto TuConjunto"));
@@ -74,11 +77,16 @@ export function getText(id: string, lang: string | null) {
     if (!lang) {
         return null;
     }
+    const item = mapPhrases.get(id);
+    if (!item) {
+        return 'Missing location for id ' + id;
+    }
     switch (lang) {
         case enUS:
-            return mapPhrases.get(id)?.englishVersion;
+            return item.englishVersion;
         case esES:
-            return mapPhrases.get(id)?.spanishVersion;
+            return item.spanishVersion;
+        default:
+            return 'Unknown language ' + lang;
     }
-    return "";
 }
