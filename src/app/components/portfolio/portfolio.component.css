@@ -1,311 +1,222 @@
-@import '../../../assets/css/files.css';
-@import '../../../assets/css/fonts.css';
-@import '../../../assets/css/common.css';
-
-.title-1,
-.title-2,
-.title-3,
-.title-4,
-.title-5 {
-    color: #586dbd;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 50px;
-    word-wrap: break-word;
+#portfolio {
+    padding: 7vh 0 3vh 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #172c50;
+    row-gap: 2rem;
 }
 
-.title-5 {
-    color: #F88982;
-    font-size: 5rem;
-}
-
-.description-1,
-.description-2,
-.description-3,
-.description-4 {
-    color: white;
-    font-size: 26px;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-.description-2 {
-    font-size: 22px;
+.title {
+    color: #f88982;
+    font-size: 6vh;
+    text-align: center;
 }
 
 .portfolio-panel {
-    height: 100vh;
-    position: relative;
-}
-
-.odd {
-    background-color: #172c50;
-}
-
-.even {
-    background-color: #7a8daf;
-}
-
-.portfolio-subpanel-1,
-.portfolio-subpanel-2,
-.portfolio-subpanel-3,
-.portfolio-subpanel-4 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    text-align: center;
-    row-gap: 6rem;
-
-    background: rgb(181 181 181 / 80%);
-    border-radius: 20px;
-    padding: 1% 2% 1% 2%;
-}
-
-.portfolio-subpanel-5 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    row-gap: 5rem;
-}
-
-.portfolio-subpanel-2 {
-    row-gap: 5rem;
-}
-
-.portfolio-link {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 400;
-    word-wrap: break-word;
-    width: 35%;
-    height: 7vh;
-}
-
-.carousel-center {
-    display: flex;
-    align-self: center;
-}
-
-.carousel-text,
-.carousel-text-3 {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    column-gap: 5rem;
+    row-gap: 2rem;
+
+    .portfolio-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+
+        .portfolio-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            row-gap: 1rem;
+            width: 35%;
+
+            background: rgb(181 181 181 / 80%);
+            border-radius: 2rem;
+            padding: 1% 2% 1% 2%;
+
+            .subtitle {
+                color: #586dbd;
+                font-size: 4vh;
+                font-weight: 400;
+                word-wrap: break-word;
+                text-align: center;
+            }
+
+            .description {
+                color: white;
+                font-size: 1.6vh;
+                font-weight: 400;
+                word-wrap: break-word;
+                width: 50%;
+            }
+
+            .right {
+                text-align: right;
+            }
+
+            .left {
+                text-align: left;
+            }
+
+            .carousel-center {
+                display: flex;
+                align-self: center;
+            }
+
+            .carousel-text {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                column-gap: 5rem;
+            }
+
+            .portfolio-link {
+                text-align: center;
+                font-size: 3vh;
+                word-wrap: break-word;
+                height: 8vh;
+                width: 45%;
+            }
+        }
+    }
 }
 
-.carousel-text-3 {
-    justify-content: center;
-    column-gap: 12rem;
+.other-projects {
+    width: 80%;
 }
 
 @media only screen and (max-width: 1400px) {
+    .portfolio-panel {
+        .portfolio-row {
+            .portfolio-item {
+                .carousel-text {
+                    column-gap: 4rem;
+                }
 
-    .description-1,
-    .description-2,
-    .description-3,
-    .description-4 {
-        font-size: 20px;
+                .description {
+                    font-size: 1.5vh;
+                }
+
+                .portfolio-link {
+                    font-size: 2.7vh;
+                    height: 7vh;
+                    width: 42%;
+                }
+            }
+        }
     }
-
-    .portfolio-link {
-        font-size: 35px;
-    }
-
-    .carousel-center.width-15 {
-        width: 17%;
-    }
-
-    .carousel-text-3 {
-        column-gap: 10rem;
-    }
-
-    .portfolio-subpanel-5 {
-        row-gap: 4rem;
-    }
-
 }
 
 @media only screen and (max-width: 1200px) {
+    .portfolio-panel {
+        .portfolio-row {
+            .portfolio-item {
+                .carousel-text {
+                    column-gap: 3rem;
+                }
 
-    .title-1,
-    .title-2,
-    .title-3,
-    .title-4 {
-        font-size: 40px;
+                .portfolio-link {
+                    font-size: 2.5vh;
+                    width: 40%;
+                }
+            }
+        }
     }
-
-    .title-5 {
-        font-size: 3rem;
-    }
-
-    .description-1,
-    .description-2,
-    .description-3,
-    .description-4 {
-        font-size: 18px;
-    }
-
-    .portfolio-link {
-        font-size: 30px;
-    }
-
-    .portfolio-subpanel-1,
-    .portfolio-subpanel-2,
-    .portfolio-subpanel-3,
-    .portfolio-subpanel-4 {
-        row-gap: 5rem;
-    }
-
-    .portfolio-subpanel-5 {
-        row-gap: 4rem;
-    }
-
-    .carousel-text-3 {
-        column-gap: 8rem;
-    }
-
-    .carousel-center.width-15 {
-        width: 19%;
-    }
-
 }
 
 @media only screen and (max-width: 992px) {
-
-    .title-1,
-    .title-2,
-    .title-3,
-    .title-4 {
-        font-size: 45px;
+    #portfolio {
+        padding: 5vh 0 3vh 0;
     }
 
-    .portfolio-link {
-        font-size: 22px;
-        width: 33%;
-        height: 5vh;
-    }
+    .portfolio-panel {
+        .portfolio-row {
+            flex-direction: column;
+            row-gap: 2rem;
 
-    .portfolio-subpanel-1,
-    .portfolio-subpanel-2,
-    .portfolio-subpanel-3,
-    .portfolio-subpanel-4 {
-        row-gap: 6rem;
-    }
+            .portfolio-item {
+                width: 75%;
+                row-gap: 3rem;
+                padding: 4% 2%;
 
-    .portfolio-subpanel-5 {
-        row-gap: 3rem;
-    }
+                .subtitle {
+                    font-size: 3.5vh;
+                }
 
-    .carousel-text-3 {
-        column-gap: 5rem;
-    }
+                .carousel-text {
+                    flex-direction: column;
+                    row-gap: 2rem;
 
-    .carousel-center.width-15 {
-        width: 23%;
-    }
+                    .right,
+                    .left {
+                        text-align: center;
+                    }
+                }
 
+                .portfolio-link {
+                    font-size: 2.1vh;
+                    width: 35%;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .portfolio-panel {
+        .portfolio-row {
+            .portfolio-item {
+                .subtitle {
+                    font-size: 4vh;
+                }
 
-    .title-1,
-    .title-2,
-    .title-3,
-    .title-4 {
-        font-size: 35px;
+                .carousel-text {
+                    row-gap: 1rem;
+
+                    .description {
+                        font-size: 1.8vh;
+                    }
+                }
+
+                .portfolio-link {
+                    font-size: 2.5vh;
+                    width: 60%;
+                }
+            }
+        }
     }
-
-    .description-1,
-    .description-2,
-    .description-3,
-    .description-4 {
-        font-size: 15px;
-        text-align: center;
-    }
-
-    .portfolio-link {
-        font-size: 15px;
-        width: 34%;
-        height: 6vh;
-    }
-
-    .portfolio-subpanel-1,
-    .portfolio-subpanel-2,
-    .portfolio-subpanel-3,
-    .portfolio-subpanel-4 {
-        row-gap: 3rem;
-    }
-
-    .portfolio-subpanel-5 {
-        row-gap: 4rem;
-        top: 40%;
-    }
-
-    .carousel-text,
-    .carousel-text-3 {
-        flex-direction: column;
-        row-gap: 2rem;
-    }
-
-    .description-3.width-50 {
-        width: 75%;
-    }
-
-    .description-1.width-40,
-    .description-4.width-40 {
-        width: 100%;
-    }
-
-    .carousel-center.width-15 {
-        width: 22%;
-    }
-
 }
 
 @media only screen and (max-width: 472px) {
-
-    .title-1,
-    .title-2,
-    .title-3,
-    .title-4 {
-        font-size: 30px;
-        line-height: 35px;
+    .title {
+        font-size: 4vh;
     }
 
-    .description-1,
-    .description-2,
-    .description-3,
-    .description-4 {
-        text-align: center;
-        font-size: 13px;
-        width: 90%;
-    }
+    .portfolio-panel {
+        .portfolio-row {
+            .portfolio-item {
+                .subtitle {
+                    font-size: 3vh;
+                }
 
-    .portfolio-link {
-        font-size: 12px;
-    }
+                .carousel-text {
+                    .description {
+                        font-size: 1.2vh;
+                        line-height: 1.5vh;
+                    }
+                }
 
-    .portfolio-subpanel-1,
-    .portfolio-subpanel-2,
-    .portfolio-subpanel-3,
-    .portfolio-subpanel-4 {
-        row-gap: 1.5rem;
+                .portfolio-link {
+                    font-size: 2vh;
+                    width: 60%;
+                    height: 6vh;
+                }
+            }
+        }
     }
-
-    .portfolio-subpanel-5 {
-        row-gap: 4rem;
-    }
-
-    .carousel-center.width-15 {
-        width: 35%;
-    }
-
 }

@@ -1,18 +1,21 @@
 <!-- MENU -->
 <div class="menu">
-    <a class="logo" href="/"><img [src]="logo" alt="logo" /></a>
     <div class="menu-items">
-        <div class="menu-item font-family-courier-prime padding-left-5 padding-right-5">
-            <a mat-button routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+        <div class="menu-item">
+            <a mat-button href="#" routerLinkActive="active" ariaCurrentWhenActive="page">{{getText("home-title")}}</a>
         </div>
-        <div class="menu-item font-family-courier-prime padding-left-5 padding-right-5">
-            <a mat-button routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
+        <div class="menu-item">
+            <a mat-button href="#about" routerLinkActive="active"
+                ariaCurrentWhenActive="page">{{getText("about-me-title")}}</a>
         </div>
-        <!-- The mail service responsible for sending the email was disabled (because of money). To avoid any conflict, the access to the Contact form has been removed.
-        <div class="menu-item font-family-courier-prime padding-left-5 padding-right-5">
-            <a mat-button routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
+        <div class="menu-item">
+            <a mat-button href="#portfolio" routerLinkActive="active"
+                ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
         </div>
-        -->
+        <div class="menu-item">
+            <button mat-button (click)="changeLanguage()">{{ isInSpanish() ? 'See in English' : ( isInEnglish() ? 'Ver en Español' :
+                '') }}</button>
+        </div>
     </div>
 </div>
 <!-- MENU END -->

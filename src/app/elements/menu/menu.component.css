@@ -1,12 +1,12 @@
-@import '../../../assets/css/files.css';
-@import '../../../assets/css/fonts.css';
-@import '../../../assets/css/common.css';
-
 .menu {
     display: flex;
     background-color: #2B2B2B;
-    justify-content: space-between;
-    height: 8vh;
+    justify-content: end;
+    height: 7vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 25;
 }
 
 .menu-items {
@@ -17,14 +17,10 @@
 
 .menu-item {
     color: #C6CDD3;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     word-wrap: break-word;
-}
-
-.logo {
-    display: flex;
-    align-items: stretch;
+    padding: 0 2vh;
 }
 
 .mat-mdc-button:not(:disabled) {
@@ -37,9 +33,17 @@
         height: 6vh;
     }
 
+    .menu-item {
+        font-size: 1.7rem;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
+
+    .menu {
+        height: 8vh;
+    }
 
     .menu-item {
         font-size: 1.5rem;
@@ -48,13 +52,17 @@
 }
 
 @media only screen and (max-width: 992px) {
-    /*Empty*/
+
+    .menu {
+        height: 5vh;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
 
     .menu-item {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
 }
@@ -62,9 +70,8 @@
 @media only screen and (max-width: 472px) {
 
     .menu-item {
-        font-size: 1rem;
-        padding-right: 3%;
-        padding-left: 3%;
+        font-size: 0.6rem;
+        padding: 0 0.4vh;
     }
 
 }

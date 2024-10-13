@@ -1,89 +1,52 @@
 <!-- PANEL 1 -->
-<div class="home-panel-1">
+<div id="home">
     <div class="home-panel-img-1">
-        <img alt="" class="width-100" src="assets/img/image-from-rawpixel-id-50145-jpeg.jpg">
+        <img alt="portrait" class="portrait" src="assets/img/Con los perros.jpg">
     </div>
-    <div class="home-panel-text-1">
-        <div class="title-1 font-family-courier-prime">Fullstack Expertise to Transform Your Digital Presence</div>
-        <div class="description-1 font-family-courier-prime">From concept to deployment, turning your ideas into functional and useful websites.</div>
-        <div class="buttons-cta font-family-courier-prime padding-left-5 padding-right-5">
-            <a class="cta-button-1" href="/portfolio" mat-button>View My Work</a>
-            <a class="cta-button-2" href="mailto:{{env.mailto}}" mat-button>Contact Me</a>
+    <div class="home-panel-content-1">
+        <span class="title">Julián González Prieto</span>
+        <span class="subtitle">{{getText("my-career")}}</span>
+        <div class="description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-map-pin css-svt5ra">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+                map-pin
+            </svg>
+            <span>Bogotá D.C, Colombia</span>
+        </div>
+        <div class="buttons-cta">
+            <a class="cta-button-1" href="#portfolio" mat-button>{{getText("cta-portfolio")}}</a>
+            <a class="cta-button-2" href="mailto:{{env.mailto}}" mat-button>{{getText("cta-contact-me")}}</a>
+        </div>
+        <div class="social-media">
+            <a class="fa fa-download" [href]="isInEnglish() ? env.cvLinkEn : (isInSpanish() ? env.cvLinkSp : '')"
+                target="_blank" [title]="getText('sm-my-cv')">
+            </a>
+            <a class="fa fa-linkedin" [href]="env.linkedinUrl" target="_blank" [title]="getText('sm-my-linkedin')">
+            </a>
+            <a class="fa fa-github" [href]="env.githubUrl" target="_blank" [title]="getText('sm-my-github')">
+            </a>
+            <a class="fa fa-bitbucket" [href]="env.bitbucketUrl" target="_blank" [title]="getText('sm-my-bitbucket')">
+            </a>
         </div>
     </div>
 </div>
 <!-- PANEL 1 END -->
 
-<!-- PANEL 2 -->
-<div class="home-panel-2">
-    <div class="home-panel-img-2">
-        <img alt="" class="width-100" src="assets/img/Con los perros.jpg">
-    </div>
-    <div class="home-panel-text-2">
-        <div class="section-2">
-            <div class="title-2 font-family-courier-prime">
-                Hi all! My name is Julian.
-            </div>
-            <div class="subtitle-2 font-family-courier-prime">
-                I am a Fullstack Developer based in Vancouver, BC.
-            </div>
-        </div>
-        <div class="description-2 font-family-courier-prime">
-            <span>I've been working as developer since 2015.</span>
-            <span>I've always been a person who has dedication and focus on
-                analyze situations and writing clean and well-maintained code.</span>
-        </div>
-    </div>
+<!-- SEPARATOR -->
+<div class="section-separator">
+    <span class="separator"></span>
 </div>
-<!-- PANEL 2 END -->
+<!-- SEPARATOR END -->
 
-<!-- PANEL 3 -->
-<div class="home-panel-3">
-    <div class="home-panel-text-3">
+<app-about></app-about>
 
-        <div class="table-panel-3 width-75">
-            <!-- FRONTEND SECTION -->
-            <div class="frontend-section width-100 padding-top-bottom-2">
-                <div class="frontend-header">
-                    <div class="red-circle">
-                        <img src="../assets/img/frontend-icon.png" alt="" class="width-70" />
-                    </div>
-                    <div class="title-frontend font-family-courier-prime">FRONTEND</div>
-                </div>
-                <div class="frontend-languages font-family-courier-prime">
-                    <div class="languages-title">Languages & Frameworks</div>
-                    <div class="languages-text">HTML, CSS, Javascript, JQuery, <br />Angular, Liferay, PHP, Yii</div>
-                </div>
-                <div class="frontend-tools font-family-courier-prime">
-                    <div class="tools-title">Tools</div>
-                    <div class="tools-text">NodeJS, Bootstrap, VS Code, <br />Figma, Git, Filezilla</div>
-                </div>
-            </div>
-            <!-- FRONTEND SECTION END -->
-
-            <div class="separator"></div>
-
-            <!-- BACKEND SECTION -->
-            <div class="backend-section width-100 padding-top-bottom-2">
-                <div class="backend-header">
-                    <div class="red-circle">
-                        <img src="../assets/img/backend-icon.png" alt="" class="width-70" />
-                    </div>
-                    <div class="title-backend font-family-courier-prime">BACKEND</div>
-                </div>
-                <div class="backend-languages font-family-courier-prime">
-                    <div class="languages-title">Languages & Frameworks</div>
-                    <div class="languages-text">Java, SpringBoot, JSF, Liferay, <br />JPA, PHP, Yii</div>
-                </div>
-                <div class="backend-tools font-family-courier-prime">
-                    <div class="tools-title">Tools</div>
-                    <div class="tools-text">Git, Oracle, MySQL, PostgreSQL, JasperReports, <br />Postman, SoapUI, CPanel
-                    </div>
-                </div>
-            </div>
-            <!-- BACKEND SECTION END -->
-        </div>
-
-    </div>
+<!-- SEPARATOR -->
+<div class="section-separator">
+    <span class="separator"></span>
 </div>
-<!-- PANEL 3 END -->
+<!-- SEPARATOR END -->
+
+<app-portfolio></app-portfolio>

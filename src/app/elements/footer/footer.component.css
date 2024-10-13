@@ -1,9 +1,6 @@
-@import '../../../assets/css/fonts.css';
-@import '../../../assets/css/common.css';
-
 :host {
     .footer {
-        height: 8vh;
+        height: 3vh;
         position: relative;
         background-color: #2B2B2B;
         display: flex;
@@ -13,66 +10,13 @@
         row-gap: 0.1rem;
         padding: 0.5% 0 0.5% 0;
 
-        .sm-icons {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            width: 10%;
-
-            .fa-twitter {
-                background: #55ACEE;
-                color: white;
-                text-decoration: none;
-                z-index: 1000;
-            }
-
-            .fa-linkedin {
-                background: #007bb5;
-                color: white;
-                text-decoration: none;
-                z-index: 1000;
-            }
-
-            .fa-github {
-                color: white;
-                text-decoration: none;
-                z-index: 1000;
-            }
-
-            .fa-bitbucket {
-                color: #0052cc;
-                text-decoration: none;
-                z-index: 1000;
-            }
-
-            .fa-envelope {
-                color: #007bb5;
-                text-decoration: none;
-                z-index: 1000;
-            }
-        }
-
-        .footer-navigation {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            column-gap: 0.2rem;
-
-            .footer-item a {
-                color: #C6CDD3;
-                font-size: 0.7rem;
-                font-weight: 400;
-                word-wrap: break-word;
-            }
-        }
-
         .author {
             color: #c6cdd3a3;
-            font-size: 0.5rem;
+            font-size: 0.8rem;
             font-weight: 400;
             word-wrap: break-word;
+            text-align: center;
+            width: 50%;
         }
     }
 }
@@ -82,10 +26,6 @@
     :host {
         .footer {
             padding: 0.7% 0 0.7% 0;
-
-            .sm-icons {
-                width: 12%;
-            }
         }
     }
 
@@ -96,10 +36,6 @@
     :host {
         .footer {
             padding: 1% 0 1% 0;
-
-            .sm-icons {
-                width: 16%;
-            }
         }
     }
 
@@ -110,10 +46,6 @@
     :host {
         .footer {
             padding: 1.2% 0 1.2% 0;
-
-            .sm-icons {
-                width: 20%;
-            }
         }
     }
 
@@ -125,12 +57,8 @@
         .footer {
             padding: 2% 0 2% 0;
 
-            .sm-icons {
-                width: 30%;
-            }
-
             .author {
-                font-size: 0.3rem;
+                font-size: 0.5rem;
             }
 
             .footer-navigation {

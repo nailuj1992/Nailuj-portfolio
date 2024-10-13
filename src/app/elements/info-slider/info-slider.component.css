@@ -1,12 +1,8 @@
-@import '../../../assets/css/fonts.css';
-@import '../../../assets/css/common.css';
-
 :host {
     display: block;
     width: 100%;
 
     .slides {
-        width: 100%;
         height: 40vh;
         overflow: hidden;
         position: relative;
@@ -27,22 +23,27 @@
 
             .title {
                 color: #586dbd;
-                font-size: 48px;
+                font-size: 5vh;
                 font-weight: 400;
-                line-height: 50px;
                 word-wrap: break-word;
+                text-align: center;
             }
 
             .description {
                 color: white;
-                font-size: 26px;
+                font-size: 3vh;
                 font-weight: 400;
                 word-wrap: break-word;
+                text-align: left;
+            }
+
+            .button {
+                text-align: center;
             }
 
             .link {
                 text-align: center;
-                font-size: 36px;
+                font-size: 3vh;
                 font-weight: 400;
                 word-wrap: break-word;
                 width: 35%;
@@ -57,7 +58,7 @@
             border: 0px;
             background-color: transparent;
             font-size: 30px;
-            color: #fff;
+            color: #4f4f4f;
             cursor: pointer;
         }
 
@@ -85,7 +86,7 @@
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                background-color: #fff;
+                background-color: #bebebe;
                 display: inline-block;
                 margin: 0 2%;
                 cursor: pointer;
@@ -108,11 +109,7 @@
             .slide {
 
                 .description {
-                    font-size: 20px;
-                }
-
-                .link {
-                    font-size: 32px;
+                    font-size: 3vh;
                 }
 
             }
@@ -140,15 +137,7 @@
 
             .slide {
                 .title {
-                    font-size: 40px;
-                }
-
-                .description {
-                    font-size: 18px;
-                }
-
-                .link {
-                    font-size: 25px;
+                    font-size: 6vh;
                 }
             }
 
@@ -166,17 +155,21 @@
 
     :host {
         .slides {
-            height: 42vh;
+            height: 37vh;
+            padding: 6% 2%;
 
             .slide {
                 .title {
-                    font-size: 45px;
+                    font-size: 4vh;
+                }
+
+                .description {
+                    font-size: 2vh;
                 }
 
                 .link {
-                    font-size: 18px;
-                    width: 33%;
-                    height: 5vh;
+                    font-size: 2vh;
+                    height: 6vh;
                 }
             }
 
@@ -201,21 +194,19 @@
 
     :host {
         .slides {
-            height: 33vh;
-            padding: 2% 2% 6% 2%;
+            height: 40vh;
 
             .slide {
                 .title {
-                    font-size: 35px;
+                    font-size: 4.2vh;
                 }
 
                 .description {
-                    font-size: 13px;
                     text-align: center;
                 }
 
                 .link {
-                    font-size: 15px;
+                    font-size: 2vh;
                     width: 45%;
                     height: 6vh;
                 }
@@ -238,6 +229,7 @@
                 width: 95%;
                 row-gap: 0.4rem;
                 column-gap: 0.1rem;
+                bottom: 10px;
 
                 .indicator {
                     margin: 0 5%;
@@ -254,22 +246,20 @@
 
     :host {
         .slides {
-            height: 36vh;
-            padding: 2% 2% 9% 2%;
+            height: 40vh;
+            padding: 9% 2%;
 
             .slide {
                 .title {
-                    font-size: 30px;
-                    line-height: 35px;
+                    font-size: 4vh;
                 }
 
                 .description {
-                    text-align: center;
-                    font-size: 11px;
+                    font-size: 1.5vh;
                 }
 
                 .link {
-                    font-size: 15px;
+                    font-size: 1.7vh;
                     width: 60%;
                 }
             }

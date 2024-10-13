@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, Inject } from '@angular/core';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { getText } from '../../model/dto/language';
 
 @Component({
   selector: 'app-info-slider',
@@ -24,6 +25,12 @@ export class InfoSliderComponent {
   faArrowLeft = faArrowLeft;
   hidden = false;
 
+  document: Document;
+
+  constructor(@Inject(DOCUMENT) document: Document) {
+    this.document = document;
+  }
+
   next() {
     let currentSlide = (this.currentSlide + 1) % this.slides.length;
     this.jumpToSlide(currentSlide);
@@ -40,6 +47,14 @@ export class InfoSliderComponent {
       this.currentSlide = index;
       this.hidden = false;
     }, this.animationSpeed);
+  }
+
+  getText(id: string) {
+    const sessionStorage = this.document.defaultView?.sessionStorage;
+    if (sessionStorage) {
+      return getText(id, sessionStorage.getItem("lang"));
+    }
+    return null;
   }
 
 }
