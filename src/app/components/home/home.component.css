@@ -1,5 +1,5 @@
 #home {
-    padding: 6vh 0;
+    padding: 10vh 0 6vh 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -90,25 +90,25 @@
             background: #007bb5;
             color: white;
             text-decoration: none;
-            z-index: 1000;
+            z-index: 10;
         }
 
         .fa-github {
             color: white;
             text-decoration: none;
-            z-index: 1000;
+            z-index: 10;
         }
 
         .fa-bitbucket {
             color: #0052cc;
             text-decoration: none;
-            z-index: 1000;
+            z-index: 10;
         }
 
         .fa-download {
             color: #007bb5;
             text-decoration: none;
-            z-index: 1000;
+            z-index: 10;
         }
     }
 }
@@ -137,6 +137,7 @@
 @media only screen and (max-width: 992px) {
     #home {
         flex-direction: column;
+        padding: 7vh 0 6vh 0;
     }
 
     .home-panel-content-1 {

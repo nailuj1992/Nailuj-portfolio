@@ -3,6 +3,10 @@
     background-color: #2B2B2B;
     justify-content: end;
     height: 7vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 25;
 }
 
 .menu-items {

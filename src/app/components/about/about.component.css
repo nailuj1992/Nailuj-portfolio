@@ -1,5 +1,5 @@
 #about {
-    padding: 3vh 0;
+    padding: 7vh 0 3vh 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -70,6 +70,10 @@
 }
 
 @media only screen and (max-width: 992px) {
+    #about {
+        padding: 5vh 0 3vh 0;
+    }
+
     .home-panel-content-1 {
         width: 90%;
 
