@@ -1,8 +1,7 @@
 <!-- PANEL 1 -->
-<div id="home" class="home-panel-1">
+<div id="home">
     <div class="home-panel-img-1">
-        <img alt="portrait" class="portrait"
-            src="assets/img/Con los perros.jpg">
+        <img alt="portrait" class="portrait" src="assets/img/Con los perros.jpg">
     </div>
     <div class="home-panel-content-1">
         <span class="title">Julián González Prieto</span>
@@ -41,53 +40,7 @@
 </div>
 <!-- SEPARATOR END -->
 
-<!-- PANEL 2 -->
-<div id="about" class="home-panel-2">
-    <div class="home-panel-content-1">
-        <span class="title">About Me</span>
-        <div class="description">
-            <span>I am a passionate developer who has dedication and focus on
-                analyzing situations and writing clean and well-maintained code.</span>
-            <span>Conducted end-to-end solutions for complex web applications, spearheaded the full software development
-                lifecycle for many projects, adhering to Agile frameworks like Scrum, and delivered impeccable code and
-                met tight deadlines.</span>
-        </div>
-    </div>
-    <div class="home-panel-content-2">
-        <span class="title">Skills</span>
-        <div class="description">
-            <div class="row-1">
-                <img alt="cs" src="assets/svg/csharp.svg" class="tech-icon">
-                <img alt="java" src="assets/svg/java.svg" class="tech-icon">
-                <img alt="python" src="assets/svg/python.svg" class="tech-icon">
-                <img alt="php" src="assets/svg/php.svg" class="tech-icon">
-                <img alt="typescript" src="assets/svg/typescript.svg" class="tech-icon">
-                <img alt="javascript" src="assets/svg/javascript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-            </div>
-            <div class="row-2">
-                <img alt="unity" src="assets/svg/unity.svg" class="tech-icon">
-                <img alt="spring" src="assets/svg/springboot.svg" class="tech-icon">
-                <img alt="yii" src="assets/svg/yii.svg" class="tech-icon">
-                <img alt="nodejs" src="assets/svg/nodejs.svg" class="tech-icon">
-                <img alt="angular" src="assets/svg/angular.svg" class="tech-icon">
-            </div>
-            <div class="row-3">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="maven" src="assets/svg/maven.svg" class="tech-icon">
-                <img alt="gradle" src="assets/svg/gradle.svg" class="tech-icon">
-                <img alt="xampp" src="assets/svg/xampp.svg" class="tech-icon">
-            </div>
-            <div class="row-4">
-                <img alt="oracle" src="assets/svg/oracle.svg" class="tech-icon">
-                <img alt="mysql" src="assets/svg/mysql.svg" class="tech-icon">
-                <img alt="redis" src="assets/svg/redis.svg" class="tech-icon">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- PANEL 2 END -->
+<app-about></app-about>
 
 <!-- SEPARATOR -->
 <div class="section-separator">
@@ -95,110 +48,4 @@
 </div>
 <!-- SEPARATOR END -->
 
-<!-- PANEL 3 -->
-<div id="portfolio" class="home-panel-3">
-    <span class="title">Projects</span>
-
-    <div class="portfolio-panel">
-        <div class="portfolio-row">
-            <div class="portfolio-item">
-                <div class="subtitle">Visual environment for learning propositional logic</div>
-
-                <div class="carousel-text">
-                    <app-image-slider [slides]="slidesLogicProject" [animationSpeed]="300"
-                        class="carousel-center"></app-image-slider>
-
-                    <div class="description right">
-                        The general objective of the project consists mainly of designing and building software with a
-                        highly visual interface, based on a playful metaphor, that allows the student to learn concepts
-                        related
-                        to propositional logic in an easier and more motivating way, in order to provide a suitable
-                        space
-                        for
-                        experimentation and conjecture.
-                    </div>
-                </div>
-
-                <div class="">
-                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoEciLogicUrl}}"
-                        target="_blank">LINK TO THE PROJECT</a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="subtitle">Basic music player</div>
-
-                <div class="carousel-text">
-                    <div class="description left">
-                        This is a basic music player, which is developed in Java. This player supports MP3 audio format
-                        files
-                        and offers basic controls such as volume adjustment and track progression. While maintaining a
-                        minimalist approach, this music player serves as an skeleton that can be expanded upon to
-                        incorporate
-                        more advanced features based on user preferences.
-                    </div>
-
-                    <app-image-slider [slides]="slidesMusicPlayer" [indicatorsVisible]="false" [animationSpeed]="0"
-                        class="carousel-center"></app-image-slider>
-                </div>
-
-                <div class="">
-                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoMusicPlayerUrl}}"
-                        target="_blank">LINK TO THE PROJECT</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio-row">
-            <div class="portfolio-item">
-                <div class="subtitle">Catholic prayers project</div>
-
-                <div class="carousel-text">
-                    <app-image-slider [slides]="slidesPrayersProject" [animationSpeed]="300"
-                        class="carousel-center"></app-image-slider>
-
-                    <div class="description right">
-                        This project is focused in providing a better experience for a catholic prayer who wants to -or
-                        needs to- make some offerings to God, through the Holy Rosary (all the year) or the Christmas
-                        Novenas (December 16th to 24th). Additionally, this project has support in English and Spanish
-                        (for
-                        now).
-                    </div>
-                </div>
-
-                <div class="">
-                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoCatholicPrayersUrl}}"
-                        target="_blank">LINK TO THE PROJECT</a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="subtitle">Basic 2D Game - Unity</div>
-
-                <div class="carousel-text">
-                    <div class="description left">
-                        This is a very basic 2D videogame made with Unity. This mini-project was originally made as a
-                        commission on November 29th, 2017, but I have decided to do some little improvements, and then
-                        to
-                        upload it to this repository until now (April 20th, 2024).
-                    </div>
-
-                    <app-image-slider [slides]="slidesBasic2dGameProject" [animationSpeed]="300"
-                        class="carousel-center"></app-image-slider>
-                </div>
-
-                <div class="">
-                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoBasic2dGame}}"
-                        target="_blank">LINK TO THE PROJECT</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <span class="title">Other Projects</span>
-
-    <div class="other-projects">
-        <app-info-slider [slides]="slidesOthers" [animationSpeed]="300"></app-info-slider>
-    </div>
-</div>
-<!-- PANEL 3 END -->
+<app-portfolio></app-portfolio>

@@ -1,0 +1,98 @@
+<div id="portfolio">
+    <span class="title">Projects</span>
+
+    <div class="portfolio-panel">
+        <div class="portfolio-row">
+            <div class="portfolio-item">
+                <div class="subtitle">Visual environment for learning propositional logic</div>
+
+                <div class="carousel-text">
+                    <app-image-slider [slides]="slidesLogicProject" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+
+                    <div class="description right">
+                        The general objective of the project consists mainly of designing and building software with a
+                        highly visual interface, based on a playful metaphor, that allows the student to learn concepts
+                        related to propositional logic in an easier and more motivating way, in order to provide a
+                        suitable space for experimentation and conjecture.
+                    </div>
+                </div>
+
+                <div class="">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoEciLogicUrl}}"
+                        target="_blank">LINK TO THE PROJECT</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="subtitle">Basic music player</div>
+
+                <div class="carousel-text">
+                    <div class="description left">
+                        This is a basic music player, which is developed in Java. This player supports MP3 audio format
+                        files and offers basic controls such as volume adjustment and track progression. While
+                        maintaining a minimalist approach, this music player serves as an skeleton that can be expanded
+                        upon to incorporate more advanced features based on user preferences.
+                    </div>
+
+                    <app-image-slider [slides]="slidesMusicPlayer" [indicatorsVisible]="false" [animationSpeed]="0"
+                        class="carousel-center"></app-image-slider>
+                </div>
+
+                <div class="">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoMusicPlayerUrl}}"
+                        target="_blank">LINK TO THE PROJECT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-row">
+            <div class="portfolio-item">
+                <div class="subtitle">Catholic prayers project</div>
+
+                <div class="carousel-text">
+                    <app-image-slider [slides]="slidesPrayersProject" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+
+                    <div class="description right">
+                        This project is focused in providing a better experience for a catholic prayer who wants to -or
+                        needs to- make some offerings to God, through the Holy Rosary (all the year) or the Christmas
+                        Novenas (December 16th to 24th). Additionally, this project has support in English and Spanish
+                        (for now).
+                    </div>
+                </div>
+
+                <div class="">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoCatholicPrayersUrl}}"
+                        target="_blank">LINK TO THE PROJECT</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="subtitle">Basic 2D Game - Unity</div>
+
+                <div class="carousel-text">
+                    <div class="description left">
+                        This is a very basic 2D video-game made with Unity. This mini-project was originally made as a
+                        commission on November 29th, 2017, but I have decided to do some little improvements, and then
+                        to upload it to this repository until now (April 20th, 2024).
+                    </div>
+
+                    <app-image-slider [slides]="slidesBasic2dGameProject" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+                </div>
+
+                <div class="">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoBasic2dGame}}"
+                        target="_blank">LINK TO THE PROJECT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="title">Other Projects</span>
+
+    <div class="other-projects">
+        <app-info-slider [slides]="slidesOthers" [animationSpeed]="300"></app-info-slider>
+    </div>
+</div>
