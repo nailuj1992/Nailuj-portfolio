@@ -5,7 +5,7 @@
     </div>
     <div class="home-panel-content-1">
         <span class="title">Julián González Prieto</span>
-        <span class="subtitle">Fullstack Software Developer</span>
+        <span class="subtitle">{{getText("my-career")}}</span>
         <div class="description">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -17,17 +17,18 @@
             <span>Bogotá D.C, Colombia</span>
         </div>
         <div class="buttons-cta">
-            <a class="cta-button-1" href="#portfolio" mat-button>View My Work</a>
-            <a class="cta-button-2" href="mailto:{{env.mailto}}" mat-button>Contact me</a>
+            <a class="cta-button-1" href="#portfolio" mat-button>{{getText("cta-portfolio")}}</a>
+            <a class="cta-button-2" href="mailto:{{env.mailto}}" mat-button>{{getText("cta-contact-me")}}</a>
         </div>
         <div class="social-media">
-            <a class="fa fa-download" href="{{env.cvLinkEn}}" target="_blank" title="My CV">
+            <a class="fa fa-download" [href]="isInEnglish() ? env.cvLinkEn : (isInSpanish() ? env.cvLinkSp : '')"
+                target="_blank" [title]="getText('sm-my-cv')">
             </a>
-            <a class="fa fa-linkedin" href="{{env.linkedinUrl}}" target="_blank" title="My LinkedIn">
+            <a class="fa fa-linkedin" [href]="env.linkedinUrl" target="_blank" [title]="getText('sm-my-linkedin')">
             </a>
-            <a class="fa fa-github" href="{{env.githubUrl}}" target="_blank" title="My GitHub">
+            <a class="fa fa-github" [href]="env.githubUrl" target="_blank" [title]="getText('sm-my-github')">
             </a>
-            <a class="fa fa-bitbucket" href="{{env.bitbucketUrl}}" target="_blank" title="My BitBucket">
+            <a class="fa fa-bitbucket" [href]="env.bitbucketUrl" target="_blank" [title]="getText('sm-my-bitbucket')">
             </a>
         </div>
     </div>

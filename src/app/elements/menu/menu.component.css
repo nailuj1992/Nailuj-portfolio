@@ -66,8 +66,8 @@
 @media only screen and (max-width: 472px) {
 
     .menu-item {
-        font-size: 1rem;
-        padding: 0 1vh;
+        font-size: 0.6rem;
+        padding: 0 0.4vh;
     }
 
 }

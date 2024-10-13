@@ -2,13 +2,19 @@
 <div class="menu">
     <div class="menu-items">
         <div class="menu-item">
-            <a mat-button href="#" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+            <a mat-button href="#" routerLinkActive="active" ariaCurrentWhenActive="page">{{getText("home-title")}}</a>
         </div>
         <div class="menu-item">
-            <a mat-button href="#about" routerLinkActive="active" ariaCurrentWhenActive="page">About me</a>
+            <a mat-button href="#about" routerLinkActive="active"
+                ariaCurrentWhenActive="page">{{getText("about-me-title")}}</a>
         </div>
         <div class="menu-item">
-            <a mat-button href="#portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
+            <a mat-button href="#portfolio" routerLinkActive="active"
+                ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
+        </div>
+        <div class="menu-item">
+            <button mat-button (click)="changeLanguage()">{{ isInSpanish() ? 'See in English' : ( isInEnglish() ? 'Ver en Español' :
+                '') }}</button>
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { environment } from '../../../environments/environment';
+import { getText } from '../../model/dto/language';
 
 @Component({
   selector: 'app-about',
@@ -11,5 +13,18 @@ import { environment } from '../../../environments/environment';
 export class AboutComponent {
 
   env = environment;
+  document: Document;
+
+  constructor(@Inject(DOCUMENT) document: Document) {
+    this.document = document;
+  }
+
+  getText(id: string) {
+    const sessionStorage = this.document.defaultView?.sessionStorage;
+    if (sessionStorage) {
+      return getText(id, sessionStorage.getItem("lang"));
+    }
+    return null;
+  }
 
 }

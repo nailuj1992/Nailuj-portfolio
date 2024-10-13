@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { environment } from '../../../environments/environment';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { AboutComponent } from '../about/about.component';
+import { getText, enUS, esES } from '../../model/dto/language';
 
 @Component({
   selector: 'app-home',
@@ -13,5 +15,34 @@ import { AboutComponent } from '../about/about.component';
 export class HomeComponent {
 
   env = environment;
+  document: Document;
+
+  constructor(@Inject(DOCUMENT) document: Document) {
+    this.document = document;
+  }
+
+  getText(id: string) {
+    const sessionStorage = this.document.defaultView?.sessionStorage;
+    if (sessionStorage) {
+      return getText(id, sessionStorage.getItem("lang"));
+    }
+    return null;
+  }
+
+  isInEnglish(): boolean {
+    const sessionStorage = this.document.defaultView?.sessionStorage;
+    if (sessionStorage) {
+      return sessionStorage.getItem("lang") === enUS;
+    }
+    return false;
+  }
+
+  isInSpanish(): boolean {
+    const sessionStorage = this.document.defaultView?.sessionStorage;
+    if (sessionStorage) {
+      return sessionStorage.getItem("lang") === esES;
+    }
+    return false;
+  }
 
 }

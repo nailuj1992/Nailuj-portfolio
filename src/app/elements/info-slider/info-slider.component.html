@@ -4,15 +4,16 @@
         <div class="description">
             {{slides[currentSlide].description}}</div>
         <div class="button" *ngIf="slides[currentSlide].url !== null">
-            <a mat-flat-button color="primary" class="link" href="{{slides[currentSlide].url}}" target="_blank">LINK TO
-                THE PROJECT</a>
+            <a mat-flat-button color="primary" class="link" href="{{slides[currentSlide].url}}"
+                target="_blank">{{getText("link-project")}}</a>
         </div>
     </div>
 
     @if(indicatorsVisible) {
     <div class="indicators">
         @for(slide of slides; track $index) {
-        <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)" onkeypress="">
+        <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)"
+            onkeypress="">
         </div>
         }
     </div>
