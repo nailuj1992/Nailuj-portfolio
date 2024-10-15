@@ -157,7 +157,7 @@
 
 @media only screen and (max-width: 992px) {
     #experience {
-        padding: 5vh 0 3vh 0;
+        padding: 6vh 0 6vh 0;
     }
 
     .list-experiences,
@@ -168,6 +168,8 @@
 
         .item-experience,
         .item-study {
+            padding: 1rem 0;
+
             .details-item {
 
                 span,
@@ -192,6 +194,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #experience {
+        padding: 8vh 0 8vh 0;
+    }
 
     .list-experiences,
     .list-studies {

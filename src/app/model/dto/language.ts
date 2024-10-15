@@ -10,6 +10,9 @@ class PhraseDto {
 
 const mapPhrases = new Map<string, PhraseDto>();
 
+/* MENU */
+mapPhrases.set("language", new PhraseDto("Ver en Español", "See in English"));
+
 /* HOME SECTION */
 mapPhrases.set("home-title", new PhraseDto("Home", "Inicio"));
 mapPhrases.set("my-career", new PhraseDto("Fullstack Software Developer", "Desarrollador Fullstack de Software"));

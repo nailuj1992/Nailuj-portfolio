@@ -132,7 +132,7 @@
 
 @media only screen and (max-width: 992px) {
     #portfolio {
-        padding: 5vh 0 3vh 0;
+        padding: 6vh 0 6vh 0;
     }
 
     .portfolio-panel {
@@ -169,6 +169,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #portfolio {
+        padding: 8vh 0 8vh 0;
+    }
+
     .portfolio-panel {
         .portfolio-row {
             .portfolio-item {

@@ -72,7 +72,7 @@
 
 @media only screen and (max-width: 992px) {
     #about {
-        padding: 5vh 0 3vh 0;
+        padding: 6vh 0 6vh 0;
     }
 
     .home-panel-content-1 {
@@ -95,6 +95,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #about {
+        padding: 8vh 0 8vh 0;
+    }
     .home-panel-content-2 {
         .tech-icon {
             width: 2rem;

@@ -124,7 +124,7 @@
 @media only screen and (max-width: 992px) {
     #home {
         flex-direction: column;
-        padding: 7vh 0 6vh 0;
+        padding: 7vh 0 5vh 0;
     }
 
     .home-panel-content-1 {
@@ -146,6 +146,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    #home {
+        padding: 8vh 0 4vh 0;
+    }
+
     .home-panel-content-1 {
         .social-media {
             column-gap: 3rem;

@@ -1,26 +1,20 @@
 <!-- MENU -->
-<div class="menu">
-    <div class="menu-items">
-        <div class="menu-item">
-            <a mat-button href="#" routerLinkActive="active" ariaCurrentWhenActive="page">{{getText("home-title")}}</a>
-        </div>
-        <div class="menu-item">
-            <a mat-button href="#about" routerLinkActive="active"
-                ariaCurrentWhenActive="page">{{getText("about-me-title")}}</a>
-        </div>
-        <div class="menu-item">
-            <a mat-button href="#portfolio" routerLinkActive="active"
-                ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
-        </div>
-        <div class="menu-item">
-            <a mat-button href="#experience" routerLinkActive="active"
-                ariaCurrentWhenActive="page">{{getText("experience-title")}}</a>
-        </div>
-        <div class="menu-item">
-            <button mat-button (click)="changeLanguage()">{{ isInSpanish() ? 'See in English' : ( isInEnglish() ? 'Ver
-                en Español' :
-                '') }}</button>
-        </div>
+<div id="menu">
+    <div id="menu-base">
+        <a href="javascript:void(0);" class="hamburger" (click)="hamburgerMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div id="menu-items">
+        <a mat-button href="#" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page">{{getText("home-title")}}</a>
+        <a mat-button href="#about" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page">{{getText("about-me-title")}}</a>
+        <a mat-button href="#portfolio" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
+        <a mat-button href="#experience" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page">{{getText("experience-title")}}</a>
+        <button class="menu-item" mat-button (click)="changeLanguage()">{{getText("language")}}</button>
     </div>
 </div>
 <!-- MENU END -->
