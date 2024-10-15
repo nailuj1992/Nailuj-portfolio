@@ -67,4 +67,16 @@ export class MenuComponent {
     }
   }
 
+  hamburgerMenu(): void {
+    let x = this.document.getElementById("menu-items");
+    if (!x) {
+      return;
+    }
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+  }
+
 }

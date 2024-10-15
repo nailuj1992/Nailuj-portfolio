@@ -10,6 +10,9 @@ class PhraseDto {
 
 const mapPhrases = new Map<string, PhraseDto>();
 
+/* MENU */
+mapPhrases.set("language", new PhraseDto("Ver en Español", "See in English"));
+
 /* HOME SECTION */
 mapPhrases.set("home-title", new PhraseDto("Home", "Inicio"));
 mapPhrases.set("my-career", new PhraseDto("Fullstack Software Developer", "Desarrollador Fullstack de Software"));
@@ -69,6 +72,43 @@ mapPhrases.set("description-tu-conjunto", new PhraseDto("This basic project was 
 
 mapPhrases.set("title-form", new PhraseDto("Basic form example", "Ejemplo de formulario básico"));
 mapPhrases.set("description-form", new PhraseDto("It was a little mockup where a person can register in a web application.", "Se trató de una pequeña maqueta donde una persona puede registrarse en una aplicación web."));
+
+/* EXPERIENCE SECTION */
+mapPhrases.set("remote", new PhraseDto("Remote", "Remoto"));
+
+mapPhrases.set("experience-title", new PhraseDto("My experience", "Mi experiencia"));
+
+mapPhrases.set("experience-1-job", new PhraseDto("Unity Developer (Volunteer)", "Desarrollador Unity (Voluntariado)"));
+mapPhrases.set("experience-1-duration", new PhraseDto("April 2024 - Present", "Abril 2024 - Presente"));
+
+mapPhrases.set("experience-2-job", new PhraseDto("Senior Java Web Developer", "Desarrollador Java Web Senior"));
+mapPhrases.set("experience-2-duration", new PhraseDto("January 2020 - March 2023", "Enero 2020 - Marzo 2023"));
+
+mapPhrases.set("experience-3-job", new PhraseDto("Fullstack Java Web Developer", "Desarrollador Java Web Fullstack"));
+mapPhrases.set("experience-3-duration", new PhraseDto("September 2018 - December 2019", "Septiembre 2018 - Diciembre 2019"));
+
+mapPhrases.set("experience-4-job", new PhraseDto("Java desktop Developer", "Desarrollador Java Escritorio"));
+mapPhrases.set("experience-4-duration", new PhraseDto("May 2017 - June 2018", "Mayo 2017 - Junio 2018"));
+
+mapPhrases.set("experience-5-job", new PhraseDto("PHP Web Developer", "Desarrollador PHP Web"));
+mapPhrases.set("experience-5-duration", new PhraseDto("November 2016 - March 2017", "Noviembre 2016 - Marzo 2017"));
+
+mapPhrases.set("experience-6-job", new PhraseDto("Java desktop Developer", "Desarrollador Java Escritorio"));
+mapPhrases.set("experience-6-duration", new PhraseDto("January 2016 - July 2016", "Enero 2016 - Julio 2016"));
+
+mapPhrases.set("experience-7-job", new PhraseDto("PHP Web Developer", "Desarrollador PHP Web"));
+mapPhrases.set("experience-7-duration", new PhraseDto("June 2015 - July 2015", "Junio 2015 - Julio 2015"));
+
+mapPhrases.set("studies-title", new PhraseDto("My studies", "Mis estudios"));
+
+mapPhrases.set("study-1-title", new PhraseDto("Information Technology Diploma", "Diploma en Tecnologías de la Información"));
+mapPhrases.set("study-1-duration", new PhraseDto("April 2023 - September 2023", "Abril 2023 - Septiembre 2023"));
+
+mapPhrases.set("study-2-title", new PhraseDto("Master’s degree in Artificial Intelligence", "Máster en Inteligencia Artificial"));
+mapPhrases.set("study-2-duration", new PhraseDto("April 2020 - July 2021", "April 2020 - July 2021"));
+
+mapPhrases.set("study-3-title", new PhraseDto("Bachelor’s degree in Systems engineering", "Grado en Ingeniería de Sistemas"));
+mapPhrases.set("study-3-duration", new PhraseDto("January 2010 - September 2017", "Enero 2010 - Septiembre 2017"));
 
 export const enUS = "enUS";
 export const esES = "esES";

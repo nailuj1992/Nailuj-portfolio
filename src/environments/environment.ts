@@ -26,4 +26,15 @@ export const environment = {
     repoTuConjuntoUrl: 'https://bitbucket.org/pegasus1992/tuconjunto/',
     repoFormularioUrl: 'https://bitbucket.org/pegasus1992/formulario/',
 
+    helpUsDefendLink: 'https://helpusdefend.com/',
+    globalHitssLink: 'https://globalhitss.com/',
+    bancoDeBogotaLink: 'https://www.bancodebogota.com/',
+    sistemasComercialesLink: 'http://www.sistemascomerciales.com.co/',
+    dataGlobalLink: 'https://www.dataglobal.co/',
+
+    canadianCollegeLink: 'https://canadiancollege.com/',
+    viuLink: 'https://facultades.universidadviu.com/',
+    eciLink: 'https://www.escuelaing.edu.co/',
+    eciWesLink: 'https://badges.wes.org/Evidence?i=1285bf6f-a94c-4b40-8aa8-c25562f6e0cf&type=ca',
+
 };

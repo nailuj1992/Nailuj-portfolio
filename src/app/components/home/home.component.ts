@@ -4,11 +4,13 @@ import { environment } from '../../../environments/environment';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { AboutComponent } from '../about/about.component';
 import { getText, enUS, esES } from '../../model/dto/language';
+import { ExperienceComponent } from '../experience/experience.component';
+import { SeparatorComponent } from '../../elements/separator/separator.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PortfolioComponent, AboutComponent],
+  imports: [PortfolioComponent, AboutComponent, ExperienceComponent, SeparatorComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
