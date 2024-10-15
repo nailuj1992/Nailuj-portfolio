@@ -13,7 +13,12 @@
                 ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
         </div>
         <div class="menu-item">
-            <button mat-button (click)="changeLanguage()">{{ isInSpanish() ? 'See in English' : ( isInEnglish() ? 'Ver en Español' :
+            <a mat-button href="#experience" routerLinkActive="active"
+                ariaCurrentWhenActive="page">{{getText("experience-title")}}</a>
+        </div>
+        <div class="menu-item">
+            <button mat-button (click)="changeLanguage()">{{ isInSpanish() ? 'See in English' : ( isInEnglish() ? 'Ver
+                en Español' :
                 '') }}</button>
         </div>
     </div>

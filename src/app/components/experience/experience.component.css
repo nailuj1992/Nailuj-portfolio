@@ -1,0 +1,239 @@
+#experience {
+    padding: 7vh 0 3vh 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    background-color: #75a6ff;
+}
+
+.title {
+    color: #99443f;
+    font-size: 6vh;
+    text-align: center;
+}
+
+.list-experiences {
+    width: 60%;
+    background: rgb(181 181 181 / 80%);
+    border-radius: 2rem;
+    padding: 1% 2%;
+
+    .item-experience {
+        border-bottom-style: dashed;
+        border-bottom-color: #586dbd;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .details-item {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            span,
+            a {
+                flex: 1 1 40%;
+                padding: 0.3vh 0;
+                font-size: 2.5vh;
+            }
+
+            span {
+                color: #2f2f2f;
+            }
+
+            a {
+                text-decoration: none;
+                color: #586dbd;
+            }
+
+            .bold {
+                font-weight: 500;
+            }
+
+            .left {
+                text-align: left;
+            }
+
+            .right {
+                text-align: right;
+            }
+        }
+
+        .technologies-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .tech-icon {
+                width: 3rem;
+                padding: 1rem;
+                content-visibility: auto;
+            }
+        }
+    }
+
+    .last {
+        border-bottom-style: none;
+        margin-bottom: 0;
+    }
+}
+
+.list-studies {
+    width: 60%;
+    background: rgb(181 181 181 / 80%);
+    border-radius: 2rem;
+    padding: 1% 2%;
+
+    .item-study {
+        border-bottom-style: dashed;
+        border-bottom-color: #586dbd;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh;
+
+        .details-item {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            span,
+            a {
+                flex: 1 1 40%;
+                padding: 0.3vh 0;
+                font-size: 2.5vh;
+
+                .wes-link {
+                    font-size: 1.5vh;
+                }
+            }
+
+            span {
+                color: #2f2f2f;
+            }
+
+            a {
+                text-decoration: none;
+                color: #586dbd;
+            }
+
+            .bold {
+                font-weight: 500;
+            }
+
+            .left {
+                text-align: left;
+            }
+
+            .right {
+                text-align: right;
+            }
+        }
+    }
+
+    .last {
+        border-bottom-style: none;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .list-experiences {
+        .item-experience {
+            .technologies-item {
+                .tech-icon {
+                    width: 2rem;
+                    padding: 0.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #experience {
+        padding: 5vh 0 3vh 0;
+    }
+
+    .list-experiences,
+    .list-studies {
+        width: 75%;
+        row-gap: 3rem;
+        padding: 4% 2%;
+
+        .item-experience,
+        .item-study {
+            .details-item {
+
+                span,
+                a {
+                    padding: 0.2vh 0;
+                    font-size: 1.6vh;
+
+                    .wes-link {
+                        font-size: 1.2vh;
+                    }
+                }
+            }
+
+            .technologies-item {
+                .tech-icon {
+                    width: 2.5rem;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .list-experiences,
+    .list-studies {
+
+        .item-experience,
+        .item-study {
+            .details-item {
+
+                span,
+                a {
+                    padding: 0.1vh 0;
+                    font-size: 1.4vh;
+
+                    .wes-link {
+                        font-size: 1vh;
+                    }
+                }
+            }
+
+            .technologies-item {
+                .tech-icon {
+                    width: 1.6rem;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 472px) {
+    .title {
+        font-size: 4vh;
+    }
+
+    .list-experiences {
+        .item-experience {
+            .technologies-item {
+                .tech-icon {
+                    width: 1.3rem;
+                    padding: 0.4rem;
+                }
+            }
+        }
+    }
+}
