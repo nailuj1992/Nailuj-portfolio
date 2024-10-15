@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { getText } from '../../model/dto/language';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-experience',
@@ -11,6 +12,7 @@ import { getText } from '../../model/dto/language';
 })
 export class ExperienceComponent {
 
+  env = environment;
   document: Document;
 
   constructor(@Inject(DOCUMENT) document: Document) {
