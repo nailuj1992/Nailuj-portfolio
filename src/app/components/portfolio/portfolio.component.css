@@ -34,7 +34,7 @@
             text-align: center;
             row-gap: 1rem;
             width: 35%;
-            content-visibility: auto;
+            /*content-visibility: auto;*/
 
             background: rgb(181 181 181 / 80%);
             border-radius: 2rem;
