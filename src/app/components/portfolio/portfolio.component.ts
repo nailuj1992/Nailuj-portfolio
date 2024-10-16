@@ -2,17 +2,17 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { ImageSliderComponent } from '../../elements/image-slider/image-slider.component';
-import { InfoSliderComponent } from '../../elements/info-slider/info-slider.component';
-import { environment } from '../../../environments/environment';
-import { getText } from '../../model/dto/language';
+import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
+import { InfoSliderComponent } from '@elements/info-slider/info-slider.component';
+import { environment } from '@environments/environment';
+import { getText } from '@model/dto/language';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, ImageSliderComponent, InfoSliderComponent],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+  templateUrl: 'portfolio.component.html',
+  styleUrl: 'portfolio.component.css'
 })
 export class PortfolioComponent {
 

@@ -2,21 +2,18 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { environment } from '../../../environments/environment';
-import { getText, enUS, esES } from '../../model/dto/language';
-
-const logo = '../assets/img/logo.jpg';
+import { environment } from '@environments/environment';
+import { getText, enUS, esES } from '@model/dto/language';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule],
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  templateUrl: 'menu.component.html',
+  styleUrl: 'menu.component.css'
 })
 export class MenuComponent {
 
-  logo = logo;
   env = environment;
   document: Document;
 

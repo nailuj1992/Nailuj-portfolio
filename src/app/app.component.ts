@@ -1,9 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MenuComponent } from './elements/menu/menu.component';
-import { FooterComponent } from './elements/footer/footer.component';
-import { environment } from '../environments/environment';
+import { MenuComponent } from '@/elements/menu/menu.component';
+import { FooterComponent } from '@/elements/footer/footer.component';
+import { environment } from '@environments/environment';
 import { inject } from '@vercel/analytics';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 
@@ -11,8 +11,8 @@ import { injectSpeedInsights } from '@vercel/speed-insights';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MenuComponent, FooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: 'app.component.html',
+  styleUrl: 'app.component.css'
 })
 export class AppComponent {
 

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageSliderComponent } from './image-slider.component';
+import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
 
 describe('ImageSliderComponent', () => {
   let component: ImageSliderComponent;
@@ -10,8 +10,8 @@ describe('ImageSliderComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ImageSliderComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ImageSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

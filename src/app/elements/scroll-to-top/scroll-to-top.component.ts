@@ -8,15 +8,15 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-scroll-to-top',
   standalone: true,
   imports: [MatButtonModule, FontAwesomeModule],
-  templateUrl: './scroll-to-top.component.html',
-  styleUrl: './scroll-to-top.component.css'
+  templateUrl: 'scroll-to-top.component.html',
+  styleUrl: 'scroll-to-top.component.css'
 })
 export class ScrollToTopComponent {
 
   windowScrolled: boolean = false;
   faArrowUp = faArrowUp;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private readonly document: Document) {
   }
 
   @HostListener("window:scroll", [])

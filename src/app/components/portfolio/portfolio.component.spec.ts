@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PortfolioComponent } from './portfolio.component';
+import { PortfolioComponent } from '@components/portfolio/portfolio.component';
 
 describe('PortfolioComponent', () => {
   let component: PortfolioComponent;

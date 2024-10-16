@@ -1,14 +1,14 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { environment } from '../../../environments/environment';
-import { getText } from '../../model/dto/language';
+import { environment } from '@environments/environment';
+import { getText } from '@model/dto/language';
 
 @Component({
   selector: 'app-about',
   standalone: true,
   imports: [],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  templateUrl: 'about.component.html',
+  styleUrl: 'about.component.css'
 })
 export class AboutComponent {
 

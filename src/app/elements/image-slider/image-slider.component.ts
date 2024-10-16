@@ -7,8 +7,8 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-image-slider',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
-  templateUrl: './image-slider.component.html',
-  styleUrl: './image-slider.component.css'
+  templateUrl: 'image-slider.component.html',
+  styleUrl: 'image-slider.component.css'
 })
 export class ImageSliderComponent {
 

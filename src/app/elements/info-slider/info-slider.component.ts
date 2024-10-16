@@ -3,14 +3,14 @@ import { DOCUMENT, CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { getText } from '../../model/dto/language';
+import { getText } from '@model/dto/language';
 
 @Component({
   selector: 'app-info-slider',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule, MatButtonModule],
-  templateUrl: './info-slider.component.html',
-  styleUrl: './info-slider.component.css'
+  templateUrl: 'info-slider.component.html',
+  styleUrl: 'info-slider.component.css'
 })
 export class InfoSliderComponent {
 
