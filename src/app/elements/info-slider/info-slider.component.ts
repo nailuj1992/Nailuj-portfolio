@@ -25,11 +25,7 @@ export class InfoSliderComponent {
   faArrowLeft = faArrowLeft;
   hidden = false;
 
-  document: Document;
-
-  constructor(@Inject(DOCUMENT) document: Document) {
-    this.document = document;
-  }
+  constructor(@Inject(DOCUMENT) readonly document: Document) { }
 
   next() {
     let currentSlide = (this.currentSlide + 1) % this.slides.length;

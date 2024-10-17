@@ -20,7 +20,7 @@
 
 .menu-item {
     color: #C6CDD3;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 400;
     word-wrap: break-word;
     padding: 0 2vh;
@@ -34,7 +34,7 @@
 @media only screen and (max-width: 1400px) {
 
     .menu-item {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         height: 6vh;
     }
 
@@ -43,7 +43,7 @@
 @media only screen and (max-width: 1200px) {
 
     .menu-item {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         height: 8vh;
     }
 

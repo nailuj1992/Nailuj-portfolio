@@ -16,8 +16,6 @@ mapPhrases.set("language", new PhraseDto("Ver en Español", "See in English"));
 /* HOME SECTION */
 mapPhrases.set("home-title", new PhraseDto("Home", "Inicio"));
 mapPhrases.set("my-career", new PhraseDto("Fullstack Software Developer", "Desarrollador Fullstack de Software"));
-mapPhrases.set("cta-portfolio", new PhraseDto("View My Work", "Mis Proyectos"));
-mapPhrases.set("cta-contact-me", new PhraseDto("Contact me", "Contáctame"));
 mapPhrases.set("sm-my-cv", new PhraseDto("My CV", "Mi HdV"));
 mapPhrases.set("sm-my-linkedin", new PhraseDto("My LinkedIn", "Mi LinkedIn"));
 mapPhrases.set("sm-my-github", new PhraseDto("My GitHub", "Mi GitHub"));
@@ -109,6 +107,9 @@ mapPhrases.set("study-2-duration", new PhraseDto("April 2020 - July 2021", "Apri
 
 mapPhrases.set("study-3-title", new PhraseDto("Bachelor’s degree in Systems engineering", "Grado en Ingeniería de Sistemas"));
 mapPhrases.set("study-3-duration", new PhraseDto("January 2010 - September 2017", "Enero 2010 - Septiembre 2017"));
+
+/* CONTACT SECTION */
+mapPhrases.set("contact-title", new PhraseDto("Contact me", "Contáctame"));
 
 export const enUS = "enUS";
 export const esES = "esES";

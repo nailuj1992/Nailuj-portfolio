@@ -15,11 +15,8 @@ import { getText, enUS, esES } from '@model/dto/language';
 export class MenuComponent {
 
   env = environment;
-  document: Document;
 
-  constructor(@Inject(DOCUMENT) document: Document) {
-    this.document = document;
-  }
+  constructor(@Inject(DOCUMENT) readonly document: Document) { }
 
   getText(id: string) {
     const sessionStorage = this.document.defaultView?.sessionStorage;

@@ -17,7 +17,6 @@ import { getText } from '@model/dto/language';
 export class PortfolioComponent {
 
   env = environment;
-  document: Document;
 
   slidesLogicProject: any[];
   slidesMusicPlayer: any[];
@@ -25,9 +24,7 @@ export class PortfolioComponent {
   slidesBasic2dGameProject: any[];
   slidesOthers: any[];
 
-  constructor(@Inject(DOCUMENT) document: Document) {
-    this.document = document;
-
+  constructor(@Inject(DOCUMENT) readonly document: Document) {
     this.slidesLogicProject = [
       {
         url: 'assets/img/logic/img1.png',

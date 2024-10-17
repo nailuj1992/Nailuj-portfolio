@@ -1,20 +1,21 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { getText } from '@model/dto/language';
 import { environment } from '@environments/environment';
+import { getText } from '@model/dto/language';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-contact',
   standalone: true,
   imports: [],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
+  templateUrl: 'contact.component.html',
+  styleUrl: 'contact.component.css'
 })
-export class ExperienceComponent {
+export class ContactComponent {
 
   env = environment;
 
-  constructor(@Inject(DOCUMENT) readonly document: Document) { }
+  constructor(@Inject(DOCUMENT) readonly document: Document) {
+  }
 
   getText(id: string) {
     const sessionStorage = this.document.defaultView?.sessionStorage;
