@@ -72,8 +72,6 @@ mapPhrases.set("title-form", new PhraseDto("Basic form example", "Ejemplo de for
 mapPhrases.set("description-form", new PhraseDto("It was a little mockup where a person can register in a web application.", "Se trató de una pequeña maqueta donde una persona puede registrarse en una aplicación web."));
 
 /* EXPERIENCE SECTION */
-mapPhrases.set("remote", new PhraseDto("Remote", "Remoto"));
-
 mapPhrases.set("experience-title", new PhraseDto("My experience", "Mi experiencia"));
 
 mapPhrases.set("experience-1-job", new PhraseDto("Unity Developer (Volunteer)", "Desarrollador Unity (Voluntariado)"));
@@ -97,6 +95,9 @@ mapPhrases.set("experience-6-duration", new PhraseDto("January 2016 - July 2016"
 mapPhrases.set("experience-7-job", new PhraseDto("PHP Web Developer", "Desarrollador PHP Web"));
 mapPhrases.set("experience-7-duration", new PhraseDto("June 2015 - July 2015", "Junio 2015 - Julio 2015"));
 
+mapPhrases.set("remote", new PhraseDto("Remote", "Remoto"));
+
+/* STUDIES SECTION */
 mapPhrases.set("studies-title", new PhraseDto("My studies", "Mis estudios"));
 
 mapPhrases.set("study-1-title", new PhraseDto("Information Technology Diploma", "Diploma en Tecnologías de la Información"));

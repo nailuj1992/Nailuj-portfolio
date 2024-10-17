@@ -5,13 +5,14 @@ import { PortfolioComponent } from '@components/portfolio/portfolio.component';
 import { AboutComponent } from '@components/about/about.component';
 import { getText, enUS, esES } from '@model/dto/language';
 import { ExperienceComponent } from '@components/experience/experience.component';
+import { StudiesComponent } from '@components/studies/studies.component';
 import { ContactComponent } from '@components/contact/contact.component';
 import { SeparatorComponent } from '@elements/separator/separator.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PortfolioComponent, AboutComponent, ExperienceComponent, ContactComponent, SeparatorComponent],
+  imports: [PortfolioComponent, AboutComponent, ExperienceComponent, StudiesComponent, ContactComponent, SeparatorComponent],
   templateUrl: 'home.component.html',
   styleUrl: 'home.component.css'
 })
