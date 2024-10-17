@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: center;
     column-gap: 5rem;
-    background-color: #172c50;
+    background-color: #486fb3;
 }
 
 .portrait {
@@ -22,15 +22,17 @@
     row-gap: 1.2rem;
 
     .title {
-        color: #f88982;
+        color: #991f17;
         font-size: 6vh;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .subtitle {
         color: #fff;
         font-size: 3vh;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .description {
@@ -47,34 +49,36 @@
         column-gap: 4rem;
         padding: 1vh 0;
 
-        .cta-button-1 {
-            background-color: #f88982;
+        .cta-button-1,
+        .cta-button-2 {
             padding: .6vh 1.5vh;
-            color: #172c50;
             font-size: 2.5vh;
-            border: 2px solid #F88982;
-            text-decoration: none;
             border-radius: 1vh;
+        }
+
+        .cta-button-1 {
+            background-color: #991f17;
+            color: #b8cff5;
+            border: 2px solid #991f17;
+            text-decoration: none;
 
             &:hover {
-                background-color: #f56960;
-                border: 2px solid #f56960;
-                color: #052864;
+                background-color: #ff1000;
+                border: 2px solid #ff1000;
+                color: white;
             }
         }
 
         .cta-button-2 {
-            padding: .6vh 1.5vh;
-            color: #f88982;
-            font-size: 2.5vh;
-            border: 2px solid #F88982;
+            color: #991f17;
+            background-color: #b8cff5;
+            border: 2px solid #991f17;
             text-decoration: none;
-            border-radius: 1vh;
 
             &:hover {
-                color: #f56960;
-                border: 2px solid #f56960;
-                background-color: #052864;
+                color: #ff1000;
+                border: 2px solid #ff1000;
+                background-color: white;
             }
         }
     }
@@ -83,32 +87,25 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        column-gap: 1.2rem;
+        column-gap: 1.8rem;
+        font-size: 1.5rem;
         align-self: center;
 
         .fa-linkedin {
-            background: #007bb5;
-            color: white;
-            text-decoration: none;
-            z-index: 10;
+            background: #486fb3;
         }
 
-        .fa-github {
-            color: white;
-            text-decoration: none;
-            z-index: 10;
-        }
-
-        .fa-bitbucket {
-            color: #0052cc;
-            text-decoration: none;
-            z-index: 10;
-        }
-
+        .fa-linkedin,
+        .fa-github,
+        .fa-bitbucket,
         .fa-download {
-            color: #007bb5;
+            color: white;
             text-decoration: none;
             z-index: 10;
+
+            &:hover {
+                color: #ff1000;
+            }
         }
     }
 }
@@ -139,8 +136,8 @@
         }
 
         .social-media {
-            column-gap: 4rem;
-            font-size: 2rem;
+            column-gap: 5rem;
+            font-size: 3rem;
         }
     }
 }
@@ -153,7 +150,7 @@
     .home-panel-content-1 {
         .social-media {
             column-gap: 3rem;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
         }
     }
 }
@@ -184,8 +181,8 @@
         }
 
         .social-media {
-            column-gap: 2.5rem;
-            font-size: 1.4rem;
+            column-gap: 2rem;
+            font-size: 2rem;
         }
     }
 }

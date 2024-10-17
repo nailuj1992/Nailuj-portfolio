@@ -13,6 +13,7 @@
     color: #d72317;
     font-size: 6vh;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .list-experiences {
@@ -47,7 +48,11 @@
 
             a {
                 text-decoration: none;
-                color: #586dbd;
+                color: #3f5299;
+
+                &:hover {
+                    color: #2955ff;
+                }
             }
 
             .bold {

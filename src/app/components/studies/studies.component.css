@@ -6,13 +6,14 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 2rem;
-    background-color: #172c50;
+    background-color: #486fb3;
 }
 
 .title {
-    color: #f88982;
+    color: #991f17;
     font-size: 6vh;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .list-studies {
@@ -52,7 +53,11 @@
 
             a {
                 text-decoration: none;
-                color: #586dbd;
+                color: #3f5299;
+
+                &:hover {
+                    color: #2955ff;
+                }
             }
 
             .bold {
