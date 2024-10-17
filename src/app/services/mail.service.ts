@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SendMailRequestDto } from '../model/dto/send-mail-dto';
-import { environment } from '../../environments/environment';
+import { SendMailRequestDto } from '@model/dto/send-mail-dto';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailService {
 
-  private mailApi = environment.sendMailEndpoint;
+  private readonly mailApi = environment.mailto;// TODO change value
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   sendEmail(data: SendMailRequestDto) {
     let options = { headers: { 'Content-Type': 'application/json' } };

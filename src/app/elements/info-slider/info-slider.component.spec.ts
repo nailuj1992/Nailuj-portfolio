@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoSliderComponent } from './info-slider.component';
+import { InfoSliderComponent } from '@elements/info-slider/info-slider.component';
 
 describe('InfoSliderComponent', () => {
   let component: InfoSliderComponent;

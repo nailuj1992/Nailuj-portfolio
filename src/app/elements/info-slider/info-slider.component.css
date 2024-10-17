@@ -228,9 +228,8 @@
 
             .indicators {
                 width: 95%;
-                row-gap: 0.4rem;
+                row-gap: 0.8rem;
                 column-gap: 0.1rem;
-                bottom: 10px;
 
                 .indicator {
                     margin: 0 5%;
@@ -263,6 +262,11 @@
                     font-size: 1.7vh;
                     width: 60%;
                 }
+            }
+
+            .indicators {
+                row-gap: 1rem;
+                column-gap: 1rem;
             }
         }
     }

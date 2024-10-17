@@ -5,6 +5,7 @@ export const environment = {
     defaultLang: 'esES',
 
     mailto: 'juliangonzalezprieto@hotmail.com',
+    cellphone: '+57 310-810-6863',
 
     cvLinkEn: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto-PPXM3ymoWVxBPLB122YoagW0XFTsmd.pdf',
     cvLinkSp: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto%20ESP-ALFJAoLIqTJmRfcQk8YE5YBoQTP0JI.pdf',

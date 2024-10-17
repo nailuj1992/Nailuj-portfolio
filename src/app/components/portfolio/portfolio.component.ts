@@ -2,22 +2,21 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { ImageSliderComponent } from '../../elements/image-slider/image-slider.component';
-import { InfoSliderComponent } from '../../elements/info-slider/info-slider.component';
-import { environment } from '../../../environments/environment';
-import { getText } from '../../model/dto/language';
+import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
+import { InfoSliderComponent } from '@elements/info-slider/info-slider.component';
+import { environment } from '@environments/environment';
+import { getText } from '@model/dto/language';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, ImageSliderComponent, InfoSliderComponent],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+  templateUrl: 'portfolio.component.html',
+  styleUrl: 'portfolio.component.css'
 })
 export class PortfolioComponent {
 
   env = environment;
-  document: Document;
 
   slidesLogicProject: any[];
   slidesMusicPlayer: any[];
@@ -25,9 +24,7 @@ export class PortfolioComponent {
   slidesBasic2dGameProject: any[];
   slidesOthers: any[];
 
-  constructor(@Inject(DOCUMENT) document: Document) {
-    this.document = document;
-
+  constructor(@Inject(DOCUMENT) readonly document: Document) {
     this.slidesLogicProject = [
       {
         url: 'assets/img/logic/img1.png',
