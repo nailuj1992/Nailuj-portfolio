@@ -1,4 +1,4 @@
-#experience {
+#studies {
     padding: 7vh 0 6vh 0;
     position: relative;
     display: flex;
@@ -6,29 +6,30 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 2rem;
-    background-color: #75a6ff;
+    background-color: #486fb3;
 }
 
 .title {
-    color: #d72317;
+    color: #991f17;
     font-size: 6vh;
     text-align: center;
     text-transform: uppercase;
 }
 
-.list-experiences {
+.list-studies {
     width: 60%;
     background: rgb(181 181 181 / 80%);
     border-radius: 2rem;
     padding: 1% 2%;
 
-    .item-experience {
+    .item-study {
         border-bottom-style: dashed;
         border-bottom-color: #586dbd;
         margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1vh;
 
         .details-item {
             width: 100%;
@@ -40,6 +41,10 @@
                 flex: 1 1 40%;
                 padding: 0.3vh 0;
                 font-size: 2.5vh;
+
+                .wes-link {
+                    font-size: 1.5vh;
+                }
             }
 
             span {
@@ -67,18 +72,6 @@
                 text-align: right;
             }
         }
-
-        .technologies-item {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .tech-icon {
-                width: 3rem;
-                padding: 1rem;
-                content-visibility: auto;
-            }
-        }
     }
 
     .last {
@@ -87,30 +80,17 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
-    .list-experiences {
-        .item-experience {
-            .technologies-item {
-                .tech-icon {
-                    width: 2rem;
-                    padding: 0.7rem;
-                }
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 992px) {
-    #experience {
+    #studies {
         padding: 6vh 0 6vh 0;
     }
 
-    .list-experiences {
+    .list-studies {
         width: 75%;
         row-gap: 3rem;
         padding: 4% 2%;
 
-        .item-experience {
+        .item-study {
             padding: 1rem 0;
 
             .details-item {
@@ -119,13 +99,10 @@
                 a {
                     padding: 0.2vh 0;
                     font-size: 1.6vh;
-                }
-            }
 
-            .technologies-item {
-                .tech-icon {
-                    width: 2.5rem;
-                    padding: 0.5rem;
+                    .wes-link {
+                        font-size: 1.2vh;
+                    }
                 }
             }
         }
@@ -133,26 +110,23 @@
 }
 
 @media only screen and (max-width: 768px) {
-    #experience {
+    #studies {
         padding: 8vh 0 8vh 0;
     }
 
-    .list-experiences {
+    .list-studies {
 
-        .item-experience {
+        .item-study {
             .details-item {
 
                 span,
                 a {
                     padding: 0.1vh 0;
                     font-size: 1.4vh;
-                }
-            }
 
-            .technologies-item {
-                .tech-icon {
-                    width: 1.6rem;
-                    padding: 0.5rem;
+                    .wes-link {
+                        font-size: 1vh;
+                    }
                 }
             }
         }
@@ -162,16 +136,5 @@
 @media only screen and (max-width: 472px) {
     .title {
         font-size: 4vh;
-    }
-
-    .list-experiences {
-        .item-experience {
-            .technologies-item {
-                .tech-icon {
-                    width: 1.3rem;
-                    padding: 0.4rem;
-                }
-            }
-        }
     }
 }

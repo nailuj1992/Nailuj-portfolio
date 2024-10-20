@@ -4,13 +4,13 @@ import { getText } from '@model/dto/language';
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-studies',
   standalone: true,
   imports: [],
-  templateUrl: 'experience.component.html',
-  styleUrl: 'experience.component.css'
+  templateUrl: 'studies.component.html',
+  styleUrl: 'studies.component.css'
 })
-export class ExperienceComponent {
+export class StudiesComponent {
 
   env = environment;
 

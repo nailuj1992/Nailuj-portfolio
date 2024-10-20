@@ -4,14 +4,15 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #172c50;
+    background-color: #75a6ff;
     row-gap: 2rem;
 }
 
 .title {
-    color: #f88982;
+    color: #d72317;
     font-size: 6vh;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .buttons-contact {
@@ -27,6 +28,7 @@
         font-size: 2vh;
         text-decoration: none;
         border-radius: 1vh;
+        height: 4vh;
 
         display: flex;
         column-gap: 1vh;
@@ -35,31 +37,32 @@
     }
 
     .contact-email {
-        background-color: #f88982;
-        color: #172c50;
-        border: 2px solid #F88982;
+        background-color: #991f17;
+        color: #b8cff5;
+        border: 2px solid #991f17;
 
         &:hover {
-            background-color: #f56960;
-            border: 2px solid #f56960;
-            color: #052864;
+            background-color: #ff1000;
+            border: 2px solid #ff1000;
+            color: white;
         }
     }
 
     .contact-cellphone {
-        color: #f88982;
-        border: 2px solid #F88982;
+        color: #991f17;
+        background-color: #b8cff5;
+        border: 2px solid #991f17;
 
         &:hover {
-            color: #f56960;
-            border: 2px solid #f56960;
-            background-color: #052864;
+            color: #ff1000;
+            border: 2px solid #ff1000;
+            background-color: white;
         }
     }
 
     .flag-icon,
     .icon {
-        width: 2vh;
+        width: 3.5vh;
     }
 }
 
@@ -72,6 +75,11 @@
         flex-direction: column;
         row-gap: 3rem;
         padding: 2vh 0;
+
+        .flag-icon,
+        .icon {
+            width: 2.5vh;
+        }
     }
 }
 

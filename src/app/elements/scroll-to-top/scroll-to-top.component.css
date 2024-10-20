@@ -6,7 +6,7 @@
     font-size: 12px;
 
     border-color: rgba(85, 85, 85, 0.2);
-    background-color: rgb(248, 137, 130);
+    background-color: #ff4236;
     border-radius: 4px;
 
     display: flex;
@@ -26,7 +26,7 @@
 }
 
 .scroll-to-top:hover {
-    background-color: #7dbbf1;
+    background-color: #ff1000;
 }
 
 .show-scrollTop {
@@ -58,7 +58,12 @@
 @media only screen and (max-width: 992px) {
 
     .scroll-to-top {
-        width: 3.2%;
+        width: 4vh;
+        height: 3.5vh;
+    }
+
+    .ng-fa-icon {
+        font-size: 1.7rem;
     }
 
 }
@@ -66,7 +71,11 @@
 @media only screen and (max-width: 768px) {
 
     .scroll-to-top {
-        width: 4.1%;
+        width: 4.5vh;
+    }
+
+    .ng-fa-icon {
+        font-size: 1.3rem;
     }
 
 }
@@ -74,7 +83,12 @@
 @media only screen and (max-width: 472px) {
 
     .scroll-to-top {
-        width: 6%;
+        width: 3.2vh;
+        height: 3vh;
+    }
+
+    .ng-fa-icon {
+        font-size: 1rem;
     }
 
 }

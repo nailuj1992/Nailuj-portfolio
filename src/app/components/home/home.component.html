@@ -17,8 +17,8 @@
             <span>Bogotá D.C, Colombia</span>
         </div>
         <div class="buttons-cta">
-            <a class="cta-button-1" href="#portfolio">{{getText("portfolio-title")}}</a>
-            <a class="cta-button-2" href="#contact">{{getText("contact-title")}}</a>
+            <a class="cta-button-2" href="#portfolio">{{getText("portfolio-title")}}</a>
+            <a class="cta-button-1" href="#contact">{{getText("contact-title")}}</a>
         </div>
         <div class="social-media">
             <a class="fa fa-download" [href]="isInEnglish() ? env.cvLinkEn : (isInSpanish() ? env.cvLinkSp : '')"
@@ -52,6 +52,12 @@
 <!-- EXPERIENCE SECTION -->
 <app-experience></app-experience>
 <!-- EXPERIENCE SECTION END -->
+
+<app-separator></app-separator>
+
+<!-- STUDIES SECTION -->
+<app-studies></app-studies>
+<!-- STUDIES SECTION END -->
 
 <app-separator></app-separator>
 
