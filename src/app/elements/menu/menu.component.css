@@ -101,6 +101,9 @@
 }
 
 @media only screen and (max-width: 472px) {
+    #menu-base {
+        height: 6vh;
+    }
 
     .hamburger {
         padding: 0 4vh;

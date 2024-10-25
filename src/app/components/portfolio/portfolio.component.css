@@ -285,7 +285,7 @@
                 .technologies-item {
                     .tech-icon {
                         width: 2rem;
-                        padding: 0.7rem;
+                        padding: 0.5rem;
                     }
                 }
 
@@ -307,7 +307,7 @@
                 .technologies-item {
                     .tech-icon {
                         width: 2rem;
-                        padding: 0.7rem;
+                        padding: 0.5rem;
                     }
                 }
             }
@@ -352,7 +352,7 @@
 
                 .technologies-item {
                     .tech-icon {
-                        width: 4rem;
+                        width: 3rem;
                         padding: 1rem;
                     }
                 }
@@ -394,7 +394,7 @@
 
             .nextButton,
             .previousButton {
-                top: 25%;
+                top: 15%;
             }
 
             .nextButton {
@@ -430,8 +430,8 @@
 
                 .technologies-item {
                     .tech-icon {
-                        width: 3rem;
-                        padding: 1rem;
+                        width: 2rem;
+                        padding: 0.5rem;
                     }
                 }
 
@@ -473,7 +473,7 @@
 
             .nextButton,
             .previousButton {
-                top: 22%;
+                top: 12%;
             }
 
             .nextButton {
@@ -520,8 +520,8 @@
 
                 .technologies-item {
                     .tech-icon {
-                        width: 2rem;
-                        padding: 0.6rem;
+                        width: 1.5rem;
+                        padding: 0.4rem;
                     }
                 }
 
@@ -559,6 +559,11 @@
                     font-size: 1.7vh;
                     width: 60%;
                 }
+            }
+
+            .nextButton,
+            .previousButton {
+                top: 15%;
             }
 
             .indicators {
