@@ -89,18 +89,27 @@
         height: 8vh;
     }
 
+    .hamburger {
+        font-size: 2.5rem;
+    }
+
     .menu-item {
-        font-size: 1.5rem;
-        height: 6vh;
+        font-size: 1.1rem;
+        height: 5vh;
     }
 
 }
 
 @media only screen and (max-width: 472px) {
 
-    .menu-item {
+    .hamburger {
+        padding: 0 4vh;
         font-size: 2rem;
-        height: 8vh;
+    }
+
+    .menu-item {
+        font-size: 1.5rem;
+        height: 6vh;
     }
 
 }
