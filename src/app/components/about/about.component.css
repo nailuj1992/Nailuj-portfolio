@@ -49,6 +49,15 @@
     }
 }
 
+@media only screen and (max-width: 1400px) {
+    .home-panel-content-2 {
+        .tech-icon {
+            width: 2.8rem;
+            padding: 0.8rem;
+        }
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     .home-panel-content-1 {
         width: 90%;

@@ -1,16 +1,17 @@
 import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
-import { InfoSliderComponent } from '@elements/info-slider/info-slider.component';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '@environments/environment';
 import { getText } from '@model/dto/language';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule, ImageSliderComponent, InfoSliderComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, FontAwesomeModule, MatButtonModule, ImageSliderComponent],
   templateUrl: 'portfolio.component.html',
   styleUrl: 'portfolio.component.css'
 })
@@ -22,7 +23,14 @@ export class PortfolioComponent {
   slidesMusicPlayer: any[];
   slidesPrayersProject: any[];
   slidesBasic2dGameProject: any[];
+
   slidesOthers: any[];
+  animationSpeed = 300;
+
+  currentSlide = 0;
+  faArrowRight = faArrowRight;
+  faArrowLeft = faArrowLeft;
+  hidden = false;
 
   constructor(@Inject(DOCUMENT) readonly document: Document) {
     this.slidesLogicProject = [
@@ -105,41 +113,68 @@ export class PortfolioComponent {
       {
         title: "title-nfc-scan",
         description: "description-nfc-scan",
+        technologies: ["csharp", "unity", "git"],
         url: null
       }, {
         title: "title-stock-management",
         description: "description-stock-management",
+        technologies: ["php", "javascript", "html", "css", "yii", "git", "xampp", "mysql"],
         url: this.env.repoStockManagementUrl
       }, {
         title: "title-portfolio",
         description: "description-portfolio",
+        technologies: ["typescript", "javascript", "html", "css", "nodejs", "angular", "git"],
         url: this.env.repoPortfolioUrl
       }, {
         title: "title-sgsst",
         description: "description-sgsst",
+        technologies: ["php", "javascript", "html", "css", "yii", "git", "xampp", "mysql"],
         url: this.env.repoSgSstUrl
       }, {
         title: "title-inpec",
         description: "description-inpec",
+        technologies: ["php", "javascript", "html", "css", "git", "xampp", "mysql"],
         url: this.env.repoInpecProjectUrl
       }, {
         title: "title-lcd-pin",
         description: "description-lcd-pin",
+        technologies: ["php", "javascript", "html", "css", "git", "xampp", "mysql"],
         url: this.env.repoLcdPinUrl
       }, {
         title: "title-lcd-questions",
         description: "description-lcd-questions",
+        technologies: ["java", "git", "mysql"],
         url: this.env.repoCuestionarioLcdUrl
       }, {
         title: "title-tu-conjunto",
         description: "description-tu-conjunto",
+        technologies: ["php", "javascript", "html", "css", "yii", "git", "xampp", "mysql"],
         url: this.env.repoTuConjuntoUrl
       }, {
         title: "title-form",
         description: "description-form",
+        technologies: ["php", "javascript", "html", "css", "git", "xampp", "mysql"],
         url: this.env.repoFormularioUrl
       }
     ];
+  }
+
+  next() {
+    let currentSlide = (this.currentSlide + 1) % this.slidesOthers.length;
+    this.jumpToSlide(currentSlide);
+  }
+
+  previous() {
+    let currentSlide = (this.currentSlide - 1 + this.slidesOthers.length) % this.slidesOthers.length;
+    this.jumpToSlide(currentSlide);
+  }
+
+  jumpToSlide(index: number) {
+    this.hidden = true;
+    setTimeout(() => {
+      this.currentSlide = index;
+      this.hidden = false;
+    }, this.animationSpeed);
   }
 
   getText(id: string) {

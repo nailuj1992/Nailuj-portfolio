@@ -1,125 +1,36 @@
 <div id="experience">
     <span class="title">{{getText("experience-title")}}</span>
     <div class="list-experiences">
-        <div class="item-experience">
+        <div class="item-experience" [style]="{transition: 'opacity ' + animationSpeed + 'ms ease-in-out'}">
             <div class="details-item">
-                <span class="left bold">{{getText("experience-1-job")}}</span>
-                <span class="right">{{getText("experience-1-duration")}}</span>
-                <a class="left" href="{{env.helpUsDefendLink}}" target="_blank">Help us Defend</a>
-                <span class="right">Vancouver, BC ({{getText("remote")}})</span>
+                <span class="left bold">{{getText(slides[currentSlide].title)}}</span>
+                <span class="right">{{getText(slides[currentSlide].duration)}}</span>
+                <a class="left" [href]="slides[currentSlide].link" target="_blank">{{slides[currentSlide].nameLink}}</a>
+                <span class="right">{{slides[currentSlide].place + (slides[currentSlide].isRemote ? " (" +
+                    getText("remote") + ")" : "")}}</span>
             </div>
-            <div class="technologies-item">
-                <img alt="cs" src="assets/svg/csharp.svg" class="tech-icon">
-                <img alt="unity" src="assets/svg/unity.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
+            <div class="technologies-item" *ngIf="slides[currentSlide].technologies !== null">
+                @for(technology of slides[currentSlide].technologies; track $index) {
+                <img [alt]="technology" [src]="'assets/svg/' + technology + '.svg'" class="tech-icon">
+                }
             </div>
         </div>
-        <div class="item-experience">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-2-job")}}</span>
-                <span class="right">{{getText("experience-2-duration")}}</span>
-                <a class="left" href="{{env.globalHitssLink}}" target="_blank">Global Hitss S.A</a>
-                <span class="right">Bogotá D.C, Colombia</span>
+
+        <div class="indicators">
+            @for(slide of slides; track $index) {
+            <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)"
+                onkeypress="">
             </div>
-            <div class="technologies-item">
-                <img alt="java" src="assets/svg/java.svg" class="tech-icon">
-                <img alt="javascript" src="assets/svg/javascript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="maven" src="assets/svg/maven.svg" class="tech-icon">
-                <img alt="oracle" src="assets/svg/oracle.svg" class="tech-icon">
-            </div>
+            }
         </div>
-        <div class="item-experience">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-3-job")}}</span>
-                <span class="right">{{getText("experience-3-duration")}}</span>
-                <a class="left" href="{{env.bancoDeBogotaLink}}" target="_blank">Banco de Bogotá</a>
-                <span class="right">Bogotá D.C, Colombia</span>
-            </div>
-            <div class="technologies-item">
-                <img alt="java" src="assets/svg/java.svg" class="tech-icon">
-                <img alt="typescript" src="assets/svg/typescript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-                <img alt="spring" src="assets/svg/springboot.svg" class="tech-icon">
-                <img alt="nodejs" src="assets/svg/nodejs.svg" class="tech-icon">
-                <img alt="angular" src="assets/svg/angular.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="maven" src="assets/svg/maven.svg" class="tech-icon">
-                <img alt="mysql" src="assets/svg/mysql.svg" class="tech-icon">
-                <img alt="redis" src="assets/svg/redis.svg" class="tech-icon">
-            </div>
-        </div>
-        <div class="item-experience">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-4-job")}}</span>
-                <span class="right">{{getText("experience-4-duration")}}</span>
-                <a class="left" href="{{env.sistemasComercialesLink}}" target="_blank">Sistemas Comerciales SIA Ltda</a>
-                <span class="right">Bogotá D.C, Colombia</span>
-            </div>
-            <div class="technologies-item">
-                <img alt="java" src="assets/svg/java.svg" class="tech-icon">
-                <img alt="php" src="assets/svg/php.svg" class="tech-icon">
-                <img alt="javascript" src="assets/svg/javascript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-                <img alt="yii" src="assets/svg/yii.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="maven" src="assets/svg/maven.svg" class="tech-icon">
-                <img alt="xampp" src="assets/svg/xampp.svg" class="tech-icon">
-                <img alt="oracle" src="assets/svg/oracle.svg" class="tech-icon">
-                <img alt="mysql" src="assets/svg/mysql.svg" class="tech-icon">
-            </div>
-        </div>
-        <div class="item-experience">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-5-job")}}</span>
-                <span class="right">{{getText("experience-5-duration")}}</span>
-                <a class="left" href="{{env.dataGlobalLink}}" target="_blank">Data Global S.A.S</a>
-                <span class="right">Bogotá D.C, Colombia</span>
-            </div>
-            <div class="technologies-item">
-                <img alt="php" src="assets/svg/php.svg" class="tech-icon">
-                <img alt="javascript" src="assets/svg/javascript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-                <img alt="yii" src="assets/svg/yii.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="xampp" src="assets/svg/xampp.svg" class="tech-icon">
-                <img alt="mysql" src="assets/svg/mysql.svg" class="tech-icon">
-            </div>
-        </div>
-        <div class="item-experience">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-6-job")}}</span>
-                <span class="right">{{getText("experience-6-duration")}}</span>
-                <a class="left" href="{{env.sistemasComercialesLink}}" target="_blank">Sistemas Comerciales SIA Ltda</a>
-                <span class="right">Bogotá D.C, Colombia</span>
-            </div>
-            <div class="technologies-item">
-                <img alt="java" src="assets/svg/java.svg" class="tech-icon">
-                <img alt="git" src="assets/svg/git.svg" class="tech-icon">
-                <img alt="maven" src="assets/svg/maven.svg" class="tech-icon">
-                <img alt="oracle" src="assets/svg/oracle.svg" class="tech-icon">
-            </div>
-        </div>
-        <div class="item-experience last">
-            <div class="details-item">
-                <span class="left bold">{{getText("experience-7-job")}}</span>
-                <span class="right">{{getText("experience-7-duration")}}</span>
-                <a class="left" href="{{env.sistemasComercialesLink}}" target="_blank">Sistemas Comerciales SIA Ltda</a>
-                <span class="right">Bogotá D.C, Colombia</span>
-            </div>
-            <div class="technologies-item">
-                <img alt="php" src="assets/svg/php.svg" class="tech-icon">
-                <img alt="javascript" src="assets/svg/javascript.svg" class="tech-icon">
-                <img alt="html" src="assets/svg/html.svg" class="tech-icon">
-                <img alt="css" src="assets/svg/css.svg" class="tech-icon">
-                <img alt="xampp" src="assets/svg/xampp.svg" class="tech-icon">
-                <img alt="mysql" src="assets/svg/mysql.svg" class="tech-icon">
-            </div>
-        </div>
+
+        @if(slides.length > 1) {
+        <button (click)="next()" class="nextButton">
+            <fa-icon [icon]="faArrowRight"></fa-icon>
+        </button>
+        <button (click)="previous()" class="previousButton">
+            <fa-icon [icon]="faArrowLeft"></fa-icon>
+        </button>
+        }
     </div>
 </div>
