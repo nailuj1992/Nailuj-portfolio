@@ -100,7 +100,7 @@ mapPhrases.set("remote", new PhraseDto("Remote", "Remoto"));
 /* STUDIES SECTION */
 mapPhrases.set("studies-title", new PhraseDto("My studies", "Mis estudios"));
 
-mapPhrases.set("study-1-title", new PhraseDto("Information Technology Diploma", "Diploma en Tecnologías de la Información"));
+mapPhrases.set("study-1-title", new PhraseDto("Information Technology Diploma", "Especialización en Tecnologías de la Información"));
 mapPhrases.set("study-1-duration", new PhraseDto("April 2023 - September 2023", "Abril 2023 - Septiembre 2023"));
 
 mapPhrases.set("study-2-title", new PhraseDto("Master’s degree in Artificial Intelligence", "Máster en Inteligencia Artificial"));
