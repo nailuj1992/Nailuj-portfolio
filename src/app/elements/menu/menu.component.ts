@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { environment } from '@environments/environment';
 import { getText, enUS, esES } from '@model/dto/language';
@@ -8,7 +8,7 @@ import { getText, enUS, esES } from '@model/dto/language';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatButtonModule],
+  imports: [RouterLinkActive, MatButtonModule],
   templateUrl: 'menu.component.html',
   styleUrl: 'menu.component.css'
 })
@@ -47,7 +47,7 @@ export class MenuComponent {
     if (sessionStorage) {
       const lang = sessionStorage.getItem("lang");
       if (lang === null) {
-        sessionStorage.setItem('lang', this.env.defaultLang);
+        sessionStorage.setItem('lang', this.env.variables.defaultLang);
         return;
       }
       switch (lang) {

@@ -1,8 +1,8 @@
+import { variables } from "@environments/variables";
+
 export const environment = {
 
-    production: true,
-    year: '2025',
-    defaultLang: 'enUS',
+    variables: variables,
 
     mailto: 'juliangonzalezprieto@hotmail.com',
     cellphone: '+57 310-810-6863',
