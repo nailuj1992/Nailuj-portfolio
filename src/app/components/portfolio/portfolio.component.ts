@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { DOCUMENT, CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
@@ -11,7 +10,7 @@ import { getText } from '@model/dto/language';
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, FontAwesomeModule, MatButtonModule, ImageSliderComponent],
+  imports: [CommonModule, FontAwesomeModule, MatButtonModule, ImageSliderComponent],
   templateUrl: 'portfolio.component.html',
   styleUrl: 'portfolio.component.css'
 })

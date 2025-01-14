@@ -1,14 +1,14 @@
+import { variables } from "@environments/variables";
+
 export const environment = {
 
-    production: true,
-    year: '2024',
-    defaultLang: 'enUS',
+    variables: variables,
 
     mailto: 'juliangonzalezprieto@hotmail.com',
     cellphone: '+57 310-810-6863',
 
-    cvLinkEn: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto-PPXM3ymoWVxBPLB122YoagW0XFTsmd.pdf',
-    cvLinkSp: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto%20ESP-ALFJAoLIqTJmRfcQk8YE5YBoQTP0JI.pdf',
+    cvLinkEn: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto.pdf',
+    cvLinkSp: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto%20ESP.pdf',
     linkedinUrl: 'https://www.linkedin.com/in/julian-gonzalez-prieto-bb7b70140/',
     githubUrl: 'https://github.com/nailuj1992',
     bitbucketUrl: 'https://bitbucket.org/pegasus1992/',
@@ -27,6 +27,7 @@ export const environment = {
     repoTuConjuntoUrl: 'https://bitbucket.org/pegasus1992/tuconjunto/',
     repoFormularioUrl: 'https://bitbucket.org/pegasus1992/formulario/',
 
+    linkTicLink: 'https://linktic.com/',
     helpUsDefendLink: 'https://helpusdefend.com/',
     globalHitssLink: 'https://globalhitss.com/',
     bancoDeBogotaLink: 'https://www.bancodebogota.com/',

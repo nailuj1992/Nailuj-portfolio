@@ -22,7 +22,7 @@ export class AppComponent {
   constructor(@Inject(DOCUMENT) document: Document) {
     const sessionStorage = document.defaultView?.sessionStorage;
     if (sessionStorage && sessionStorage.getItem('lang') == null) {
-      sessionStorage.setItem('lang', this.env.defaultLang);
+      sessionStorage.setItem('lang', this.env.variables.defaultLang);
     }
     inject();
     injectSpeedInsights();
