@@ -28,8 +28,17 @@ export class ExperienceComponent {
   constructor(@Inject(DOCUMENT) readonly document: Document) {
     this.slides = [
       {
-        title: "experience-1-job",
-        duration: "experience-1-duration",
+        title: "experience-8-job",
+        duration: "experience-8-duration",
+        link: this.env.linkTicLink,
+        nameLink: "LinkTIC S.A.S",
+        place: "Bogotá D.C, Colombia",
+        isRemote: false,
+        technologies: ["java", "typescript", "html", "css", "angular", "git", "maven", "postgresql", "powerbi"]
+      },
+      {
+        title: "experience-7-job",
+        duration: "experience-7-duration",
         link: this.env.helpUsDefendLink,
         nameLink: "Help us Defend",
         place: "Vancouver, BC",
@@ -37,8 +46,8 @@ export class ExperienceComponent {
         technologies: ["csharp", "unity", "git"]
       },
       {
-        title: "experience-2-job",
-        duration: "experience-2-duration",
+        title: "experience-6-job",
+        duration: "experience-6-duration",
         link: this.env.globalHitssLink,
         nameLink: "Global Hitss S.A",
         place: "Bogotá D.C, Colombia",
@@ -46,8 +55,8 @@ export class ExperienceComponent {
         technologies: ["java", "javascript", "html", "css", "git", "maven", "oracle"]
       },
       {
-        title: "experience-3-job",
-        duration: "experience-3-duration",
+        title: "experience-5-job",
+        duration: "experience-5-duration",
         link: this.env.bancoDeBogotaLink,
         nameLink: "Banco de Bogotá",
         place: "Bogotá D.C, Colombia",
@@ -64,8 +73,8 @@ export class ExperienceComponent {
         technologies: ["java", "php", "javascript", "html", "css", "yii", "git", "maven", "xampp", "oracle", "mysql"]
       },
       {
-        title: "experience-5-job",
-        duration: "experience-5-duration",
+        title: "experience-3-job",
+        duration: "experience-3-duration",
         link: this.env.dataGlobalLink,
         nameLink: "Data Global S.A.S",
         place: "Bogotá D.C, Colombia",
@@ -73,8 +82,8 @@ export class ExperienceComponent {
         technologies: ["php", "javascript", "html", "css", "yii", "git", "xampp", "mysql"]
       },
       {
-        title: "experience-6-job",
-        duration: "experience-6-duration",
+        title: "experience-2-job",
+        duration: "experience-2-duration",
         link: this.env.sistemasComercialesLink,
         nameLink: "Sistemas Comerciales SIA Ltda",
         place: "Bogotá D.C, Colombia",
@@ -82,8 +91,8 @@ export class ExperienceComponent {
         technologies: ["java", "git", "maven", "oracle"]
       },
       {
-        title: "experience-7-job",
-        duration: "experience-7-duration",
+        title: "experience-1-job",
+        duration: "experience-1-duration",
         link: this.env.sistemasComercialesLink,
         nameLink: "Sistemas Comerciales SIA Ltda",
         place: "Bogotá D.C, Colombia",
