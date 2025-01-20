@@ -34,7 +34,7 @@ export class ExperienceComponent {
         nameLink: "LinkTIC S.A.S",
         place: "Bogotá D.C, Colombia",
         isRemote: false,
-        technologies: ["java", "typescript", "html", "css", "angular", "git", "maven", "postgresql", "powerbi"]
+        technologies: ["java", "typescript", "html", "css", "angular", "git", "maven", "sql-server", "powerbi"]
       },
       {
         title: "experience-7-job",

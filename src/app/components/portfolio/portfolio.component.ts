@@ -110,20 +110,20 @@ export class PortfolioComponent {
 
     this.slidesOthers = [
       {
-        title: "title-nfc-scan",
-        description: "description-nfc-scan",
-        technologies: ["csharp", "unity", "git"],
-        url: null
+        title: "title-portfolio",
+        description: "description-portfolio",
+        technologies: ["typescript", "javascript", "html", "css", "nodejs", "angular", "git"],
+        url: this.env.repoPortfolioUrl
       }, {
         title: "title-stock-management",
         description: "description-stock-management",
         technologies: ["php", "javascript", "html", "css", "yii", "git", "xampp", "mysql"],
         url: this.env.repoStockManagementUrl
       }, {
-        title: "title-portfolio",
-        description: "description-portfolio",
-        technologies: ["typescript", "javascript", "html", "css", "nodejs", "angular", "git"],
-        url: this.env.repoPortfolioUrl
+        title: "title-nfc-scan",
+        description: "description-nfc-scan",
+        technologies: ["csharp", "unity", "git"],
+        url: this.env.repoUnityNfc
       }, {
         title: "title-sgsst",
         description: "description-sgsst",
