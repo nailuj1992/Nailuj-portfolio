@@ -18,14 +18,14 @@ export const environment = {
     repoCatholicPrayersUrl: 'https://github.com/nailuj1992/OracionesCatolicas',
     repoPortfolioUrl: 'https://github.com/nailuj1992/Nailuj-portfolio',
     repoBasic2dGame: 'https://github.com/nailuj1992/Basic-2D-Game',
-
     repoUnityNfc: 'https://github.com/nailuj1992/unity_nfc',
+    repoStockManagementUrl: 'https://github.com/nailuj1992/stock-management',
+    repoTuConjuntoUrl: 'https://github.com/nailuj1992/TuConjunto',
+
     repoSgSstUrl: 'https://bitbucket.org/pegasus1992/sg-sst/',
     repoInpecProjectUrl: 'https://bitbucket.org/pegasus1992/inpec-project/',
     repoLcdPinUrl: 'https://bitbucket.org/pegasus1992/lcd_pin/',
     repoCuestionarioLcdUrl: 'https://bitbucket.org/pegasus1992/cuestionariolcd/',
-    repoStockManagementUrl: 'https://bitbucket.org/pegasus1992/stock-management/',
-    repoTuConjuntoUrl: 'https://bitbucket.org/pegasus1992/tuconjunto/',
     repoFormularioUrl: 'https://bitbucket.org/pegasus1992/formulario/',
 
     linkTicLink: 'https://linktic.com/',
