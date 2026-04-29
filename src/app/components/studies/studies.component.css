@@ -6,103 +6,83 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 2rem;
-    background-color: #486fb3;
+    background-color: var(--bg-dark);
 }
 
 .title {
-    color: #991f17;
-    font-size: 6vh;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .list-studies {
-    width: 60%;
-    background: rgb(181 181 181 / 80%);
-    border-radius: 2rem;
-    padding: 1% 2%;
+    width: 58%;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    padding: 0.5rem 2.5rem;
 
     .item-study {
-        border-bottom-style: dashed;
-        border-bottom-color: #586dbd;
-        margin-bottom: 1rem;
+        border-bottom: 1px solid rgba(74, 158, 255, 0.2);
+        margin-bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1vh;
+        padding: 1.25rem 0;
 
         .details-item {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
 
-            span,
-            a {
+            span, a {
                 flex: 1 1 40%;
-                padding: 0.3vh 0;
-                font-size: 2.5vh;
+                padding: 0.2rem 0;
+                font-size: 0.92rem;
 
                 .wes-link {
-                    font-size: 1.5vh;
+                    font-size: 0.75rem;
+                    margin-left: 0.35rem;
                 }
             }
 
-            span {
-                color: #2f2f2f;
-            }
+            span { color: var(--card-text); }
 
             a {
                 text-decoration: none;
-                color: #3f5299;
+                color: var(--card-link);
+                transition: color var(--transition);
 
-                &:hover {
-                    color: #2955ff;
-                }
+                &:hover { color: var(--card-link-hover); }
             }
 
-            .bold {
-                font-weight: 500;
-            }
-
-            .left {
-                text-align: left;
-            }
-
-            .right {
-                text-align: right;
-            }
+            .bold { font-weight: 600; }
+            .left { text-align: left; }
+            .right { text-align: right; color: var(--card-text-muted); }
         }
     }
 
     .last {
-        border-bottom-style: none;
+        border-bottom: none;
         margin-bottom: 0;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    #studies {
-        padding: 6vh 0 6vh 0;
-    }
+    #studies { padding: 6vh 0 6vh 0; }
 
     .list-studies {
         width: 75%;
-        row-gap: 3rem;
-        padding: 4% 2%;
+        padding: 0.5rem 1.5rem;
 
         .item-study {
-            padding: 1rem 0;
-
             .details-item {
-
-                span,
-                a {
-                    padding: 0.2vh 0;
-                    font-size: 1.6vh;
-
-                    .wes-link {
-                        font-size: 1.2vh;
-                    }
+                span, a {
+                    font-size: 0.7rem;
+                    .wes-link { font-size: 0.6rem; }
                 }
             }
         }
@@ -110,23 +90,14 @@
 }
 
 @media only screen and (max-width: 768px) {
-    #studies {
-        padding: 8vh 0 8vh 0;
-    }
+    #studies { padding: 8vh 0 8vh 0; }
 
     .list-studies {
-
         .item-study {
             .details-item {
-
-                span,
-                a {
-                    padding: 0.1vh 0;
-                    font-size: 1.4vh;
-
-                    .wes-link {
-                        font-size: 1vh;
-                    }
+                span, a {
+                    font-size: 0.6rem;
+                    .wes-link { font-size: 0.55rem; }
                 }
             }
         }
@@ -134,7 +105,10 @@
 }
 
 @media only screen and (max-width: 472px) {
-    .title {
-        font-size: 4vh;
+    .title { font-size: 1.2rem; }
+
+    .list-studies {
+        width: 88%;
+        padding: 0.5rem 1rem;
     }
 }

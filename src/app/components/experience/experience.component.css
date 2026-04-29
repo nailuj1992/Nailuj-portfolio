@@ -6,71 +6,62 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 2rem;
-    background-color: #75a6ff;
+    background-color: var(--bg-medium);
 }
 
 .title {
-    color: #d72317;
-    font-size: 6vh;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .list-experiences {
-    width: 60%;
-    overflow: hidden;
+    width: 58%;
+    overflow: visible;
     position: relative;
     display: flex;
     justify-content: center;
     content-visibility: auto;
-    background: rgb(181 181 181 / 80%);
-    border-radius: 20px;
-    padding: 1% 2%;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem 3rem 3rem 3rem;
 
     .item-experience {
         margin-bottom: 1rem;
-        width: 90%;
-        height: 100%;
+        width: 92%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        row-gap: 0.5rem;
 
         .details-item {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
 
-            span,
-            a {
+            span, a {
                 flex: 1 1 40%;
-                padding: 0.3vh 0;
-                font-size: 2.5vh;
+                padding: 0.25rem 0;
+                font-size: 0.92rem;
             }
 
-            span {
-                color: #2f2f2f;
-            }
+            span { color: var(--card-text); }
 
             a {
                 text-decoration: none;
-                color: #3f5299;
+                color: var(--card-link);
+                transition: color var(--transition);
 
-                &:hover {
-                    color: #2955ff;
-                }
+                &:hover { color: var(--card-link-hover); }
             }
 
-            .bold {
-                font-weight: 500;
-            }
-
-            .left {
-                text-align: left;
-            }
-
-            .right {
-                text-align: right;
-            }
+            .bold { font-weight: 600; }
+            .left { text-align: left; }
+            .right { text-align: right; color: var(--card-text-muted); }
         }
 
         .technologies-item {
@@ -79,9 +70,14 @@
             justify-content: center;
 
             .tech-icon {
-                width: 3rem;
-                padding: 1rem;
+                width: 2.5rem;
+                padding: 0.7rem;
                 content-visibility: auto;
+                transition: transform var(--transition);
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
             }
         }
     }
@@ -90,45 +86,47 @@
     .previousButton {
         position: absolute;
         top: 50%;
-        border: 0px;
+        border: 0;
         background-color: transparent;
-        font-size: 30px;
-        color: #4f4f4f;
+        font-size: 1.2rem;
+        color: var(--card-text-muted);
         cursor: pointer;
+        transition: color var(--transition), transform var(--transition);
+
+        &:hover {
+            color: var(--accent);
+            transform: translateY(-50%) scale(1.15);
+        }
     }
 
-    .nextButton {
-        right: 3%;
-    }
-
-    .previousButton {
-        left: 3%;
-    }
+    .nextButton { right: 3%; }
+    .previousButton { left: 3%; }
 
     .indicators {
         position: absolute;
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         margin: auto;
-        bottom: 20px;
+        bottom: 14px;
         display: flex;
         flex-flow: wrap;
         justify-content: center;
-        row-gap: 0.5rem;
-        column-gap: 0.2rem;
+        row-gap: 0.4rem;
+        column-gap: 0.3rem;
 
         .indicator {
-            width: 20px;
-            height: 20px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            background-color: #bebebe;
+            background-color: #c0d0e0;
             display: inline-block;
-            margin: 0 2%;
+            margin: 0 3px;
             cursor: pointer;
-            transition: background-color 0.5s ease-in-out;
+            transition: background-color 0.3s ease, transform 0.2s ease;
 
             &.active {
-                background-color: #4f4f4f;
+                background-color: var(--accent);
+                transform: scale(1.4);
             }
         }
     }
@@ -137,158 +135,81 @@
 @media only screen and (max-width: 1400px) {
     .list-experiences {
         .item-experience {
-            .technologies-item {
-                .tech-icon {
-                    width: 2rem;
-                    padding: 0.7rem;
-                }
-            }
+            .technologies-item { .tech-icon { width: 2rem; padding: 0.6rem; } }
         }
-
-        .nextButton,
-        .previousButton {
-            font-size: 25px;
-        }
-
-        .indicators {
-            .indicator {
-                width: 15px;
-                height: 15px;
-            }
-        }
+        .nextButton, .previousButton { font-size: 1.1rem; }
+        .indicators { .indicator { width: 6px; height: 6px; } }
     }
 }
 
 @media only screen and (max-width: 1200px) {
     .list-experiences {
-        padding: 2% 2%;
-
-        .item-experience {
-            .technologies-item {
-                .tech-icon {
-                    width: 2rem;
-                    padding: 0.5rem;
-                }
-            }
-        }
-
-        .indicators {
-            .indicator {
-                margin: 0 3%;
-            }
-        }
+        padding: 1.5rem 2.5rem 3rem 2.5rem;
+        .indicators { .indicator { margin: 0 4px; } }
     }
 }
 
 @media only screen and (max-width: 992px) {
-    #experience {
-        padding: 6vh 0 6vh 0;
-    }
+    #experience { padding: 6vh 0 6vh 0; }
 
     .list-experiences {
         width: 75%;
-        padding: 3% 2%;
+        padding: 1.5rem 2.5rem 3rem 2.5rem;
 
         .item-experience {
-            padding: 1rem 0;
+            padding: 0.5rem 0;
 
             .details-item {
-
-                span,
-                a {
-                    padding: 0.2vh 0;
-                    font-size: 1.4vh;
+                span, a {
+                    flex: 1 1 45%;
+                    font-size: 0.7rem;
+                    text-align: center;
                 }
+
+                .right { text-align: center; }
+                .left  { text-align: center; }
             }
 
-            .technologies-item {
-                .tech-icon {
-                    width: 3rem;
-                    padding: 1rem;
-                }
-            }
+            .technologies-item { .tech-icon { width: 2.4rem; padding: 0.7rem; } }
         }
 
-        .nextButton {
-            right: 5%;
-        }
-
-        .previousButton {
-            left: 5%;
-        }
+        .nextButton { right: 5%; }
+        .previousButton { left: 5%; }
     }
 }
 
 @media only screen and (max-width: 768px) {
-    #experience {
-        padding: 8vh 0 8vh 0;
-    }
+    #experience { padding: 8vh 0 8vh 0; }
 
     .list-experiences {
-
         .item-experience {
             .details-item {
-
-                span,
-                a {
-                    padding: 0.1vh 0;
-                    font-size: 1.4vh;
-                }
+                span, a { font-size: 0.6rem; }
             }
 
-            .technologies-item {
-                .tech-icon {
-                    width: 2rem;
-                    padding: 0.5rem;
-                }
-            }
+            .technologies-item { .tech-icon { width: 2rem; padding: 0.5rem; } }
         }
 
-        .nextButton {
-            right: 2%;
-        }
-
-        .previousButton {
-            left: 2%;
-        }
+        .nextButton { right: 2%; }
+        .previousButton { left: 2%; }
 
         .indicators {
             width: 95%;
-            row-gap: 0.8rem;
-            column-gap: 0.1rem;
-
-            .indicator {
-                margin: 0 5%;
-                width: 9px;
-                height: 9px;
-            }
+            row-gap: 0.5rem;
+            .indicator { margin: 0 4px; width: 6px; height: 6px; }
         }
     }
 }
 
 @media only screen and (max-width: 472px) {
-    .title {
-        font-size: 4vh;
-    }
+    .title { font-size: 1.2rem; }
 
     .list-experiences {
         .item-experience {
-            .technologies-item {
-                .tech-icon {
-                    width: 1.5rem;
-                    padding: 0.4rem;
-                }
-            }
+            .technologies-item { .tech-icon { width: 1.5rem; padding: 0.4rem; } }
         }
 
-        .nextButton,
-        .previousButton {
-            top: 25%;
-        }
-
-        .indicators {
-            row-gap: 1rem;
-            column-gap: 1rem;
-        }
+        .nextButton, .previousButton { top: 25%; }
+        .indicators { row-gap: 0.5rem; column-gap: 0.3rem; }
     }
 }

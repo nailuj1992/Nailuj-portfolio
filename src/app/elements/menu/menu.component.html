@@ -6,16 +6,18 @@
         </a>
     </div>
     <div id="menu-items">
-        <a mat-button href="#" class="menu-item" routerLinkActive="active"
-            ariaCurrentWhenActive="page">{{getText("home-title")}}</a>
+        <a mat-button href="#home" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("home-title")}}</a>
         <a mat-button href="#about" class="menu-item" routerLinkActive="active"
-            ariaCurrentWhenActive="page">{{getText("about-me-title")}}</a>
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("about-me-title")}}</a>
         <a mat-button href="#portfolio" class="menu-item" routerLinkActive="active"
-            ariaCurrentWhenActive="page">{{getText("portfolio-title")}}</a>
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("portfolio-title")}}</a>
         <a mat-button href="#experience" class="menu-item" routerLinkActive="active"
-            ariaCurrentWhenActive="page">{{getText("experience-title")}}</a>
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("experience-title")}}</a>
+        <a mat-button href="#studies" class="menu-item" routerLinkActive="active"
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("studies-title")}}</a>
         <a mat-button href="#contact" class="menu-item" routerLinkActive="active"
-            ariaCurrentWhenActive="page">{{getText("contact-title")}}</a>
+            ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("contact-title")}}</a>
         <button class="menu-item" mat-button (click)="changeLanguage()">{{getText("language")}}</button>
     </div>
 </div>

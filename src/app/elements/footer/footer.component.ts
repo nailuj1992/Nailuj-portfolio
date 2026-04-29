@@ -13,5 +13,6 @@ import { environment } from '@environments/environment';
 export class FooterComponent {
 
   env = environment;
+  currentYear = new Date().getFullYear();
 
 }

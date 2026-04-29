@@ -5,7 +5,10 @@ export const environment = {
     variables: variables,
 
     mailto: 'juliangonzalezprieto@hotmail.com',
-    cellphone: '+57 310-810-6863',
+    personalLine: '+57 310-810-6863',
+    personalLineWhatsappLink: 'https://wa.me/573108106863',
+    corporativeLine: '+1 672-699-4543',
+    corporativeLineWhatsappLink: 'https://wa.me/16726994543',
 
     cvLinkEn: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto.pdf',
     cvLinkSp: 'https://yr9miya62rh0uzpt.public.blob.vercel-storage.com/cv/Resume%20Developer%20Julian%20Gonzalez%20Prieto%20ESP.pdf',

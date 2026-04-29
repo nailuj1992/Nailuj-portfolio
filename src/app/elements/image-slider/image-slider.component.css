@@ -4,7 +4,7 @@
 
     .slides {
         width: 100%;
-        height: 30vh;
+        height: 28vh;
         border-radius: 10px;
         overflow: hidden;
         position: relative;
@@ -12,55 +12,65 @@
         justify-content: center;
         align-items: center;
         content-visibility: auto;
+        background-color: #f0f4f8;
 
         .slide {
             max-width: 100%;
             max-height: 100%;
+            object-fit: contain;
         }
 
         .nextButton,
         .previousButton {
             position: absolute;
             top: 50%;
-            border: 0px;
-            background-color: transparent;
-            font-size: 30px;
-            color: #4f4f4f;
+            transform: translateY(-50%);
+            border: 0;
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #ffffff;
             cursor: pointer;
+            transition: background-color var(--transition);
+
+            &:hover {
+                background-color: rgba(74, 158, 255, 0.7);
+            }
         }
 
-        .nextButton {
-            right: 7%;
-        }
-
-        .previousButton {
-            left: 7%;
-        }
+        .nextButton  { right: 6%; }
+        .previousButton { left: 6%; }
 
         .indicators {
             position: absolute;
-            left: 0px;
-            right: 0px;
+            left: 0;
+            right: 0;
             margin: auto;
-            bottom: 20px;
+            bottom: 8px;
             display: flex;
             flex-flow: wrap;
             justify-content: center;
-            row-gap: 0.5rem;
-            column-gap: 0.2rem;
+            row-gap: 0.4rem;
+            column-gap: 0.3rem;
 
             .indicator {
-                width: 20px;
-                height: 20px;
+                width: 7px;
+                height: 7px;
                 border-radius: 50%;
-                background-color: #bebebe;
+                background-color: rgba(255, 255, 255, 0.5);
                 display: inline-block;
-                margin: 0 2%;
+                margin: 0 2px;
                 cursor: pointer;
-                transition: background-color 0.5s ease-in-out;
+                transition: background-color 0.3s ease, transform 0.2s ease;
 
                 &.active {
-                    background-color: #4f4f4f;
+                    background-color: #ffffff;
+                    transform: scale(1.4);
                 }
             }
         }
@@ -68,108 +78,55 @@
 }
 
 @media only screen and (max-width: 1400px) {
-
     :host {
         .slides {
-            height: 32vh;
+            height: 26vh;
 
-            .nextButton,
-            .previousButton {
-                font-size: 25px;
-            }
-
-            .indicators {
-                .indicator {
-                    width: 15px;
-                    height: 15px;
-                }
-            }
+            .nextButton, .previousButton { font-size: 0.8rem; }
         }
     }
-
 }
 
 @media only screen and (max-width: 1200px) {
-
     :host {
-        .slides {
-            height: 35vh;
-
-            .indicators {
-                .indicator {
-                    margin: 0 3%;
-                }
-            }
-        }
+        .slides { height: 28vh; }
     }
-
 }
 
 @media only screen and (max-width: 992px) {
-
     :host {
         .slides {
-            height: 25vh;
+            height: 22vh;
 
-            .nextButton,
-            .previousButton {
-                top: 35%;
-            }
-
-            .nextButton {
-                right: 5%;
-            }
-
-            .previousButton {
-                left: 5%;
-            }
+            .nextButton { right: 4%; }
+            .previousButton { left: 4%; }
         }
     }
-
 }
 
 @media only screen and (max-width: 768px) {
-
     :host {
         .slides {
-            height: 30vh;
+            height: 26vh;
 
-            .nextButton,
-            .previousButton {
-                top: 30%;
-            }
-
-            .nextButton {
-                right: 2%;
-            }
-
-            .previousButton {
-                left: 2%;
-            }
+            .nextButton { right: 3%; }
+            .previousButton { left: 3%; }
 
             .indicators {
-                width: 95%;
-                row-gap: 0.8rem;
-                column-gap: 0.1rem;
-
-                .indicator {
-                    margin: 0 5%;
-                    width: 8px;
-                    height: 8px;
-                }
+                bottom: 6px;
+                .indicator { width: 6px; height: 6px; }
             }
         }
     }
-
 }
 
 @media only screen and (max-width: 472px) {
     :host {
         .slides {
+            height: 20vh;
+
             .indicators {
-                width: 95%;
-                row-gap: 1rem;
-                column-gap: 1rem;
+                .indicator { width: 5px; height: 5px; }
             }
         }
     }

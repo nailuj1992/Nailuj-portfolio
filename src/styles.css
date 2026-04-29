@@ -1,4 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-darkest:    #060e1a;
+  --bg-dark:       #0a1628;
+  --bg-medium:     #0e1f3d;
+  --accent:        #4a9eff;
+  --accent-hover:  #70b3ff;
+  --red:           #e05252;
+  --red-hover:     #f07272;
+  --text-on-dark:  #c8ddf0;
+  --text-muted:    #6888a8;
+  --card-bg:       #ffffff;
+  --card-text:     #1e2d45;
+  --card-text-muted: #516070;
+  --card-link:     #1a6fd4;
+  --card-link-hover: #3a8af0;
+  --card-shadow:   0 4px 28px rgba(0, 0, 0, 0.4);
+  --radius-lg:     1rem;
+  --radius-sm:     0.5rem;
+  --transition:    0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8vh;
+  overflow-x: hidden;
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

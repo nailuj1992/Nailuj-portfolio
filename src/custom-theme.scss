@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$Nailuj-portfolio-primary: mat.define-palette(mat.$indigo-palette);
-$Nailuj-portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$Nailuj-portfolio-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
+$Nailuj-portfolio-accent: mat.define-palette(mat.$red-palette, 400, 200, 700);
 
 // The warn palette is optional (defaults to red).
 $Nailuj-portfolio-warn: mat.define-palette(mat.$red-palette);

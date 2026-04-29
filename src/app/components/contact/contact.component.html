@@ -6,9 +6,20 @@
             <img alt="envelope" src="assets/svg/envelope.svg" class="icon">
             <span>{{env.mailto}}</span>
         </a>
-        <div class="contact-cellphone">
+        <a class="contact-personal-line" [href]="env.personalLineWhatsappLink" target="_blank">
+            <i class="fa fa-whatsapp"></i>
             <img alt="col" src="assets/svg/colombia.svg" class="flag-icon">
-            <span>{{env.cellphone}}</span>
-        </div>
+            <span>{{env.personalLine}}</span>
+        </a>
+        <a class="contact-corporative-line" [href]="env.corporativeLineWhatsappLink" target="_blank">
+            <i class="fa fa-whatsapp"></i>
+            <img alt="ca" src="assets/svg/canada.svg" class="flag-icon">
+            <span>{{env.corporativeLine}} <span class="corporative-label"></span></span>
+        </a>
+    </div>
+    <div class="social-media">
+        <a class="fa fa-linkedin" [href]="env.linkedinUrl" target="_blank" [title]="getText('sm-my-linkedin')"></a>
+        <a class="fa fa-github" [href]="env.githubUrl" target="_blank" [title]="getText('sm-my-github')"></a>
+        <a class="fa fa-bitbucket" [href]="env.bitbucketUrl" target="_blank" [title]="getText('sm-my-bitbucket')"></a>
     </div>
 </div>

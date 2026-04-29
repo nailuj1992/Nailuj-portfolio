@@ -9,11 +9,13 @@
                 <span class="right">{{slides[currentSlide].place + (slides[currentSlide].isRemote ? " (" +
                     getText("remote") + ")" : "")}}</span>
             </div>
-            <div class="technologies-item" *ngIf="slides[currentSlide].technologies !== null">
+            @if(slides[currentSlide].technologies !== null) {
+            <div class="technologies-item">
                 @for(technology of slides[currentSlide].technologies; track $index) {
                 <img [alt]="technology" [src]="'assets/svg/' + technology + '.svg'" class="tech-icon">
                 }
             </div>
+            }
         </div>
 
         <div class="indicators">

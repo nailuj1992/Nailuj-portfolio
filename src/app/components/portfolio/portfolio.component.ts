@@ -1,16 +1,15 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT, CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '@environments/environment';
-import { getText } from '@model/dto/language';
+import { LanguageService } from '@services/language.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, MatButtonModule, ImageSliderComponent],
+  imports: [FontAwesomeModule, MatButtonModule, ImageSliderComponent],
   templateUrl: 'portfolio.component.html',
   styleUrl: 'portfolio.component.css'
 })
@@ -31,7 +30,7 @@ export class PortfolioComponent {
   faArrowLeft = faArrowLeft;
   hidden = false;
 
-  constructor(@Inject(DOCUMENT) readonly document: Document) {
+  constructor(private langService: LanguageService) {
     this.slidesLogicProject = [
       {
         url: 'assets/img/logic/img1.png',
@@ -176,12 +175,6 @@ export class PortfolioComponent {
     }, this.animationSpeed);
   }
 
-  getText(id: string) {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return getText(id, sessionStorage.getItem("lang"));
-    }
-    return null;
-  }
+  getText(id: string) { return this.langService.getText(id); }
 
 }
