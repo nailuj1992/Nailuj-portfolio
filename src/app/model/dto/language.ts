@@ -107,7 +107,7 @@ mapPhrases.set("study-3-title", new PhraseDto("Information Technology Diploma", 
 mapPhrases.set("study-3-duration", new PhraseDto("April 2023 - September 2023", "Abril 2023 - Septiembre 2023"));
 
 mapPhrases.set("study-2-title", new PhraseDto("Master’s degree in Artificial Intelligence", "Máster en Inteligencia Artificial"));
-mapPhrases.set("study-2-duration", new PhraseDto("April 2020 - July 2021", "April 2020 - July 2021"));
+mapPhrases.set("study-2-duration", new PhraseDto("April 2020 - July 2021", "Abril 2020 - Julio 2021"));
 
 mapPhrases.set("study-1-title", new PhraseDto("Bachelor’s degree in Systems engineering", "Grado en Ingeniería de Sistemas"));
 mapPhrases.set("study-1-duration", new PhraseDto("January 2010 - September 2017", "Enero 2010 - Septiembre 2017"));

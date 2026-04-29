@@ -4,106 +4,158 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #75a6ff;
+    background-color: var(--bg-medium);
     row-gap: 2rem;
 }
 
 .title {
-    color: #d72317;
-    font-size: 6vh;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .buttons-contact {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 4rem;
-    padding: 1vh 0;
+    column-gap: 2rem;
+    padding: 0.5rem 0;
 
     .contact-email,
-    .contact-cellphone {
-        padding: .6vh 1.5vh;
-        font-size: 2vh;
+    .contact-personal-line {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.92rem;
+        font-weight: 500;
         text-decoration: none;
-        border-radius: 1vh;
-        height: 4vh;
-
+        border-radius: 8px;
         display: flex;
-        column-gap: 1vh;
+        column-gap: 0.6rem;
         align-items: center;
         justify-content: center;
+        transition: all var(--transition);
     }
 
     .contact-email {
-        background-color: #991f17;
-        color: #b8cff5;
-        border: 2px solid #991f17;
+        background-color: var(--red);
+        color: #ffffff;
+        border: 2px solid var(--red);
 
         &:hover {
-            background-color: #ff1000;
-            border: 2px solid #ff1000;
-            color: white;
+            background-color: var(--red-hover);
+            border-color: var(--red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(224, 82, 82, 0.35);
         }
     }
 
-    .contact-cellphone {
-        color: #991f17;
-        background-color: #b8cff5;
-        border: 2px solid #991f17;
+    .contact-personal-line {
+        color: var(--accent);
+        background-color: transparent;
+        border: 2px solid var(--accent);
+
+        .fa-whatsapp {
+            font-size: 1.2rem;
+        }
 
         &:hover {
-            color: #ff1000;
-            border: 2px solid #ff1000;
-            background-color: white;
+            background-color: rgba(74, 158, 255, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 158, 255, 0.2);
         }
     }
 
-    .flag-icon,
+    .contact-corporative-line {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.92rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 8px;
+        display: flex;
+        column-gap: 0.6rem;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition);
+        color: #ffffff;
+        background-color: #25d366;
+        border: 2px solid #25d366;
+
+        .fa-whatsapp {
+            font-size: 1.2rem;
+        }
+
+        .corporative-label {
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+
+        &:hover {
+            background-color: #1ebe5a;
+            border-color: #1ebe5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+        }
+    }
+
+    .flag-icon {
+        width: 1.4rem;
+    }
+
     .icon {
-        width: 3.5vh;
+        width: 1.4rem;
+        filter: brightness(0) invert(1);
+    }
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2.2rem;
+    font-size: 1.6rem;
+
+    .fa-linkedin,
+    .fa-github,
+    .fa-bitbucket {
+        color: var(--text-on-dark);
+        text-decoration: none;
+        transition: color var(--transition), transform var(--transition);
+
+        &:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
     }
 }
 
 @media only screen and (max-width: 992px) {
-    #contact {
-        padding: 5vh 0 5vh 0;
-    }
+    #contact { padding: 5vh 0 5vh 0; }
 
     .buttons-contact {
         flex-direction: column;
-        row-gap: 3rem;
-        padding: 2vh 0;
-
-        .flag-icon,
-        .icon {
-            width: 2.5vh;
-        }
+        row-gap: 1.2rem;
+        padding: 0.5rem 0;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    #contact {
-        row-gap: 1rem;
-    }
+    #contact { row-gap: 1.5rem; }
 
     .buttons-contact {
-        row-gap: 1.5rem;
-        padding: 1vh 0;
+        row-gap: 1rem;
     }
 }
 
 @media only screen and (max-width: 472px) {
-    .title {
-        font-size: 4vh;
-    }
+    .title { font-size: 1.2rem; }
 
     .buttons-contact {
-
         .contact-email,
-        .contact-cellphone {
-            font-size: 1.6vh;
+        .contact-personal-line,
+        .contact-corporative-line {
+            font-size: 0.6rem;
         }
     }
 }

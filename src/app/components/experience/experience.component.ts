@@ -1,15 +1,24 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT, CommonModule } from '@angular/common';
-import { getText } from '@model/dto/language';
+import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LanguageService } from '@services/language.service';
+
+interface ExperienceSlide {
+  title: string;
+  duration: string;
+  link: string;
+  nameLink: string;
+  place: string;
+  isRemote: boolean;
+  technologies: string[];
+}
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, MatButtonModule],
+  imports: [FontAwesomeModule, MatButtonModule],
   templateUrl: 'experience.component.html',
   styleUrl: 'experience.component.css'
 })
@@ -17,7 +26,7 @@ export class ExperienceComponent {
 
   env = environment;
 
-  slides: any[];
+  slides: ExperienceSlide[];
   animationSpeed = 300;
 
   currentSlide = 0;
@@ -25,7 +34,7 @@ export class ExperienceComponent {
   faArrowLeft = faArrowLeft;
   hidden = false;
 
-  constructor(@Inject(DOCUMENT) readonly document: Document) {
+  constructor(private langService: LanguageService) {
     this.slides = [
       {
         title: "experience-8-job",
@@ -34,7 +43,7 @@ export class ExperienceComponent {
         nameLink: "LinkTIC S.A.S",
         place: "Bogotá D.C, Colombia",
         isRemote: false,
-        technologies: ["java", "typescript", "html", "css", "angular", "git", "maven", "sql-server", "powerbi"]
+        technologies: ["java", "typescript", "html", "css", "springboot", "angular", "restful", "git", "maven", "postgresql", "sql-server", "keycloak", "powerbi"]
       },
       {
         title: "experience-7-job",
@@ -120,12 +129,6 @@ export class ExperienceComponent {
     }, this.animationSpeed);
   }
 
-  getText(id: string) {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return getText(id, sessionStorage.getItem("lang"));
-    }
-    return null;
-  }
+  getText(id: string) { return this.langService.getText(id); }
 
 }

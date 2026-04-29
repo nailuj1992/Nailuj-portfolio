@@ -2,8 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { environment } from '@environments/environment';
-import { getText, enUS, esES } from '@model/dto/language';
+import { LanguageService } from '@services/language.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,62 +13,24 @@ import { getText, enUS, esES } from '@model/dto/language';
 })
 export class MenuComponent {
 
-  env = environment;
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    private langService: LanguageService
+  ) { }
 
-  constructor(@Inject(DOCUMENT) readonly document: Document) { }
-
-  getText(id: string) {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return getText(id, sessionStorage.getItem("lang"));
-    }
-    return null;
-  }
-
-  isInEnglish(): boolean {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return sessionStorage.getItem("lang") === enUS;
-    }
-    return false;
-  }
-
-  isInSpanish(): boolean {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return sessionStorage.getItem("lang") === esES;
-    }
-    return false;
-  }
-
-  changeLanguage(): void {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      const lang = sessionStorage.getItem("lang");
-      if (lang === null) {
-        sessionStorage.setItem('lang', this.env.variables.defaultLang);
-        return;
-      }
-      switch (lang) {
-        case enUS:
-          sessionStorage.setItem('lang', esES);
-          break;
-        case esES:
-          sessionStorage.setItem('lang', enUS);
-          break;
-      }
-    }
-  }
+  getText(id: string) { return this.langService.getText(id); }
+  changeLanguage(): void { this.langService.changeLanguage(); }
 
   hamburgerMenu(): void {
-    let x = this.document.getElementById("menu-items");
-    if (!x) {
-      return;
-    }
-    if (x.style.display === "flex") {
+    const x = this.document.getElementById("menu-items");
+    if (!x) return;
+    x.style.display = x.style.display === "flex" ? "none" : "flex";
+  }
+
+  closeMenuIfMobile(): void {
+    const x = this.document.getElementById("menu-items");
+    if (x?.style.display === "flex") {
       x.style.display = "none";
-    } else {
-      x.style.display = "flex";
     }
   }
 

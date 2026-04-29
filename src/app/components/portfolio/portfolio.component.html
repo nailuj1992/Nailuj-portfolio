@@ -104,15 +104,19 @@
                 <div class="title">{{getText(slidesOthers[currentSlide].title)}}</div>
                 <div class="description">
                     {{getText(slidesOthers[currentSlide].description)}}</div>
-                <div class="technologies-item" *ngIf="slidesOthers[currentSlide].technologies !== null">
+                @if(slidesOthers[currentSlide].technologies !== null) {
+                <div class="technologies-item">
                     @for(technology of slidesOthers[currentSlide].technologies; track $index) {
                     <img [alt]="technology" [src]="'assets/svg/' + technology + '.svg'" class="tech-icon">
                     }
                 </div>
-                <div class="button" *ngIf="slidesOthers[currentSlide].url !== null">
+                }
+                @if(slidesOthers[currentSlide].url !== null) {
+                <div class="button">
                     <a mat-flat-button color="primary" class="link" href="{{slidesOthers[currentSlide].url}}"
                         target="_blank">{{getText("link-project")}}</a>
                 </div>
+                }
             </div>
 
             <div class="indicators">

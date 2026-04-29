@@ -1,7 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { getText } from '@model/dto/language';
+import { Component } from '@angular/core';
 import { environment } from '@environments/environment';
+import { LanguageService } from '@services/language.service';
 
 @Component({
   selector: 'app-studies',
@@ -14,14 +13,8 @@ export class StudiesComponent {
 
   env = environment;
 
-  constructor(@Inject(DOCUMENT) readonly document: Document) { }
+  constructor(private langService: LanguageService) { }
 
-  getText(id: string) {
-    const sessionStorage = this.document.defaultView?.sessionStorage;
-    if (sessionStorage) {
-      return getText(id, sessionStorage.getItem("lang"));
-    }
-    return null;
-  }
+  getText(id: string) { return this.langService.getText(id); }
 
 }
