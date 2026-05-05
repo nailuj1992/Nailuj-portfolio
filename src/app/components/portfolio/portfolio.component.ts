@@ -49,9 +49,12 @@ export class PortfolioComponent {
 
     this.slidesMusicPlayer = [
       {
-        url: 'assets/img/calculator/img1.png',
-        title: 'Music player'
-      }
+        url: 'assets/img/music-player/Screenshot 2026-05-05 161249.png',
+        title: 'Basic Music Player'
+      }, {
+        url: 'assets/img/music-player/Screenshot 2026-05-05 161239.png',
+        title: 'Basic Music Player'
+      },
     ];
 
     this.slidesPrayersProject = [

@@ -17,7 +17,7 @@ export const environment = {
     bitbucketUrl: 'https://bitbucket.org/pegasus1992/',
 
     repoEciLogicUrl: 'https://github.com/nailuj1992/ECI-Logic',
-    repoMusicPlayerUrl: 'https://github.com/nailuj1992/ReproductorMusica',
+    repoMusicPlayerUrl: 'https://github.com/nailuj1992/BasicMusicPlayer',
     repoCatholicPrayersUrl: 'https://github.com/nailuj1992/OracionesCatolicas',
     repoPortfolioUrl: 'https://github.com/nailuj1992/Nailuj-portfolio',
     repoBasic2dGame: 'https://github.com/nailuj1992/Basic-2D-Game',
