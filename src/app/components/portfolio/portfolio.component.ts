@@ -59,34 +59,31 @@ export class PortfolioComponent {
 
     this.slidesPrayersProject = [
       {
-        url: 'assets/img/prayers/img1.jpg',
+        url: 'assets/img/prayers/img1.jpeg',
         title: 'Home'
       }, {
-        url: 'assets/img/prayers/img2.jpg',
+        url: 'assets/img/prayers/img2.jpeg',
         title: 'Special prayers'
       }, {
-        url: 'assets/img/prayers/img3.jpg',
-        title: 'Holy Rosary'
-      }, {
-        url: 'assets/img/prayers/img4.jpg',
+        url: 'assets/img/prayers/img3.jpeg',
         title: 'Mysteries of the day - Holy Rosary'
       }, {
-        url: 'assets/img/prayers/img5.jpg',
+        url: 'assets/img/prayers/img4.jpeg',
         title: 'Hail Mary - Holy Rosary'
       }, {
-        url: 'assets/img/prayers/img6.jpg',
+        url: 'assets/img/prayers/img5.jpeg',
         title: 'Christmas Novena days'
       }, {
-        url: 'assets/img/prayers/img7.jpg',
-        title: 'Consideration for the day - Christmas Novena'
-      }, {
-        url: 'assets/img/prayers/img8.jpg',
+        url: 'assets/img/prayers/img6.jpeg',
         title: 'Joys for all days - Christmas Novena'
       }, {
-        url: 'assets/img/prayers/img9.jpg',
+        url: 'assets/img/prayers/img7.jpeg',
         title: 'Simple prayers'
       }, {
-        url: 'assets/img/prayers/img10.jpg',
+        url: 'assets/img/prayers/img8.jpeg',
+        title: 'Simple prayers - Magnificat'
+      }, {
+        url: 'assets/img/prayers/img9.jpeg',
         title: 'Settings: Language selector (Spanish and English)'
       }
     ];
