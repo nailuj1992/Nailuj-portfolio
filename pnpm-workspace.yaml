@@ -8,3 +8,4 @@ allowBuilds:
   '@fortawesome/free-solid-svg-icons': true
   '@vercel/speed-insights': true
   esbuild: true
+  nice-napi: false
