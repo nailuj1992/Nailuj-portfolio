@@ -1,6 +1,8 @@
 <div class="slides">
-    <img class="slide" alt="" [src]="slides[currentSlide].url"
+    @if(slides.length) {
+    <img class="slide" [alt]="slides[currentSlide].title ?? ''" [src]="slides[currentSlide].url"
         [style]="{opacity: hidden ? 0 : 1, transition: 'opacity ' + animationSpeed + 'ms ease-in-out'}">
+    }
 
     @if(indicatorsVisible) {
     <div class="indicators">

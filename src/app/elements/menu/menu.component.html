@@ -5,7 +5,7 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <div id="menu-items">
+    <div id="menu-items" [class.open]="menuOpen()">
         <a mat-button href="#home" class="menu-item" routerLinkActive="active"
             ariaCurrentWhenActive="page" (click)="closeMenuIfMobile()">{{getText("home-title")}}</a>
         <a mat-button href="#about" class="menu-item" routerLinkActive="active"

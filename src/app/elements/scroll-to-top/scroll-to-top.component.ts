@@ -4,6 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
+/** Scroll distance (px) after which the button becomes visible. */
+const SHOW_AFTER_PX = 100;
+
 @Component({
   selector: 'app-scroll-to-top',
   standalone: true,
@@ -21,22 +24,17 @@ export class ScrollToTopComponent {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    if (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-      this.windowScrolled = true;
-    }
-    else if (this.windowScrolled && window.scrollY || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-      this.windowScrolled = false;
-    }
+    this.windowScrolled = this.currentScroll() > SHOW_AFTER_PX;
   }
 
   scrollToTop() {
-    (function smoothscroll() {
-      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 8));
-      }
-    })();
+    this.document.defaultView?.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  private currentScroll(): number {
+    return this.document.defaultView?.scrollY
+      ?? this.document.documentElement.scrollTop
+      ?? 0;
   }
 
 }

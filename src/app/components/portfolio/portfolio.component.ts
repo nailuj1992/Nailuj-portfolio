@@ -136,7 +136,7 @@ export class PortfolioComponent {
       }, {
         title: "title-lcd-pin",
         description: "description-lcd-pin",
-        technologies: ["php", "javascript", "html", "css", "git", "xampp", "mysql"],
+        technologies: ["java", "git", "mysql"],
         url: this.env.repoLcdPinUrl
       }, {
         title: "title-lcd-questions",
