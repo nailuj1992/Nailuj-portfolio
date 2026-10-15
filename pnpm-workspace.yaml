@@ -9,6 +9,7 @@ allowBuilds:
   '@fortawesome/free-regular-svg-icons': true
   '@fortawesome/free-solid-svg-icons': true
   '@vercel/speed-insights': true
+  '@parcel/watcher': false
   esbuild: true
   lmdb: false
   msgpackr-extract: false
