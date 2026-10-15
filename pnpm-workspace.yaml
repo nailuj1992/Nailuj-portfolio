@@ -9,5 +9,58 @@ allowBuilds:
   '@fortawesome/free-regular-svg-icons': true
   '@fortawesome/free-solid-svg-icons': true
   '@vercel/speed-insights': true
+  '@parcel/watcher': false
   esbuild: true
+  lmdb: false
+  msgpackr-extract: false
   nice-napi: false
+minimumReleaseAgeExclude:
+  - follow-redirects@1.15.12
+  - ws@8.20.1
+  - uuid@11.1.1
+  - qs@6.15.2
+  - tmp@0.2.6
+  - esbuild@0.28.1
+  - js-yaml@4.1.2
+  - ws@8.21.0
+  - websocket-driver@0.7.5
+  - '@babel/core@7.29.1'
+  - brace-expansion@1.1.16
+  - js-yaml@4.3.0
+  - body-parser@1.20.6
+  - fast-uri@3.1.4
+  - brace-expansion@1.1.17
+  - postcss@8.5.23
+  - socket.io-parser@4.2.7
+  - fast-uri@3.1.5
+  - ip-address@10.3.1
+  - ip-address@10.2.2
+  - ip-address@10.2.1
+  - brace-expansion@1.1.18
+  - js-yaml@4.3.1
+  - nanoid@3.3.16
+  - nanoid@3.3.18
+  - postcss@8.5.18
+  - postcss-selector-parser@7.1.3
+  - browserslist@4.28.7
+  - qs@6.15.4
+  - qs@6.16.0
+  - fast-uri@3.1.6
+  - baseline-browser-mapping@2.11.0
+  - js-yaml@4.3.2
+  - fast-uri@3.1.3
+  - fast-uri@3.1.7
+  - ip-address@10.5.1
+  - webpack-dev-middleware@7.4.5
+  - fast-uri@3.1.8
+  - ip-address@10.7.1
+  - brace-expansion@1.1.21
+  - brace-expansion@1.1.20
+  - brace-expansion@1.1.19
+  - engine.io@6.6.10
+  - http-cache-semantics@4.2.1
+  - source-map-js@1.2.2
+  - compression@1.8.2
+  - postcss-selector-parser@7.1.6
+overrides:
+  ws@<8.21.0: ^8.21.0
