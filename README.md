@@ -130,6 +130,7 @@ The development server opens at `http://localhost:4200/` with Spanish as the def
 | `pnpm dev` | Start the Angular dev server and open the browser |
 | `pnpm build` | Production build with prerendering (output in `dist/nailuj-portfolio`) |
 | `pnpm preview` | Build, then serve the static output with Express (`server.js`) |
+| `pnpm serve:ssr` | Run the SSR server (`server.ts`) from the build output |
 | `pnpm test` | Run unit tests with Karma |
 
 ## Deployment

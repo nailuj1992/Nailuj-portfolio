@@ -5,6 +5,7 @@ import { ImageSliderComponent } from '@elements/image-slider/image-slider.compon
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '@environments/environment';
 import { LanguageService } from '@services/language.service';
+import { SlideNavigation } from '@elements/slide-navigation';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,7 +14,7 @@ import { LanguageService } from '@services/language.service';
   templateUrl: 'portfolio.component.html',
   styleUrl: 'portfolio.component.css'
 })
-export class PortfolioComponent {
+export class PortfolioComponent extends SlideNavigation {
 
   env = environment;
 
@@ -25,12 +26,13 @@ export class PortfolioComponent {
   slidesOthers: any[];
   animationSpeed = 300;
 
-  currentSlide = 0;
   faArrowRight = faArrowRight;
   faArrowLeft = faArrowLeft;
-  hidden = false;
+
+  protected get slideCount(): number { return this.slidesOthers.length; }
 
   constructor(private langService: LanguageService) {
+    super();
     this.slidesLogicProject = [
       {
         url: 'assets/img/logic/img1.png',
@@ -49,10 +51,10 @@ export class PortfolioComponent {
 
     this.slidesMusicPlayer = [
       {
-        url: 'assets/img/music-player/Screenshot 2026-05-05 161249.png',
+        url: 'assets/img/music-player/img1.png',
         title: 'Basic Music Player'
       }, {
-        url: 'assets/img/music-player/Screenshot 2026-05-05 161239.png',
+        url: 'assets/img/music-player/img2.png',
         title: 'Basic Music Player'
       },
     ];
@@ -157,23 +159,6 @@ export class PortfolioComponent {
     ];
   }
 
-  next() {
-    let currentSlide = (this.currentSlide + 1) % this.slidesOthers.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  previous() {
-    let currentSlide = (this.currentSlide - 1 + this.slidesOthers.length) % this.slidesOthers.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  jumpToSlide(index: number) {
-    this.hidden = true;
-    setTimeout(() => {
-      this.currentSlide = index;
-      this.hidden = false;
-    }, this.animationSpeed);
-  }
 
   getText(id: string) { return this.langService.getText(id); }
 
