@@ -10,4 +10,6 @@ allowBuilds:
   '@fortawesome/free-solid-svg-icons': true
   '@vercel/speed-insights': true
   esbuild: true
+  lmdb: false
+  msgpackr-extract: false
   nice-napi: false
