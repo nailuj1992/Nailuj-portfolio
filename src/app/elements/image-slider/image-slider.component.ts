@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { SlideNavigation } from '@elements/slide-navigation';
 
 @Component({
   selector: 'app-image-slider',
@@ -10,7 +11,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   templateUrl: 'image-slider.component.html',
   styleUrl: 'image-slider.component.css'
 })
-export class ImageSliderComponent {
+export class ImageSliderComponent extends SlideNavigation {
 
   @Input() slides: any[] = [];
   @Input() indicatorsVisible = true;
@@ -18,27 +19,9 @@ export class ImageSliderComponent {
   @Input() autoPlay = false;
   @Input() autoPlaySpeed = 3000;
 
-  currentSlide = 0;
   faArrowRight = faArrowRight;
   faArrowLeft = faArrowLeft;
-  hidden = false;
 
-  next() {
-    let currentSlide = (this.currentSlide + 1) % this.slides.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  previous() {
-    let currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  jumpToSlide(index: number) {
-    this.hidden = true;
-    setTimeout(() => {
-      this.currentSlide = index;
-      this.hidden = false;
-    }, this.animationSpeed);
-  }
+  protected get slideCount(): number { return this.slides.length; }
 
 }

@@ -8,9 +8,7 @@
     "preview": "ng build && node server.js",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "serve:ssr": "node dist/ng_ssr_esm/server.mjs"
+    "serve:ssr": "node dist/nailuj-portfolio/server/server.mjs"
   },
   "private": true,
   "dependencies": {

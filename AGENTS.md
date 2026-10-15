@@ -20,7 +20,7 @@ Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián G
 - **SSR + prerender** through `@angular/ssr` (`angular.json` → `prerender: true`, `ssr.entry: server.ts`) with client hydration (`provideClientHydration`).
 - **Angular Material 20** (theme in `src/custom-theme.scss`), **Font Awesome** (`@fortawesome/angular-fontawesome` for icons in templates; the 4.7 CSS from the CDN in `index.html` powers the `fa fa-*` classes in the home and menu), plain per-component CSS.
 - **Vercel Analytics + Speed Insights** (injected in `AppComponent`).
-- **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `pnpm-workspace.yaml` sets `nodeLinker: hoisted` and `autoInstallPeers: true` (pnpm 11 ignores these in `.npmrc`). Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
+- **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `pnpm-workspace.yaml` sets `nodeLinker: hoisted` and `autoInstallPeers: true` (pnpm 11 ignores these in `.npmrc`, which this repo no longer has). Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
 - Node **24.x** (`engines` in `package.json`).
 
 ## Hard constraints — do not violate
@@ -57,7 +57,7 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 - **One page, one route.** `HomeComponent` stacks every section; the menu navigates with in-page anchors (`href="#about"`), not router links. A new section = a new component under `components/`, added to `home.component.html`, plus a menu entry in `menu.component.html` and its title key in the dictionary.
 - **Content is data, not markup.** Jobs (`ExperienceComponent.slides`), projects (`PortfolioComponent.slidesOthers`, screenshot arrays) and URLs (`environment.ts`) are plain TS data; templates only render them. To add a job or project, edit the data and the dictionary, not the HTML.
 - **Technology icons by naming convention.** A technology is referenced by key (`"angular"`, `"springboot"`, …) and rendered from `assets/svg/<key>.svg`. A new technology needs the SVG file with exactly that name; a missing file shows a broken image.
-- **Slider logic is copy-pasted** (`next` / `previous` / `jumpToSlide` with the `hidden` + `setTimeout` fade) in `ExperienceComponent`, `PortfolioComponent` and `ImageSliderComponent`. If you touch one, keep the three consistent, or better, extract the shared behavior instead of adding a fourth copy.
+- **Slide navigation is shared.** `elements/slide-navigation.ts` (`SlideNavigation`: `next` / `previous` / `jumpToSlide` with the `hidden` + `setTimeout` fade) is the base class of `ExperienceComponent`, `PortfolioComponent` and `ImageSliderComponent`. A component that needs a slider extends it and provides `animationSpeed` and `slideCount`; don't copy the logic again.
 
 ## Internationalization (i18n)
 
@@ -71,8 +71,8 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 - New components: `standalone: true`, `templateUrl` + `styleUrl` in their own folder (`name.component.ts/.html/.css/.spec.ts`), selector prefix `app-`, class `NameComponent`. Match the existing files: components expose `env = environment` and a `getText(id)` wrapper when the template needs them.
 - Inject through the constructor like the existing code (or `inject()` consistently within a file); don't mix styles inside one class.
 - Reusable pieces go in `elements/`, page sections in `components/`.
-- Styling is per-component CSS plus global `src/styles.css` and the Material theme in `src/custom-theme.scss`. Don't introduce another UI/CSS framework. `ngx-bootstrap` is installed but **unused** — don't start using it.
-- Images: use web formats, no spaces in new file names, and keep `.psd`/source files out of `src/assets` (they are copied to the deployed site).
+- Styling is per-component CSS plus global `src/styles.css` and the Material theme in `src/custom-theme.scss`. Don't introduce another UI/CSS framework.
+- Images: use web formats and no spaces in file names. Everything under `src/assets` is copied to the deployed site, so design sources (`.psd`, etc.) live in `design/`, outside the build.
 - Don't commit secrets. The phone numbers, email and links in `environment.ts` are intentionally public contact data; nothing else sensitive should be added there.
 
 ## Testing
@@ -88,11 +88,10 @@ pnpm dev            # ng serve --open, http://localhost:4200 (development config
 pnpm build          # production build: browser + server bundles + prerendered routes in dist/nailuj-portfolio
 pnpm preview        # ng build, then serve dist/…/browser with server.js on http://localhost:8080
 pnpm test           # Karma + Jasmine
-pnpm lint           # ng lint (no linter is configured yet — it asks to add one)
 ```
 
 - `pnpm start` runs `node server.js` and requires a previous build.
-- `serve:ssr` points to `dist/ng_ssr_esm/server.mjs`, which does not match the real output (`dist/nailuj-portfolio/server/server.mjs`); don't rely on it until it is fixed.
+- `pnpm serve:ssr` runs the SSR server from the build output (`dist/nailuj-portfolio/server/server.mjs`, port 4000). `server.ts` only starts listening when it is the entry point (`isMainModule`) and passes `ALLOWED_HOSTS` to `CommonEngine` as `allowedHosts`; without it Angular falls back to client-side rendering.
 - `dist/` and `.angular/cache` are build output: never edit or commit them.
 
 ## Deployment (Vercel)
@@ -102,7 +101,8 @@ pnpm lint           # ng lint (no linter is configured yet — it asks to add on
 ## Known issues (don't "discover" them again, and don't hide them)
 
 - `pnpm audit` reports one dev-only finding (`braces`, through karma) with no patched release published yet.
-- Slider logic is duplicated in three components (see Architecture notes).
+- There is no linter configured (`ng lint` has no target). Adding `angular-eslint` would be a reasonable next step.
+- `logo.jpg` and `nailuj-happy.png` in `src/assets/img` are not referenced anywhere.
 
 If you fix one of these, remove it from this list in the same change.
 

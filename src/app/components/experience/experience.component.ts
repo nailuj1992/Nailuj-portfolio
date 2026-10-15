@@ -4,6 +4,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LanguageService } from '@services/language.service';
+import { SlideNavigation } from '@elements/slide-navigation';
 
 interface ExperienceSlide {
   title: string;
@@ -22,19 +23,20 @@ interface ExperienceSlide {
   templateUrl: 'experience.component.html',
   styleUrl: 'experience.component.css'
 })
-export class ExperienceComponent {
+export class ExperienceComponent extends SlideNavigation {
 
   env = environment;
 
   slides: ExperienceSlide[];
   animationSpeed = 300;
 
-  currentSlide = 0;
   faArrowRight = faArrowRight;
   faArrowLeft = faArrowLeft;
-  hidden = false;
+
+  protected get slideCount(): number { return this.slides.length; }
 
   constructor(private langService: LanguageService) {
+    super();
     this.slides = [
       {
         title: "experience-8-job",
@@ -109,24 +111,6 @@ export class ExperienceComponent {
         technologies: ["php", "javascript", "html", "css", "xampp", "mysql"]
       }
     ];
-  }
-
-  next() {
-    let currentSlide = (this.currentSlide + 1) % this.slides.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  previous() {
-    let currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-    this.jumpToSlide(currentSlide);
-  }
-
-  jumpToSlide(index: number) {
-    this.hidden = true;
-    setTimeout(() => {
-      this.currentSlide = index;
-      this.hidden = false;
-    }, this.animationSpeed);
   }
 
   getText(id: string) { return this.langService.getText(id); }
