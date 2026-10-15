@@ -20,13 +20,13 @@ Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián G
 - **SSR + prerender** through `@angular/ssr` (`angular.json` → `prerender: true`, `ssr.entry: server.ts`) with client hydration (`provideClientHydration`).
 - **Angular Material 17** (theme in `src/custom-theme.scss`), **Font Awesome** (`@fortawesome/angular-fontawesome` for icons in templates; the 4.7 CSS from the CDN in `index.html` powers the `fa fa-*` classes in the home and menu), plain per-component CSS.
 - **Vercel Analytics + Speed Insights** (injected in `AppComponent`).
-- **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `.npmrc` sets `node-linker=hoisted` and `auto-install-peers=true`. Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
+- **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `pnpm-workspace.yaml` sets `nodeLinker: hoisted` and `autoInstallPeers: true` (pnpm 11 ignores these in `.npmrc`). Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
 - Node **24.x** (`engines` in `package.json`).
 
 ## Hard constraints — do not violate
 
 - **pnpm only.** Do not generate or commit a `package-lock.json` or `yarn.lock` (`package-lock.json` is git-ignored).
-- **Keep the `.npmrc` `node-linker=hoisted`.** Angular Material SCSS resolution and the Vercel build broke without it (see git history: "Fix pnpm node_modules structure and Vercel build"). Don't remove it or `vercel.json`'s `installCommand` without testing a Vercel build.
+- **Keep `nodeLinker: hoisted` in `pnpm-workspace.yaml`.** pnpm 11 reads its settings from there and ignores `node-linker` in `.npmrc`; without it Angular Material SCSS fails with `The "path" argument must be of type string` (`@use '@material/typography'`). Test any change to it with a clean `pnpm install` + `pnpm build`.
 - **Code that runs during SSR/prerender must not touch browser globals unguarded.** `window`, `document`, `localStorage`, `sessionStorage` do not exist on the server. Inject `DOCUMENT` and use `document.defaultView?.…` (see `LanguageService`, `AppComponent`), or guard with `isPlatformBrowser`. A crash here breaks `ng build` (prerender) and therefore the deploy.
 - **Keep the host-header validation in `server.ts`** (`sanitizeHeaders`, `ALLOWED_HOSTS`) and the URL sanitizer in `server.js`: they are security fixes for SSR/SSRF advisories. If a new production domain is added, set `ALLOWED_HOST` rather than weakening the check.
 - **Don't bump Angular major/minor versions piecemeal.** `@angular/*`, `@angular-devkit/build-angular` and `@angular/ssr` move together (`ng update`), otherwise the build breaks.
