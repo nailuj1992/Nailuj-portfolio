@@ -4,7 +4,7 @@ Spec for agents/LLMs working on this repo. Read before proposing changes.
 
 ## Project identity
 
-Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián González Prieto, deployed on Vercel at https://nailuj-portfolio.vercel.app/. Angular 17 with SSR + build-time prerendering. There is no backend and no database: all content lives in the source.
+Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián González Prieto, deployed on Vercel at https://nailuj-portfolio.vercel.app/. Angular 20 with SSR + build-time prerendering. There is no backend and no database: all content lives in the source.
 
 ## Git workflow — mandatory
 
@@ -15,10 +15,10 @@ Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián G
 
 ## Stack
 
-- **Angular 17.3** with **standalone components** — no `NgModule`s in new code. Bootstrapped with `bootstrapApplication` (`src/main.ts`, `src/main.server.ts`).
-- **TypeScript 5.3**, strict mode (`strict`, `strictTemplates`, `noImplicitReturns`, `noPropertyAccessFromIndexSignature`). Single quotes in `.ts` and 2-space indent (`.editorconfig`).
+- **Angular 20.3** with **standalone components** — no `NgModule`s in new code. Bootstrapped with `bootstrapApplication` (`src/main.ts`, `src/main.server.ts`).
+- **TypeScript 5.8**, strict mode (`strict`, `strictTemplates`, `noImplicitReturns`, `noPropertyAccessFromIndexSignature`). Single quotes in `.ts` and 2-space indent (`.editorconfig`).
 - **SSR + prerender** through `@angular/ssr` (`angular.json` → `prerender: true`, `ssr.entry: server.ts`) with client hydration (`provideClientHydration`).
-- **Angular Material 17** (theme in `src/custom-theme.scss`), **Font Awesome** (`@fortawesome/angular-fontawesome` for icons in templates; the 4.7 CSS from the CDN in `index.html` powers the `fa fa-*` classes in the home and menu), plain per-component CSS.
+- **Angular Material 20** (theme in `src/custom-theme.scss`), **Font Awesome** (`@fortawesome/angular-fontawesome` for icons in templates; the 4.7 CSS from the CDN in `index.html` powers the `fa fa-*` classes in the home and menu), plain per-component CSS.
 - **Vercel Analytics + Speed Insights** (injected in `AppComponent`).
 - **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `pnpm-workspace.yaml` sets `nodeLinker: hoisted` and `autoInstallPeers: true` (pnpm 11 ignores these in `.npmrc`). Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
 - Node **24.x** (`engines` in `package.json`).
@@ -29,7 +29,7 @@ Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián G
 - **Keep `nodeLinker: hoisted` in `pnpm-workspace.yaml`.** pnpm 11 reads its settings from there and ignores `node-linker` in `.npmrc`; without it Angular Material SCSS fails with `The "path" argument must be of type string` (`@use '@material/typography'`). Test any change to it with a clean `pnpm install` + `pnpm build`.
 - **Code that runs during SSR/prerender must not touch browser globals unguarded.** `window`, `document`, `localStorage`, `sessionStorage` do not exist on the server. Inject `DOCUMENT` and use `document.defaultView?.…` (see `LanguageService`, `AppComponent`), or guard with `isPlatformBrowser`. A crash here breaks `ng build` (prerender) and therefore the deploy.
 - **Keep the host-header validation in `server.ts`** (`sanitizeHeaders`, `ALLOWED_HOSTS`) and the URL sanitizer in `server.js`: they are security fixes for SSR/SSRF advisories. If a new production domain is added, set `ALLOWED_HOST` rather than weakening the check.
-- **Don't bump Angular major/minor versions piecemeal.** `@angular/*`, `@angular-devkit/build-angular` and `@angular/ssr` move together (`ng update`), otherwise the build breaks.
+- **Don't bump Angular major/minor versions piecemeal.** `@angular/*`, `@angular/build` (the esbuild builder, replaces `@angular-devkit/build-angular`), `@angular/ssr` and `@fortawesome/angular-fontawesome` move together (major N of one needs major N of the others), otherwise the build breaks.
 
 ## Project structure
 
@@ -116,3 +116,4 @@ If you fix one of these, remove it from this list in the same change.
 5. **Don't add dependencies lightly.** This is a static portfolio; prefer what's already installed. If one is needed, use `pnpm add`, and keep it in the right section (`devDependencies` for tooling).
 6. **Keep contact info and links in `environment.ts`**, not scattered in templates.
 7. **Update this file** and `README.md` when you change a convention, add a section/route or hit a gotcha the hard way.
+8. **Angular upgrades go one major at a time** (`@angular/core` 20 → 21 → …): bump, `pnpm install`, `pnpm build` and `pnpm test`, commit, repeat. Known traps from the 17 → 20 upgrade: `main.server.ts` must forward the `BootstrapContext` to `bootstrapApplication` (otherwise route extraction fails with "document is not defined"), `CommonEngine` lives in `@angular/ssr/node`, and Material's M2 theming functions are prefixed `m2-` in `custom-theme.scss`.

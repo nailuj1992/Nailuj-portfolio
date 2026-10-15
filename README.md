@@ -23,8 +23,8 @@ All content can be read in **English** or **Spanish**, and visitors switch betwe
 
 | Area | Technology |
 |------|------------|
-| Framework | [Angular 17.3](https://angular.dev/) (standalone components) |
-| Language | TypeScript 5.3 (strict mode) |
+| Framework | [Angular 20.3](https://angular.dev/) (standalone components) |
+| Language | TypeScript 5.8 (strict mode) |
 | Rendering | Angular SSR with build-time **prerendering** (`@angular/ssr`) |
 | UI | Angular Material, custom CSS, Font Awesome icons |
 | Server | Express (SSR entry point in `server.ts`) |
