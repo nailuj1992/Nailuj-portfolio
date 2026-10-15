@@ -1,38 +1,62 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, signal, effect } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { getText, enUS, esES } from '@model/dto/language';
 import { environment } from '@environments/environment';
 
+const STORAGE_KEY = 'lang';
+
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) { }
+  /** Current language code. Falls back to the build default when there is no storage (SSR, blocked storage). */
+  private readonly lang = signal<string>(environment.variables.defaultLang);
 
-  private get sessionStorage() {
-    return this.document.defaultView?.sessionStorage;
+  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+    const stored = this.readStoredLang();
+    if (stored === enUS || stored === esES) {
+      this.lang.set(stored);
+    } else {
+      this.writeStoredLang(this.lang());
+    }
+
+    // Keep <html lang="..."> in sync, also in the prerendered HTML.
+    effect(() => {
+      this.document.documentElement.lang = this.lang() === esES ? 'es' : 'en';
+    });
   }
 
-  getText(id: string): string | null {
-    return getText(id, this.sessionStorage?.getItem('lang') ?? null);
+  getText(id: string): string {
+    return getText(id, this.lang());
   }
 
   isInEnglish(): boolean {
-    return this.sessionStorage?.getItem('lang') === enUS;
+    return this.lang() === enUS;
   }
 
   isInSpanish(): boolean {
-    return this.sessionStorage?.getItem('lang') === esES;
+    return this.lang() === esES;
   }
 
   changeLanguage(): void {
-    const ss = this.sessionStorage;
-    if (!ss) return;
-    const lang = ss.getItem('lang');
-    if (lang === null) {
-      ss.setItem('lang', environment.variables.defaultLang);
-      return;
+    const next = this.lang() === enUS ? esES : enUS;
+    this.lang.set(next);
+    this.writeStoredLang(next);
+  }
+
+  private readStoredLang(): string | null {
+    try {
+      return this.document.defaultView?.sessionStorage?.getItem(STORAGE_KEY) ?? null;
+    } catch {
+      return null;
     }
-    ss.setItem('lang', lang === enUS ? esES : enUS);
+  }
+
+  private writeStoredLang(lang: string): void {
+    try {
+      this.document.defaultView?.sessionStorage?.setItem(STORAGE_KEY, lang);
+    } catch {
+      // Storage unavailable (private mode, blocked cookies): keep the choice in memory only.
+    }
   }
 
 }

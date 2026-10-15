@@ -83,7 +83,7 @@ src/
 │   │   ├── image-slider/  # Generic screenshot carousel
 │   │   ├── scroll-to-top/
 │   │   └── separator/
-│   ├── services/          # LanguageService (i18n), MailService
+│   ├── services/          # LanguageService (i18n)
 │   ├── model/dto/         # Translation dictionary and DTOs
 │   ├── app.config.ts      # Client providers (router, hydration, animations, HTTP)
 │   ├── app.config.server.ts  # Server-rendering providers
@@ -100,7 +100,7 @@ TypeScript path aliases (`@components/*`, `@elements/*`, `@services/*`, `@model/
 
 - **Standalone components.** There are no `NgModule`s. Each component declares its own imports, and the app starts with `bootstrapApplication`.
 - **Content kept apart from layout.** Section data (jobs, projects, technologies) lives in plain TypeScript arrays inside each component. External URLs and contact details are kept together in `src/environments/environment.ts`, so updating the portfolio rarely means touching templates.
-- **Home-made internationalization.** `src/app/model/dto/language.ts` holds a dictionary that maps each text key to its English and Spanish versions. `LanguageService` saves the selected language in `sessionStorage` and returns the right text through `getText(key)`. The default language comes from the build variables: English in production, Spanish in development.
+- **Home-made internationalization.** `src/app/model/dto/language.ts` holds a dictionary that maps each text key to its English and Spanish versions. `LanguageService` keeps the selected language in a signal (mirrored in `sessionStorage` when available, so it also works during SSR) and returns the right text through `getText(key)`. The default language comes from the build variables: English in production, Spanish in development.
 - **SSR + prerendering.** The page is rendered to static HTML at build time for faster first paint and better SEO, then hydrated in the browser (`provideClientHydration`). `server.ts` adds host-header validation to protect the SSR server against SSRF.
 - **Technology icons by convention.** Technologies are referenced by name (e.g. `"angular"`), which resolves to `assets/svg/<name>.svg`, so adding a new tool only takes a new SVG file.
 

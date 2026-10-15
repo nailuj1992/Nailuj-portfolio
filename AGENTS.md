@@ -38,7 +38,7 @@ src/
   app/
     components/      — page sections, one folder each: home (hosts all the others), about, portfolio, experience, studies, contact
     elements/        — reusable UI pieces: menu (nav + language toggle), footer, image-slider, scroll-to-top, separator
-    services/        — language.service.ts (i18n), mail.service.ts (unused for now)
+    services/        — language.service.ts (i18n: signal-based, SSR-safe)
     model/dto/       — language.ts (translation dictionary), send-mail-dto.ts
     app.config.ts    — client providers (router, hydration, async animations, HttpClient)
     app.config.server.ts — adds server rendering
@@ -63,9 +63,8 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 
 - Every user-facing string goes through the dictionary in `src/app/model/dto/language.ts`: `mapPhrases.set("key", new PhraseDto("English", "Español"))`, read in components with `LanguageService.getText("key")`. **Never hard-code visible text in a template** (proper names and place names such as company names and "Bogotá D.C" are the exception).
 - **Always provide both languages** for a new key, with the same meaning. **Spanish text uses correct orthography** (accents and ñ).
-- Language lives in `sessionStorage` under `lang` (`enUS` / `esES`). Default comes from `environment.variables.defaultLang`: **English in production, Spanish in development** (`angular.json` development `fileReplacements`). Don't assume one default when testing.
-- `getText` is called from templates on every change-detection pass and returns `null` when there is no stored language (e.g. during SSR, where `sessionStorage` doesn't exist). Keep that in mind: prerendered HTML may lack translated text, and any change here must be checked against a production build.
-- `index.html` is `lang="en"` and is not updated when the user switches language; account for it if you work on accessibility/SEO.
+- Language lives in a signal in `LanguageService`, mirrored in `sessionStorage` under `lang` (`enUS` / `esES`). Default comes from `environment.variables.defaultLang`: **English in production, Spanish in development** (`angular.json` development `fileReplacements`). Don't assume one default when testing.
+- `LanguageService` is SSR-safe: without `sessionStorage` (server, blocked storage) it keeps the language in memory and falls back to the default, so prerendered HTML always contains text. Templates call `getText()` on every change-detection pass; it reads the signal, so switching language updates the whole page. It also keeps `<html lang>` in sync (`en` / `es`).
 
 ## Components & code conventions
 
@@ -78,7 +77,7 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 
 ## Testing
 
-- Tests are Karma + Jasmine (`pnpm test`), specs next to each component (`*.spec.ts`). Most are the default CLI boilerplate and **`app.component.spec.ts` currently fails** (it expects the title `'Nailuj-portfolio'` and an `<h1>`). When you change a component, fix or write its spec instead of leaving the boilerplate; don't make unrelated specs pass by deleting assertions.
+- Tests are Karma + Jasmine (`pnpm test`), specs next to each component (`*.spec.ts`). Specs for the app shell, `LanguageService`, menu, scroll-to-top and image slider have real assertions; the rest are still CLI boilerplate. When you change a component, write or fix its spec instead of leaving the boilerplate; don't make specs pass by deleting assertions. On a machine without Chrome, point `CHROME_BIN` at Edge (`msedge.exe`) and run `pnpm test --watch=false --browsers=ChromeHeadless`.
 - There is no CI workflow in the repo; **the deploy build is the gate**. Before opening a PR, run `pnpm build` (production, with prerender) and make sure it succeeds, since SSR-only errors do not show up in `pnpm dev`.
 
 ## Build & run
@@ -102,8 +101,8 @@ pnpm lint           # ng lint (no linter is configured yet — it asks to add on
 
 ## Known issues (don't "discover" them again, and don't hide them)
 
-- Language handling is not SSR-safe/reactive (see i18n section); scroll-to-top has operator-precedence bugs in `onWindowScroll`; `title-lcd-pin` technology tags don't match its description; `MailService` posts to an email address and is unused.
-- `package.json` mixes build tools and legacy pins into `dependencies` (`@angular/cli`, `typescript`, `vite`, `http-server`, `path`, `ip`, `undici`, …). Some are security pins: check why before removing one.
+- `pnpm audit` reports one dev-only finding (`braces`, through karma) with no patched release published yet.
+- Slider logic is duplicated in three components (see Architecture notes).
 
 If you fix one of these, remove it from this list in the same change.
 

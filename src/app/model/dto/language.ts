@@ -24,7 +24,7 @@ mapPhrases.set("sm-my-bitbucket", new PhraseDto("My BitBucket", "Mi BitBucket"))
 /* ABOUT SECTION */
 mapPhrases.set("about-me-title", new PhraseDto("About me", "Acerca de mí"));
 mapPhrases.set("about-me-paragraph-1", new PhraseDto("I am a passionate developer who has dedication and focus on analyzing situations and writing clean and well-maintained code.", "Soy un desarrollador apasionado que tiene dedicación y enfoque en analizar situaciones y escribir código limpio y bien mantenido."));
-mapPhrases.set("about-me-paragraph-2", new PhraseDto("Conducted end-to-end solutions for complex web applications, spearheaded the full software development lifecycle for many projects, adhering to Agile frameworks like Scrum, and delivered impeccable code and met tight deadlines.", "Realicé soluciones de extremo a extremo para aplicaciones web complejas, encabezé todo el ciclo de vida del desarrollo de software para muchos proyectos, adhiriéndome a marcos ágiles como Scrum, y entregué un código impecable, cumpliendo a su vez con plazos ajustados."));
+mapPhrases.set("about-me-paragraph-2", new PhraseDto("Conducted end-to-end solutions for complex web applications, spearheaded the full software development lifecycle for many projects, adhering to Agile frameworks like Scrum, and delivered impeccable code and met tight deadlines.", "Realicé soluciones de extremo a extremo para aplicaciones web complejas, encabecé todo el ciclo de vida del desarrollo de software para muchos proyectos, adhiriéndome a marcos ágiles como Scrum, y entregué un código impecable, cumpliendo a su vez con plazos ajustados."));
 mapPhrases.set("about-me-skills", new PhraseDto("Tools used", "Herramientas utilizadas"));
 
 /* PORTFOLIO SECTION */
@@ -53,7 +53,7 @@ mapPhrases.set("description-stock-management", new PhraseDto("This basic project
 mapPhrases.set("title-portfolio", new PhraseDto("Web Portfolio", "Portafolio Web"));
 mapPhrases.set("description-portfolio", new PhraseDto("This project is focused in showing my portfolio in a good and pretty manner. The next link contains the source code for this project -and this entire Web page, of course-.", "Este proyecto está enfocado a mostrar mi portfolio de una forma bonita y atractiva. El siguiente enlace contiene el código fuente de este proyecto (y de esta página web completa, por supuesto)."));
 
-mapPhrases.set("title-sgsst", new PhraseDto("SG-SST propotype", "Prototipo para SG-SST"));
+mapPhrases.set("title-sgsst", new PhraseDto("SG-SST prototype", "Prototipo para SG-SST"));
 mapPhrases.set("description-sgsst", new PhraseDto("This prototype was developed on PHP using the framework Yii. This project was imagined to provide companies with tools with which they can fully comply with the guidelines and strict controls related to Occupational Health and Safety (SG-SST for its acronym in Spanish).", "Este prototipo fue desarrollado en PHP utilizando el framework Yii. Este proyecto fue pensado para brindar a las empresas herramientas con las que puedan cumplir a cabalidad con los lineamientos y controles estrictos relacionados con la Seguridad y Salud en el Trabajo (SG-SST)."));
 
 mapPhrases.set("title-inpec", new PhraseDto("Stock management for Inpec", "Manejo de inventarios para el Inpec"));
@@ -63,7 +63,7 @@ mapPhrases.set("title-lcd-pin", new PhraseDto("LCD Pin", "LCD Pin"));
 mapPhrases.set("description-lcd-pin", new PhraseDto("This desktop app -developed in Java- was focused on register the enrollment data of the students at a school (Liceo Campo David - LCD for its acronym in Spanish), in order to obtain a consecutive number that the parents must present to the school, along with the corresponding payment, thus confirming the student's enrollment. This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Esta aplicación de escritorio desarrollada en Java estuvo enfocada en registrar los datos de matrícula de los alumnos del colegio Liceo Campo David (LCD), con el fin de obtener un número consecutivo que los padres de familia deben presentar al colegio, junto con el pago correspondiente, confirmando así la matrícula del alumno. Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
 
 mapPhrases.set("title-lcd-questions", new PhraseDto("Cuestionario LCD", "Cuestionario LCD"));
-mapPhrases.set("description-lcd-questions", new PhraseDto("This Java desktop application was built to store and print questions on the exams for the school Liceo Campo David (LCD for its acronym in Spanish). The exams were made and printed using a powerful tool calles JasperReports. This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Esta aplicación de escritorio en Java fue desarrollada para almacenar e imprimir preguntas para los exámenes del colegio Liceo Campo David (LCD). Los exámenes fueron realizados e impresos utilizando una potente herramienta llamada JasperReports. Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
+mapPhrases.set("description-lcd-questions", new PhraseDto("This Java desktop application was built to store and print questions on the exams for the school Liceo Campo David (LCD for its acronym in Spanish). The exams were made and printed using a powerful tool called JasperReports. This project was developed for the company 'Sistemas Comerciales SIA Ltda'.", "Esta aplicación de escritorio en Java fue desarrollada para almacenar e imprimir preguntas para los exámenes del colegio Liceo Campo David (LCD). Los exámenes fueron realizados e impresos utilizando una potente herramienta llamada JasperReports. Este proyecto fue desarrollado para la empresa 'Sistemas Comerciales SIA Ltda'."));
 
 mapPhrases.set("title-tu-conjunto", new PhraseDto("TuConjunto Project", "Proyecto TuConjunto"));
 mapPhrases.set("description-tu-conjunto", new PhraseDto("This basic project was built on PHP using the framework Yii. This project was focused on help the administrators and related people with some topics related with horizontal properties and residential complexes. This project was developed for the company 'Data Global S.A'.", "Este proyecto básico fue desarrollado en PHP utilizando el framework Yii. Este proyecto estuvo enfocado en ayudar a los administradores y personas relacionadas con algunos temas relacionados con propiedades horizontales y conjuntos residenciales. Este proyecto fue desarrollado para la empresa 'Data Global S.A'."));
@@ -118,10 +118,7 @@ mapPhrases.set("contact-title", new PhraseDto("Contact me", "Contáctame"));
 export const enUS = "enUS";
 export const esES = "esES";
 
-export function getText(id: string, lang: string | null) {
-    if (!lang) {
-        return null;
-    }
+export function getText(id: string, lang: string): string {
     const item = mapPhrases.get(id);
     if (!item) {
         return 'Missing location for id ' + id;

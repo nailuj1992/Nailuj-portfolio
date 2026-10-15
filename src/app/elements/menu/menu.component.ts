@@ -1,5 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { LanguageService } from '@services/language.service';
@@ -13,25 +12,20 @@ import { LanguageService } from '@services/language.service';
 })
 export class MenuComponent {
 
-  constructor(
-    @Inject(DOCUMENT) private readonly document: Document,
-    private langService: LanguageService
-  ) { }
+  /** Whether the collapsed (mobile) menu is open. Ignored by the CSS on wide screens. */
+  readonly menuOpen = signal(false);
+
+  constructor(private langService: LanguageService) { }
 
   getText(id: string) { return this.langService.getText(id); }
   changeLanguage(): void { this.langService.changeLanguage(); }
 
   hamburgerMenu(): void {
-    const x = this.document.getElementById("menu-items");
-    if (!x) return;
-    x.style.display = x.style.display === "flex" ? "none" : "flex";
+    this.menuOpen.update(open => !open);
   }
 
   closeMenuIfMobile(): void {
-    const x = this.document.getElementById("menu-items");
-    if (x?.style.display === "flex") {
-      x.style.display = "none";
-    }
+    this.menuOpen.set(false);
   }
 
 }

@@ -1,5 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from '@/elements/menu/menu.component';
 import { FooterComponent } from '@/elements/footer/footer.component';
@@ -19,11 +18,7 @@ export class AppComponent {
   env = environment;
   title = "Nailuj's portfolio";
 
-  constructor(@Inject(DOCUMENT) document: Document) {
-    const sessionStorage = document.defaultView?.sessionStorage;
-    if (sessionStorage && sessionStorage.getItem('lang') == null) {
-      sessionStorage.setItem('lang', this.env.variables.defaultLang);
-    }
+  constructor() {
     inject();
     injectSpeedInsights();
   }
