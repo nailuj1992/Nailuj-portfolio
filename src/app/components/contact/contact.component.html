@@ -7,19 +7,22 @@
             <span>{{env.mailto}}</span>
         </a>
         <a class="contact-personal-line" [href]="env.personalLineWhatsappLink" target="_blank">
-            <i class="fa fa-whatsapp"></i>
+            <fa-icon class="whatsapp-icon" [icon]="faWhatsapp"></fa-icon>
             <img alt="col" src="assets/svg/colombia.svg" class="flag-icon">
             <span>{{env.personalLine}}</span>
         </a>
         <a class="contact-corporative-line" [href]="env.corporativeLineWhatsappLink" target="_blank">
-            <i class="fa fa-whatsapp"></i>
+            <fa-icon class="whatsapp-icon" [icon]="faWhatsapp"></fa-icon>
             <img alt="ca" src="assets/svg/canada.svg" class="flag-icon">
             <span>{{env.corporativeLine}} <span class="corporative-label"></span></span>
         </a>
     </div>
     <div class="social-media">
-        <a class="fa fa-linkedin" [href]="env.linkedinUrl" target="_blank" [title]="getText('sm-my-linkedin')"></a>
-        <a class="fa fa-github" [href]="env.githubUrl" target="_blank" [title]="getText('sm-my-github')"></a>
-        <a class="fa fa-bitbucket" [href]="env.bitbucketUrl" target="_blank" [title]="getText('sm-my-bitbucket')"></a>
+                <a class="social-link" [href]="env.linkedinUrl" target="_blank" rel="noopener" [title]="getText('sm-my-linkedin')"
+            [attr.aria-label]="getText('sm-my-linkedin')"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                <a class="social-link" [href]="env.githubUrl" target="_blank" rel="noopener" [title]="getText('sm-my-github')"
+            [attr.aria-label]="getText('sm-my-github')"><fa-icon [icon]="faGithub"></fa-icon></a>
+                <a class="social-link" [href]="env.bitbucketUrl" target="_blank" rel="noopener" [title]="getText('sm-my-bitbucket')"
+            [attr.aria-label]="getText('sm-my-bitbucket')"><fa-icon [icon]="faBitbucket"></fa-icon></a>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Injectable, Inject, signal, effect } from '@angular/core';
+import { Injectable, signal, effect, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { getText, enUS, esES } from '@model/dto/language';
 import { environment } from '@environments/environment';
@@ -7,11 +7,12 @@ const STORAGE_KEY = 'lang';
 
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
+  private readonly document = inject<Document>(DOCUMENT);
 
   /** Current language code. Falls back to the build default when there is no storage (SSR, blocked storage). */
   private readonly lang = signal<string>(environment.variables.defaultLang);
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  constructor() {
     const stored = this.readStoredLang();
     if (stored === enUS || stored === esES) {
       this.lang.set(stored);

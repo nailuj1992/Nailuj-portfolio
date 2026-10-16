@@ -101,10 +101,7 @@
         font-size: 1.4rem;
         align-self: center;
 
-        .fa-linkedin,
-        .fa-github,
-        .fa-bitbucket,
-        .fa-download {
+        .social-link {
             color: var(--text-on-dark);
             text-decoration: none;
             transition: color var(--transition), transform var(--transition);

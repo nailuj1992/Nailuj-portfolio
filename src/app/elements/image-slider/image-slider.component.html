@@ -7,8 +7,8 @@
     @if(indicatorsVisible) {
     <div class="indicators">
         @for(slide of slides; track $index) {
-        <div class="indicator" [class]="{ active: $index === currentSlide }" (click)="jumpToSlide($index)" onkeypress="">
-        </div>
+        <button type="button" class="indicator" [class.active]="$index === currentSlide"
+            [attr.aria-label]="($index + 1) + ' / ' + slides.length" (click)="jumpToSlide($index)"></button>
         }
     </div>
     }

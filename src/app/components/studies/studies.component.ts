@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { environment } from '@environments/environment';
 import { LanguageService } from '@services/language.service';
 
@@ -10,10 +10,9 @@ import { LanguageService } from '@services/language.service';
   styleUrl: 'studies.component.css'
 })
 export class StudiesComponent {
+  private langService = inject(LanguageService);
 
   env = environment;
-
-  constructor(private langService: LanguageService) { }
 
   getText(id: string) { return this.langService.getText(id); }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageSliderComponent } from '@elements/image-slider/image-slider.component';
@@ -6,6 +6,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '@environments/environment';
 import { LanguageService } from '@services/language.service';
 import { SlideNavigation } from '@elements/slide-navigation';
+import { ImageSlide, OtherProject } from '@model/dto/slide';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,15 +16,16 @@ import { SlideNavigation } from '@elements/slide-navigation';
   styleUrl: 'portfolio.component.css'
 })
 export class PortfolioComponent extends SlideNavigation {
+  private langService = inject(LanguageService);
 
   env = environment;
 
-  slidesLogicProject: any[];
-  slidesMusicPlayer: any[];
-  slidesPrayersProject: any[];
-  slidesBasic2dGameProject: any[];
+  slidesLogicProject: ImageSlide[];
+  slidesMusicPlayer: ImageSlide[];
+  slidesPrayersProject: ImageSlide[];
+  slidesBasic2dGameProject: ImageSlide[];
 
-  slidesOthers: any[];
+  slidesOthers: OtherProject[];
   animationSpeed = 300;
 
   faArrowRight = faArrowRight;
@@ -31,7 +33,7 @@ export class PortfolioComponent extends SlideNavigation {
 
   protected get slideCount(): number { return this.slidesOthers.length; }
 
-  constructor(private langService: LanguageService) {
+  constructor() {
     super();
     this.slidesLogicProject = [
       {

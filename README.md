@@ -4,6 +4,10 @@ Personal portfolio of **Julián González Prieto**, Fullstack Software Developer
 
 🌐 Live site: **https://nailuj-portfolio.vercel.app/**
 
+[![CI](https://github.com/nailuj1992/Nailuj-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/nailuj1992/Nailuj-portfolio/actions/workflows/ci.yml)
+
+![Screenshot of the portfolio home page](docs/screenshot.jpg)
+
 > *Náiluj* has one simple explanation: it's my name backwards.
 
 ## Objective
@@ -132,8 +136,12 @@ The development server opens at `http://localhost:4200/` with Spanish as the def
 | `pnpm preview` | Build, then serve the static output with Express (`server.js`) |
 | `pnpm serve:ssr` | Run the SSR server (`server.ts`) from the build output |
 | `pnpm test` | Run unit tests with Karma |
+| `pnpm test:ci` | Single headless run of the unit tests (what CI runs) |
+| `pnpm lint` | Lint TypeScript and templates with ESLint (angular-eslint) |
 
 ## Deployment
+
+Every pull request and every push to `master` runs the **CI** workflow (`.github/workflows/ci.yml`): lint, unit tests and the production build, plus an informational audit of the production dependencies.
 
 The site is deployed on **Vercel**. On every push, Vercel installs dependencies with pnpm and runs `ng build` (see `vercel.json`), then serves the prerendered output.
 

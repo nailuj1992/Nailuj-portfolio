@@ -18,7 +18,7 @@ Nailuj portfolio: personal, bilingual (EN/ES) single-page portfolio of Julián G
 - **Angular 20.3** with **standalone components** — no `NgModule`s in new code. Bootstrapped with `bootstrapApplication` (`src/main.ts`, `src/main.server.ts`).
 - **TypeScript 5.8**, strict mode (`strict`, `strictTemplates`, `noImplicitReturns`, `noPropertyAccessFromIndexSignature`). Single quotes in `.ts` and 2-space indent (`.editorconfig`).
 - **SSR + prerender** through `@angular/ssr` (`angular.json` → `prerender: true`, `ssr.entry: server.ts`) with client hydration (`provideClientHydration`).
-- **Angular Material 20** (theme in `src/custom-theme.scss`), **Font Awesome** (`@fortawesome/angular-fontawesome` for icons in templates; the 4.7 CSS from the CDN in `index.html` powers the `fa fa-*` classes in the home and menu), plain per-component CSS.
+- **Angular Material 20** (theme in `src/custom-theme.scss`), **Font Awesome 6** (`@fortawesome/angular-fontawesome`: every icon is an `<fa-icon [icon]="faXxx">` with the icon imported from `free-solid-svg-icons` / `free-brands-svg-icons` in the component; there is no Font Awesome CSS or CDN, so don't add `fa fa-*` classes), plain per-component CSS. Icon-only links need an `aria-label`.
 - **Vercel Analytics + Speed Insights** (injected in `AppComponent`).
 - **pnpm — not npm, not yarn.** Lockfile is `pnpm-lock.yaml`, `pnpm-workspace.yaml` sets `nodeLinker: hoisted` and `autoInstallPeers: true` (pnpm 11 ignores these in `.npmrc`, which this repo no longer has). Always `pnpm install` / `pnpm add` / `pnpm run <script>`.
 - Node **24.x** (`engines` in `package.json`).
@@ -39,7 +39,7 @@ src/
     components/      — page sections, one folder each: home (hosts all the others), about, portfolio, experience, studies, contact
     elements/        — reusable UI pieces: menu (nav + language toggle), footer, image-slider, scroll-to-top, separator
     services/        — language.service.ts (i18n: signal-based, SSR-safe)
-    model/dto/       — language.ts (translation dictionary), send-mail-dto.ts
+    model/dto/       — language.ts (translation dictionary), slide.ts (slide / project types)
     app.config.ts    — client providers (router, hydration, async animations, HttpClient)
     app.config.server.ts — adds server rendering
     app.routes.ts    — single route: '' → HomeComponent
@@ -69,7 +69,7 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 ## Components & code conventions
 
 - New components: `standalone: true`, `templateUrl` + `styleUrl` in their own folder (`name.component.ts/.html/.css/.spec.ts`), selector prefix `app-`, class `NameComponent`. Match the existing files: components expose `env = environment` and a `getText(id)` wrapper when the template needs them.
-- Inject through the constructor like the existing code (or `inject()` consistently within a file); don't mix styles inside one class.
+- Inject dependencies with `inject()` (field initializers), not constructor parameters (`@angular-eslint/prefer-inject`). Don't mix styles inside one class.
 - Reusable pieces go in `elements/`, page sections in `components/`.
 - Styling is per-component CSS plus global `src/styles.css` and the Material theme in `src/custom-theme.scss`. Don't introduce another UI/CSS framework.
 - Images: use web formats and no spaces in file names. Everything under `src/assets` is copied to the deployed site, so design sources (`.psd`, etc.) live in `design/`, outside the build.
@@ -77,8 +77,8 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 
 ## Testing
 
-- Tests are Karma + Jasmine (`pnpm test`), specs next to each component (`*.spec.ts`). Specs for the app shell, `LanguageService`, menu, scroll-to-top and image slider have real assertions; the rest are still CLI boilerplate. When you change a component, write or fix its spec instead of leaving the boilerplate; don't make specs pass by deleting assertions. On a machine without Chrome, point `CHROME_BIN` at Edge (`msedge.exe`) and run `pnpm test --watch=false --browsers=ChromeHeadless`.
-- There is no CI workflow in the repo; **the deploy build is the gate**. Before opening a PR, run `pnpm build` (production, with prerender) and make sure it succeeds, since SSR-only errors do not show up in `pnpm dev`.
+- Tests are Karma + Jasmine (`pnpm test`), specs next to each component (`*.spec.ts`). Every component, the language service and the slide navigation have real assertions: rendering in both languages, links taken from `environment.ts`, slider wrap-around, and data integrity (every dictionary key used by the experience/projects data exists in English and Spanish, every technology icon and screenshot referenced exists under `assets/`, checked with `fetch` against Karma's server). When you change a component, update its spec; don't make specs pass by deleting assertions. On a machine without Chrome, point `CHROME_BIN` at Edge (`msedge.exe`) and run `pnpm test --watch=false --browsers=ChromeHeadless`.
+- **CI** (`.github/workflows/ci.yml`) runs on every PR and on pushes to `master`: `pnpm lint`, `pnpm test:ci` (headless Chrome through the `ChromeHeadlessCI` launcher in `karma.conf.js`, which adds `--no-sandbox`) and `pnpm build` (production, with prerender, like Vercel), plus a non-blocking `pnpm audit --prod`. Keep all three green. Run the same three commands locally before opening a PR, since SSR-only errors do not show up in `pnpm dev`. Actions are pinned to a **full commit SHA** with the version in a trailing comment; when bumping one, look up the new SHA (`gh api repos/<owner>/<repo>/commits/<tag> --jq .sha`).
 
 ## Build & run
 
@@ -88,6 +88,8 @@ pnpm dev            # ng serve --open, http://localhost:4200 (development config
 pnpm build          # production build: browser + server bundles + prerendered routes in dist/nailuj-portfolio
 pnpm preview        # ng build, then serve dist/…/browser with server.js on http://localhost:8080
 pnpm test           # Karma + Jasmine
+pnpm test:ci        # single headless run (CI); set CHROME_BIN to Edge/Chrome if needed
+pnpm lint           # ESLint (angular-eslint, flat config in eslint.config.js): TypeScript + templates, incl. accessibility rules
 ```
 
 - `pnpm start` runs `node server.js` and requires a previous build.
@@ -101,8 +103,6 @@ pnpm test           # Karma + Jasmine
 ## Known issues (don't "discover" them again, and don't hide them)
 
 - `pnpm audit` reports one dev-only finding (`braces`, through karma) with no patched release published yet.
-- There is no linter configured (`ng lint` has no target). Adding `angular-eslint` would be a reasonable next step.
-- `logo.jpg` and `nailuj-happy.png` in `src/assets/img` are not referenced anywhere.
 
 If you fix one of these, remove it from this list in the same change.
 
