@@ -16,7 +16,7 @@ This project is a single-page web application that presents my professional prof
 
 - **Who I am**: a short introduction, my location and links to my CV, LinkedIn, GitHub and Bitbucket.
 - **What I work with**: the languages, frameworks, databases and tools I use.
-- **What I have built**: featured projects with screenshot carousels, plus a slider of other projects that link to their repositories.
+- **What I have built**: featured projects with screenshot carousels, a block with my **World of Warcraft addons** ([FPS & Latency Meter](https://github.com/nailuj1992/FpsLatencyMeter), [Dead UI](https://github.com/nailuj1992/DeadUI) and [TacoTip for Mists of Pandaria](https://github.com/nailuj1992/TacoTip-for-MoP), each with its screenshots and a CurseForge link), plus a slider of other projects that link to their repositories.
 - **Where I have worked**: my work history as a timeline-style slider, with the technologies used in each role.
 - **What I have studied**: my degrees and certifications.
 - **How to reach me**: email and phone/WhatsApp contacts.
@@ -77,7 +77,7 @@ src/
 │   ├── components/        # Page sections (one per menu entry)
 │   │   ├── home/          # Hero section; hosts all other sections
 │   │   ├── about/         # Introduction and tech skills
-│   │   ├── portfolio/     # Featured projects and "other projects" slider
+│   │   ├── portfolio/     # Featured projects, WoW addons and "other projects" slider
 │   │   ├── experience/    # Work history slider
 │   │   ├── studies/       # Education
 │   │   └── contact/       # Contact information

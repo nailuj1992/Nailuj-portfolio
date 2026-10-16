@@ -94,6 +94,81 @@
                 </div>
             </div>
         </div>
+
+        <span class="subsection-title">{{getText("portfolio-wow-addons")}}</span>
+
+        <div class="portfolio-row">
+            <div class="portfolio-item">
+                <span class="subtitle">{{getText("title-fps-latency-meter")}}</span>
+
+                <div class="carousel-text">
+                    <app-image-slider [slides]="slidesFpsLatencyMeter" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+
+                    <span class="description right">{{getText("description-fps-latency-meter")}}</span>
+                </div>
+
+                <div class="technologies-item">
+                    <img alt="lua" src="assets/svg/lua.svg" class="tech-icon">
+                    <img alt="git" src="assets/svg/git.svg" class="tech-icon">
+                </div>
+
+                <div class="button button-group">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoFpsLatencyMeterUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-project")}}</a>
+                    <a mat-stroked-button color="primary" class="portfolio-link curseforge-link" href="{{env.curseForgeFpsLatencyMeterUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-curseforge")}}</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <span class="subtitle">{{getText("title-dead-ui")}}</span>
+
+                <div class="carousel-text">
+                    <span class="description left">{{getText("description-dead-ui")}}</span>
+
+                    <app-image-slider [slides]="slidesDeadUi" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+                </div>
+
+                <div class="technologies-item">
+                    <img alt="lua" src="assets/svg/lua.svg" class="tech-icon">
+                    <img alt="git" src="assets/svg/git.svg" class="tech-icon">
+                </div>
+
+                <div class="button button-group">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoDeadUiUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-project")}}</a>
+                    <a mat-stroked-button color="primary" class="portfolio-link curseforge-link" href="{{env.curseForgeDeadUiUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-curseforge")}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-row">
+            <div class="portfolio-item">
+                <span class="subtitle">{{getText("title-tacotip-mop")}}</span>
+
+                <div class="carousel-text">
+                    <app-image-slider [slides]="slidesTacoTipMop" [animationSpeed]="300"
+                        class="carousel-center"></app-image-slider>
+
+                    <span class="description right">{{getText("description-tacotip-mop")}}</span>
+                </div>
+
+                <div class="technologies-item">
+                    <img alt="lua" src="assets/svg/lua.svg" class="tech-icon">
+                    <img alt="git" src="assets/svg/git.svg" class="tech-icon">
+                </div>
+
+                <div class="button button-group">
+                    <a mat-flat-button color="primary" class="portfolio-link" href="{{env.repoTacoTipMopUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-project")}}</a>
+                    <a mat-stroked-button color="primary" class="portfolio-link curseforge-link" href="{{env.curseForgeTacoTipMopUrl}}"
+                        target="_blank" rel="noopener">{{getText("link-curseforge")}}</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <span class="title">{{getText("portfolio-other-projects")}}</span>
