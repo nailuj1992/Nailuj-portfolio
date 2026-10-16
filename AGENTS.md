@@ -44,7 +44,7 @@ src/
     app.config.server.ts — adds server rendering
     app.routes.ts    — single route: '' → HomeComponent
   environments/      — environment.ts (links, contact data), variables.ts (production) / variables.development.ts (dev, swapped by fileReplacements)
-  assets/img/        — photos and project screenshots (one subfolder per project)
+  assets/img/        — photos and project screenshots (one subfolder per project); the World of Warcraft addons use `fps-latency-meter/`, `dead-ui/` and `tacotip-mop/` (the screenshots of each addon README, in README order; the repeated "Addon out of date" tip image is left out on purpose)
   assets/svg/        — technology/flag/contact icons, named after the technology key
 server.ts            — Express SSR server (Vercel / `serve:ssr`)
 server.js            — plain Express static server behind `pnpm start` / `pnpm preview`
@@ -56,6 +56,7 @@ TypeScript path aliases (`tsconfig.json`) are used for imports: `@components/*`,
 
 - **One page, one route.** `HomeComponent` stacks every section; the menu navigates with in-page anchors (`href="#about"`), not router links. A new section = a new component under `components/`, added to `home.component.html`, plus a menu entry in `menu.component.html` and its title key in the dictionary.
 - **Content is data, not markup.** Jobs (`ExperienceComponent.slides`), projects (`PortfolioComponent.slidesOthers`, screenshot arrays) and URLs (`environment.ts`) are plain TS data; templates only render them. To add a job or project, edit the data and the dictionary, not the HTML.
+- **World of Warcraft addons** (FpsLatencyMeter, DeadUI, TacoTip-for-MoP) are featured cards under the "World of Warcraft addons" subsection of `PortfolioComponent`: screenshot arrays (`slidesFpsLatencyMeter`, `slidesDeadUi`, `slidesTacoTipMop`), texts `title-*` / `description-*` in the dictionary, and two buttons each (GitHub `repo*Url` and CurseForge `curseForge*Url`, both in `environment.ts`). To add another addon, follow the same pattern and add its images under `assets/img/<name>/`. The `lua` technology icon (`assets/svg/lua.svg`) is a simple neutral badge, not the official Lua logo.
 - **Technology icons by naming convention.** A technology is referenced by key (`"angular"`, `"springboot"`, …) and rendered from `assets/svg/<key>.svg`. A new technology needs the SVG file with exactly that name; a missing file shows a broken image.
 - **Slide navigation is shared.** `elements/slide-navigation.ts` (`SlideNavigation`: `next` / `previous` / `jumpToSlide` with the `hidden` + `setTimeout` fade) is the base class of `ExperienceComponent`, `PortfolioComponent` and `ImageSliderComponent`. A component that needs a slider extends it and provides `animationSpeed` and `slideCount`; don't copy the logic again.
 

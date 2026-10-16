@@ -24,6 +24,13 @@ export const environment = {
     repoUnityNfc: 'https://github.com/nailuj1992/unity_nfc',
     repoStockManagementUrl: 'https://github.com/nailuj1992/stock-management',
     repoTuConjuntoUrl: 'https://github.com/nailuj1992/TuConjunto',
+    repoFpsLatencyMeterUrl: 'https://github.com/nailuj1992/FpsLatencyMeter',
+    repoTacoTipMopUrl: 'https://github.com/nailuj1992/TacoTip-for-MoP',
+    repoDeadUiUrl: 'https://github.com/nailuj1992/DeadUI',
+
+    curseForgeFpsLatencyMeterUrl: 'https://www.curseforge.com/wow/addons/fps-latency-meter',
+    curseForgeTacoTipMopUrl: 'https://www.curseforge.com/wow/addons/tacotip-for-mop',
+    curseForgeDeadUiUrl: 'https://www.curseforge.com/wow/addons/dead-ui',
 
     repoSgSstUrl: 'https://bitbucket.org/pegasus1992/sg-sst/',
     repoInpecProjectUrl: 'https://bitbucket.org/pegasus1992/inpec-project/',

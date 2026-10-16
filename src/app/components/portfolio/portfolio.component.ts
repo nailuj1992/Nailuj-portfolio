@@ -24,6 +24,9 @@ export class PortfolioComponent extends SlideNavigation {
   slidesMusicPlayer: ImageSlide[];
   slidesPrayersProject: ImageSlide[];
   slidesBasic2dGameProject: ImageSlide[];
+  slidesFpsLatencyMeter: ImageSlide[];
+  slidesDeadUi: ImageSlide[];
+  slidesTacoTipMop: ImageSlide[];
 
   slidesOthers: OtherProject[];
   animationSpeed = 300;
@@ -108,6 +111,87 @@ export class PortfolioComponent extends SlideNavigation {
       }, {
         url: 'assets/img/basic-2d-game/img5.png',
         title: 'Capture 5'
+      }
+    ];
+
+    this.slidesFpsLatencyMeter = [
+      {
+        url: 'assets/img/fps-latency-meter/img1.jpg',
+        title: 'FPS and latency indicators'
+      },
+      {
+        url: 'assets/img/fps-latency-meter/img2.jpg',
+        title: 'Options: refresh interval, font and colors'
+      },
+      {
+        url: 'assets/img/fps-latency-meter/img3.jpg',
+        title: 'Options: indicators and positions'
+      }
+    ];
+
+    this.slidesDeadUi = [
+      {
+        url: 'assets/img/dead-ui/img1.png',
+        title: 'Death banner in the game'
+      },
+      {
+        url: 'assets/img/dead-ui/img2.png',
+        title: 'Options panel'
+      },
+      {
+        url: 'assets/img/dead-ui/img3.png',
+        title: 'Options: animation, text and position'
+      },
+      {
+        url: 'assets/img/dead-ui/img4.png',
+        title: 'Options: sound picker'
+      },
+      {
+        url: 'assets/img/dead-ui/img5.png',
+        title: 'Options: custom sounds'
+      },
+      {
+        url: 'assets/img/dead-ui/img6.png',
+        title: 'Slash commands'
+      }
+    ];
+
+    this.slidesTacoTipMop = [
+      {
+        url: 'assets/img/tacotip-mop/img1.png',
+        title: 'Unit tooltip'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img2.png',
+        title: 'Item tooltip'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img3.png',
+        title: 'Character frame'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img4.png',
+        title: 'Equipped items overlay'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img5.png',
+        title: 'Options panel'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img6.png',
+        title: 'Options: unit tooltips'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img7.png',
+        title: 'Options: character frame'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img8.png',
+        title: 'Options: extra'
+      },
+      {
+        url: 'assets/img/tacotip-mop/img9.png',
+        title: 'Options: tooltip style'
       }
     ];
 

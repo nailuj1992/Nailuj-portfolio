@@ -42,4 +42,9 @@ describe('AboutComponent', () => {
       expect(icon.getAttribute('src')).toMatch(/^assets\/svg\/.+\.svg$/);
     }
   });
+
+  it('should list Lua, used for the World of Warcraft addons', async () => {
+    const el = await render(enUS);
+    expect(el.querySelector('img[alt="lua"]')?.getAttribute('src')).toBe('assets/svg/lua.svg');
+  });
 });
