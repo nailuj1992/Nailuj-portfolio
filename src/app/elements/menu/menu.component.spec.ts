@@ -33,4 +33,15 @@ describe('MenuComponent', () => {
     fixture.detectChanges();
     expect(items.classList).not.toContain('open');
   });
+
+  it('should expose the hamburger state to assistive technology', () => {
+    const hamburger = (fixture.nativeElement as HTMLElement).querySelector('.hamburger') as HTMLElement;
+    expect(hamburger.querySelector('svg')).not.toBeNull();
+    expect(hamburger.getAttribute('aria-label')).toBeTruthy();
+    expect(hamburger.getAttribute('aria-expanded')).toBe('false');
+
+    hamburger.click();
+    fixture.detectChanges();
+    expect(hamburger.getAttribute('aria-expanded')).toBe('true');
+  });
 });

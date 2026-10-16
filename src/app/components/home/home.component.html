@@ -20,15 +20,15 @@
             <a class="cta-button-1" href="#contact">{{getText("contact-title")}}</a>
         </div>
         <div class="social-media">
-            <a class="fa fa-download" [href]="isInEnglish() ? env.cvLinkEn : (isInSpanish() ? env.cvLinkSp : '')"
-                target="_blank" [title]="getText('sm-my-cv')">
-            </a>
-            <a class="fa fa-linkedin" [href]="env.linkedinUrl" target="_blank" [title]="getText('sm-my-linkedin')">
-            </a>
-            <a class="fa fa-github" [href]="env.githubUrl" target="_blank" [title]="getText('sm-my-github')">
-            </a>
-            <a class="fa fa-bitbucket" [href]="env.bitbucketUrl" target="_blank" [title]="getText('sm-my-bitbucket')">
-            </a>
+            <a class="social-link" [href]="isInEnglish() ? env.cvLinkEn : (isInSpanish() ? env.cvLinkSp : '')"
+                target="_blank" rel="noopener" [title]="getText('sm-my-cv')" [attr.aria-label]="getText('sm-my-cv')"><fa-icon
+                    [icon]="faDownload"></fa-icon></a>
+            <a class="social-link" [href]="env.linkedinUrl" target="_blank" rel="noopener" [title]="getText('sm-my-linkedin')"
+                [attr.aria-label]="getText('sm-my-linkedin')"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+            <a class="social-link" [href]="env.githubUrl" target="_blank" rel="noopener" [title]="getText('sm-my-github')"
+                [attr.aria-label]="getText('sm-my-github')"><fa-icon [icon]="faGithub"></fa-icon></a>
+            <a class="social-link" [href]="env.bitbucketUrl" target="_blank" rel="noopener" [title]="getText('sm-my-bitbucket')"
+                [attr.aria-label]="getText('sm-my-bitbucket')"><fa-icon [icon]="faBitbucket"></fa-icon></a>
         </div>
     </div>
 </div>

@@ -11,6 +11,7 @@ class PhraseDto {
 const mapPhrases = new Map<string, PhraseDto>();
 
 /* MENU */
+mapPhrases.set("menu-toggle", new PhraseDto("Toggle menu", "Mostrar u ocultar el menú"));
 mapPhrases.set("language", new PhraseDto("Ver en Español", "See in English"));
 
 /* HOME SECTION */

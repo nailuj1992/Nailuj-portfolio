@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { SlideNavigation } from '@elements/slide-navigation';
+import { ImageSlide } from '@model/dto/slide';
 
 @Component({
   selector: 'app-image-slider',
@@ -13,7 +14,7 @@ import { SlideNavigation } from '@elements/slide-navigation';
 })
 export class ImageSliderComponent extends SlideNavigation {
 
-  @Input() slides: any[] = [];
+  @Input() slides: ImageSlide[] = [];
   @Input() indicatorsVisible = true;
   @Input() animationSpeed = 500;
   @Input() autoPlay = false;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { environment } from '@environments/environment';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +24,7 @@ interface ExperienceSlide {
   styleUrl: 'experience.component.css'
 })
 export class ExperienceComponent extends SlideNavigation {
+  private langService = inject(LanguageService);
 
   env = environment;
 
@@ -35,7 +36,7 @@ export class ExperienceComponent extends SlideNavigation {
 
   protected get slideCount(): number { return this.slides.length; }
 
-  constructor(private langService: LanguageService) {
+  constructor() {
     super();
     this.slides = [
       {

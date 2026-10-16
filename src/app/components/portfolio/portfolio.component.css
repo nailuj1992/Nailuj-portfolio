@@ -207,6 +207,8 @@
             column-gap: 0.3rem;
 
             .indicator {
+                border: none;
+                padding: 0;
                 width: 7px;
                 height: 7px;
                 border-radius: 50%;

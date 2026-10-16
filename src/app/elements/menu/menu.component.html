@@ -1,8 +1,9 @@
 <!-- MENU -->
 <div id="menu">
     <div id="menu-base">
-        <a href="javascript:void(0);" class="hamburger" (click)="hamburgerMenu()">
-            <i class="fa fa-bars"></i>
+        <a href="javascript:void(0);" class="hamburger" (click)="hamburgerMenu()" [attr.aria-label]="getText('menu-toggle')"
+            [attr.aria-expanded]="menuOpen()" aria-controls="menu-items">
+            <fa-icon [icon]="faBars"></fa-icon>
         </a>
     </div>
     <div id="menu-items" [class.open]="menuOpen()">
